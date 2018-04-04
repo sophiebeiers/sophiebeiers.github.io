@@ -1,57 +1,257 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--
+      1. To change fonts, visit https://fonts.google.com/
+      2. After you pick your fonts, click 'Customize'
+      3. Pick a few weights for your body font
+          400 = regular, regular italic, 700 = bold
+      4. And whichever weight you want for your title font (regular? bold?)
+      5. Replace the <link... down below
+      6. Edit custom.css with your new font names. Be sure to add the weight!
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Slabo+27px" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Our custom CSS file -->
+    <link rel="stylesheet" href="custom.css">
+
     <title>Sophie Beiers</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-          <h1 class="display-2"><strong>Sophie</strong> Beiers</h1>
-          <p> A quantitative data analyst passionate about using data for social good and bad tv.
-            Currently a Master’s student in Applied Statistics at Columbia. Check out some of my work below
-            (click on the first image for a fake story)!
-            Wanna <a target = "_new" href = "mailto:sophiebeiers@gmail.com">chat</a>?</p>
-            &nbsp;
+
+
+    <!-- <div class="fancy-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9 text-left">
+            <h1 class="display-3">Sophie Beiers</h1>
+            <p>A quantitative data analyst passionate about using & visualizing
+               data for social good and bad tv.
+              Currently a Master’s student in Applied Statistics at Columbia.
+              Wanna <strong><a href="mailto:sophiebeiers@gmail.com">chat</a></strong>?</p>
+          </div>
         </div>
       </div>
+    </div> -->
 
-      <div class="container">
-        <div class = "row" >
-            <div class="col-sm-3">
-                <a target = "_new" href="story.html"><img src="cat.png" class="img-fluid"> </a>
+<div class="fancy-header background text-highlight">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 text-left">
+        <h1 class="display-3">Sophie Beiers</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container section">
+  <div class="row">
+    <div class="col-sm">
+      <h3>Projects </h3>
+    </div>
+  </div>
+
+<!-- Different kind of overlay
+         <div class="row">
+          <div class="col-sm">
+            <div class="image-container"><img src="test.jpg"><div class="overlay">Blah</div></div>
+          </div>
+          <div class="col-sm">
+            <div class="image-container"><img src="test.jpg"><div class="overlay">Blah</div></div>
+          </div>
+          <div class="col-sm">
+            <div class="image-container"><img src="test.jpg"><div class="overlay">Blah</div></div>
+          </div>
+          <div class="col-sm">
+            <div class="image-container"><img src="test.jpg"><div class="overlay">Blah</div></div>
+          </div>
+          <div class="col-sm">
+            <div class="image-container"><img src="test.jpg"><div class="overlay">Blah</div></div>
+          </div>
+        </div> -->
+
+        <div class="row">
+        <div class="col-sm">
+        <div class="image-container">
+          <div class="content">
+            <a href="./proj_flow/article.html" target="_new">
+              <div class="content-overlay"></div>
+              <img class="content-image" src="./proj_flow/test.png">
+              <div class="content-details fadeIn-bottom">
+                <p class="content-text">California Freshmen: <br> Where do they go?</p>
               </div>
-            <div class="col-sm-3">
-              <img src="cat.png" class="img-fluid">
-            </div>
-            <div class="col-sm-3">
-              <img src="cat.png" class="img-fluid">
-            </div>
-            <div class="col-sm-3">
-              <img src="cat.png" class="img-fluid">
+            </a>
+          </div>
+        </div>
+      </div>
+        <div class="col-sm">
+          <div class="image-container">
+            <div class="content">
+              <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+                <div class="content-overlay"></div>
+                <img class="content-image" src="./proj_olympics/olymp.jpg">
+                <div class="content-details fadeIn-bottom">
+                  <p class="content-text">Winter Olympics</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
-          &nbsp;
-      <div class="container">
-          <div class = "row" >
-              <div class="col-sm-3">
-                  <a href="google.com"><img src="cat.png" class="img-fluid"> </a>
+        <div class="col-sm">
+          <div class="image-container">
+            <div class="content">
+              <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+                <div class="content-overlay"></div>
+                <img class="content-image" src="./proj_fires/fires2.png">
+                <div class="content-details fadeIn-bottom">
+                  <!-- <h3 class="content-title">Project 1</h3> -->
+                  <p class="content-text">NYC Fires</p>
                 </div>
-              <div class="col-sm-3">
-                <img src="cat.png" class="img-fluid">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="image-container">
+            <div class="content">
+              <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+                <div class="content-overlay"></div>
+                <img class="content-image" src="./proj_lemonade/lemon.png">
+                <div class="content-details fadeIn-bottom">
+                  <p class="content-text">Beyoncé: Lemonade</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="image-container">
+            <div class="content">
+              <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+                <div class="content-overlay"></div>
+                <img class="content-image" src="./proj_manhattan/manhattan.png">
+                <div class="content-details fadeIn-bottom">
+                  <p class="content-text">Old NYC Buildings</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+<!-- second row  -->
+<br>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-sm">
+        <div class="image-container">
+          <div class="content">
+            <a href="./proj_flow/article.html" target="_new">
+              <div class="content-overlay"></div>
+              <img class="content-image" src="./proj_run/run.png">
+              <div class="content-details fadeIn-bottom">
+                <p class="content-text">Just an SF 5k</p>
               </div>
-              <div class="col-sm-3">
-                <img src="cat.png" class="img-fluid">
-              </div>
-              <div class="col-sm-3">
-                <img src="cat.png" class="img-fluid">
-              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+        <div class="col-sm">
+          <div class="image-container">
+            <div class="content">
+              <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+                <div class="content-overlay"></div>
+                <img class="content-image" src="./proj_flu/flu.png">
+                <div class="content-details fadeIn-bottom">
+                  <p class="content-text">2017-18 Flu <br> (we're doomed)</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="image-container">
+            <div class="content">
+              <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+                <div class="content-overlay"></div>
+                <img class="content-image" src="./proj_ks/ks.png">
+                <div class="content-details fadeIn-bottom">
+                  <p class="content-text">Kickstarter</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="image-container">
+            <div class="content">
+              <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+                <div class="content-overlay"></div>
+                <img class="content-image" src="./proj_elec/elec.png">
+                <div class="content-details fadeIn-bottom">
+                  <!-- <h3 class="content-title">Project 1</h3> -->
+                  <p class="content-text">2016 Election <br> & why the Bay rocks </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="image-container">
+
+                <img class="content-image" src="blank.png">
+
             </div>
           </div>
 
 
+
+
+
+      </div>
+
+
+      </div>
+      </div>
+
+
+<!-- footer -->
+<br>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <span class="text-muted">A quantitative data analyst passionate about visualizing
+               data for social good and bad tv. Wanna chat data and/or The Bachelor?
+               Feel free to reach out. </span>
+          </div>
+          <div class="col-sm-3">
+            <p>New York, NY</p>
+            <p><a href="mailto:sophiebeiers@gmail.com">sophiebeiers@gmail.com</a>
+          </div>
+          <div class="col-sm-3">
+            <p><a href="www.github.com/sophiebeiers">GitHub</a></p>
+            <p><a href="https://www.linkedin.com/in/sophiebeiers/">LinkedIn</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <footer class="footer text-center">
+      <div class="container">
+        <span class="text-muted"> &copy; 2018</span>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   </body>
 </html>
