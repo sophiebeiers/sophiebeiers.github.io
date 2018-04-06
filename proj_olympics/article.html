@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <!-- Our custom CSS file -->
-    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="../custom.css">
 
-    <title>Project 1</title>
+    <title>Winter Olympics</title>
   </head>
   <body>
 
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-<!-- Do I put a title here?
+<!-- Should I put a title here?
     <br>
     <h3></h3> -->
 
@@ -37,11 +37,99 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 offset-sm-2">
-          <h2>California Freshmen: Where do they go?</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla enim velit, accumsan vitae lectus nec, egestas sodales enim. Suspendisse potenti. Ut interdum porttitor lorem sed blandit. Ut ut nisl sed libero fringilla commodo. Phasellus tristique nisi vel volutpat pharetra. Ut convallis dui non diam finibus, a blandit dolor blandit. Cras vestibulum libero et convallis commodo. Nullam eu massa facilisis, imperdiet est fringilla, congue tellus. Nulla laoreet congue metus gravida posuere.</p>
-          <p><img src="3_Flow.jpg"></p>
-          <p>In elementum consequat hendrerit. Nam eu erat magna. Aliquam dapibus lorem vel fringilla mattis. Maecenas ornare elit vel bibendum pharetra. Nunc mollis lorem id purus accumsan, id tempor nunc euismod. Maecenas ullamcorper turpis sit amet mauris placerat fermentum. Nunc posuere facilisis ex eget auctor. Pellentesque quis luctus dui. Maecenas aliquet purus est, quis rhoncus turpis consequat a. Nullam ullamcorper vulputate mi. Duis sit amet massa quis tortor ornare molestie. Curabitur nec gravida lacus. Nam id accumsan metus. Sed ac justo at mi eleifend lacinia. Maecenas et lorem sed metus viverra vulputate. Fusce consequat eros nec lacus fermentum pellentesque.</p>
-          <p>Ut a lacinia lacus. Mauris quis egestas dui. Fusce lorem velit, luctus in aliquam ut, molestie sit amet nibh. Fusce quis vestibulum purus, at lobortis dui. Nunc sed metus orci. Nunc non dapibus turpis. Mauris dolor odio, molestie dictum enim a, luctus vestibulum est. Aliquam luctus varius tortor, a maximus dolor volutpat vel. Aenean sed vehicula enim, a condimentum neque.</p>
+          <h2>Winter Olympics: 1924 - 2014</h2>
+          <p>The Olympics is the best so let's talk about it.<br> <br>
+          Between 1924 and 2014, the US has competed and medaled in over 20 winter Olympics games.
+          Because some countries that competed under different designations in the past (e.g. Germany and Russia), I chose to combine Russia with URS, Germany with EUA, FRG and GDR, YUG with Bosnia and Czech Republic with TCH.
+          I felt these designations were fair and didn’t overweight countries unfairly.
+          Below are the other countries that participated in and medaled in over 5 winter games since
+          1924. </p>
+          <p><img src="unnamed-chunk-2-1.png"></p>
+          <h4> Olympic Medals Over Time </h4>
+          <p>The below visualization represents the top 10 medal-winning countries over the
+          1920-2014 Winter Olympics. Something that immediately jumps out is that while Canada
+          and the USA seem to have won similarly large amounts of medals over time, the US has won many
+          more silver and gold, while Canada seems to focus on gold.</p>
+          <br>
+          <p><img src="unnamed-chunk-5-1.png"></p>
+          <br>
+          <h4> Olympic Medals Overall </h4>
+
+          <p>To visualize the total amount of medals won by the top 10 medal-winning countries,
+            I produced a bar chart that includes countries that have won at least 100 medals
+            over time with the same gold, silver and bronze coloring to add more information and
+            to make the stacks immediately obvious to the reader. One hundred medals felt like a natural cut-off
+            point between the highest perorming countries and the mid-performing countries.
+          </p>
+          <br>
+          <p><img src="unnamed-chunk-6-2.png"></p>
+
+
+          <h4>Medal Counts adjusted by Population </h4>
+
+          <p>The next visualization shows the countries lined up by population size and compares
+            how many medals they’ve won in total. Countries with the fewest medals are “shamed”
+            by being highlighted in yellow. My argument for showing the data in this matter is
+            that countries with larger populations have more opportunity for top-performing athletes.
+            China and Japan are both countries with particularly large populations that don’t tend
+            to win as many medals as other countries with large populations. </p>
+          <br>
+          <p><img src="unnamed-chunk-8-1.png"></p>
+
+
+          <p>I then visualized the percentage of medals won by the country’s population and showed
+            how many total medals countries won overall via the size of each bubble. From this viz,
+            it’s clear that Norway and Finland do well for themselves given the large amount of
+            medals they’ve won despite their smaller populations.</p>
+          <br>
+          <p><img src="unnamed-chunk-11-1.png"></p>
+
+
+          <h4> Home Team Advantage </h4>
+
+          <p>I calculated whether countries won more medals when they hosted Winter Olympics
+            as opposed to when they were visiting participants. I chose to only use countries that have
+            hosted the Olympics in my plots and calculations for a more intuitive comparison. Most countries do exceedingly better,
+            if not, at least as good as they’ve ever done, when they host.
+          </p>
+          <br>
+          <p><img src="unnamed-chunk-13-1.png"></p>
+          <p> This plot, again, includes only countries that have hosted an Olympics
+            and shows how many medals each country won at each winter Olympics.
+            Tiles outlined in black indicate that the country hosted that year. </p>
+          <br>
+          <p><img src="unnamed-chunk-14-1.png"></p>
+
+          <h4> Top 10 Medal-Winning Countries by Sport </h4>
+          <br>
+          The top ten medal-winning countries happen to be best at Skiing and Skating sports
+          as indicated by the darker blues. Germany, Norway and Russia seem to outperform
+          the other countries in Biathlon, specifically, and Germany is talented in the Luge.
+          <br>
+          <p><img src="unnamed-chunk-17-1.png"></p>
+
+          <h4> Most Successful Athletes </h4>
+
+          <p>Below is a visual display of the most successful winter Olympic athletes of all time.
+          I manipulated the data such that I could create a count of medals won per Olympic athlete.
+          Some athletes had multiple country designations, so I tried to choose which country made
+          the most sense for the individual and labeled them as being part of that country.
+          I created a category for “multiple sports” if a top medal-winning athlete participated and
+          won medals in multiple disciplines. Norway tends to produce the top medal-winning winter athletes,
+          which is not surprising given Norway’s clear success in prior plots. </p>
+
+          <br>
+          <p><img src="unnamed-chunk-18-1.png"></p>
+
+          <p>I then split the athletes by gender. From the plots, we can see that women dominate in Cross Country Skiing
+          while men dominate in the Biathlon.
+          The top medal-winning men have won a few more medals than the top women.</p>
+          <br>
+          <p><img src="unnamed-chunk-20-1.png"></p>
+
+          <p></p>
+          <p><i>Graphics were created using R, Highcharter and Plotly. Data from Wikipedia. Code on Github.
+          </i></p>
         </div>
       </div>
     </div>
@@ -49,30 +137,31 @@
 
 
 <!-- //footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <span class="text-muted"> Wanna talk data and/or bad tv? Feel free to reach out.</span>
-
-          </div>
-          <div class="col-sm-3">
-            <p>New York, NY</p>
-            <p><a href="mailto:sophiebeiers@gmail.com">sophiebeiers@gmail.com</a>
-          </div>
-          <div class="col-sm-3">
-            <p><a href="www.github.com/sophiebeiers">GitHub</a></p>
-            <p><a href="#">Twitter</a></p>
-          </div>
-        </div>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <span class="text-muted">Quantitative data analyst passionate about visualizing
+           data for social good and bad tv. Wanna chat data and/or The Bachelor?
+           Feel free to reach out. </span>
       </div>
-    </footer>
-
-    <footer class="footer text-center">
-      <div class="container">
-        <span class="text-muted"> &copy; 2018</span>
+      <div class="col-sm-3">
+        <p>New York, NY</p>
+        <p><a href="mailto:sophiebeiers@gmail.com" target="_blank">sophiebeiers@gmail.com</a>
       </div>
-    </footer>
+      <div class="col-sm-3">
+        <p><a href="https://www.github.com/sophiebeiers" target="_blank">GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank">LinkedIn</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<footer class="footer text-center">
+  <div class="container">
+    <span class="text-muted"> &copy; 2018</span>
+  </div>
+</footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   </body>
