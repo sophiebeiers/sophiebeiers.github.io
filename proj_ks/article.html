@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Slabo+27px" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Our custom CSS file -->
+    <link rel="stylesheet" href="../custom.css">
+
+    <title>Kickstarter</title>
+  </head>
+  <body>
+
+
+
+    <div class="fancy-header background text-highlight">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 text-left">
+            <h1 class="display-3">Sophie Beiers</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Should I put a title here?
+    <br>
+    <h3></h3> -->
+
+<br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+
+
+          <h2>Kickstarter Campaigns</h2>
+
+          <p>Kickstarter is a public-benefit corporation based in Brooklyn,
+            New York, that maintains a global crowd funding platform focused on creativity.
+            The company’s stated mission is to “help bring creative projects to life”.
+
+          Kickstarter has reportedly received more than $1.9 billion in pledges from
+          9.4 million backers to fund 257,000 creative projects, such as films,
+          music, stage shows, comics, journalism, video games, technology and
+          food-related projects. Below, I analyze the descriptions of Kickstarter projects to
+          identify commonalities of successful (and unsuccessful projects)
+          using text mining techniques.</p>
+          <br>
+          <h4> Successful Campaigns </h4>
+          <p>To define “success,” I chose to create a ratio of pledged
+            amount of money over the monetary goal of the campaign.
+            I removed any campaign with a goal of under $30 to ensure results were
+            a little less skewed and eliminated any campaigns deemed unsuccessful
+            since many of these campaigns dropped out or discontinued. I then broke
+            out the results into categories of campaigns; we can see below that
+            all campaign categories received an average of over 100% of their goal money,
+            which is surprising! The technology category seems to have the most
+            success while art campaigns were still highly successful (over 100% of
+            goal money on average) but less exorbitantly successful than other
+            campaign categories.</p>
+          <p><img src="unnamed-chunk-2-1.png"></p>
+          <br>
+          <h4> San Francisco Campaigns </h4>
+          <p>I was curious to visualize success in San Francisco because
+            it’s a tech hub and a hot spot for Kickstarter campaigns. Most campaigns
+            from San Francisco received over 100% of their goal from their backers,
+            so “success” took on a new definition: popularity. Larger bubbles had more
+            backers and bubbles placed higher up on the graph received the most pledged
+            money. The scales of the x axis versus the y axis tell us that no projects
+            asked for over a million dollars, yet one received up to 6.5 million and
+            multiple received multi-millions of dollars! Scroll over each bubble
+            for more information about the project.<br> </p>
+          <iframe src="ks1.html" width="100%" height="25%" ></iframe>
+          <br>
+          <br>
+
+          <h4> Common Words </h4>
+          <p> Each campaign contains a blurb – a short description
+            of the project. While not the full description of the project, the short
+            headline is arguably important for inducing interest in the project
+            (and ultimately popularity and success). I hate word clouds but here we are.
+            Below is a visualization of the most common words used
+            in Kickstarter blurbs.</p>
+
+            <p>Most common words include “game,” “art,” “designed” and “homemade.”
+            Many of the kickstarter projects must be game-related, and it’s not
+            surprising that many projects are “homemade” and “artistically” “designed”
+            due to many people’s hipster, DIY aesthetic these days.<br> </p>
+          <br>
+          <p><img src="unnamed-chunk-4-1.png"></p>
+          <br>
+          <p></p>
+          <p><i>Graphics were created using R, and Leaflet.
+            Data from a web-scraper found <a href="https://webrobots.io/kickstarter-datasets/" target="_blank">here.</a>
+            Code on Github.
+          </i></p>
+        </div>
+      </div>
+    </div>
+
+
+
+<!-- //footer -->
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <span class="text-muted">Quantitative data analyst passionate about visualizing
+           data for social good and bad tv. Wanna chat data and/or The Bachelor?
+           Feel free to reach out. </span>
+      </div>
+      <div class="col-sm-3">
+        <p>New York, NY</p>
+        <p><a href="mailto:sophiebeiers@gmail.com" target="_blank">sophiebeiers@gmail.com</a>
+      </div>
+      <div class="col-sm-3">
+        <p><a href="https://www.github.com/sophiebeiers" target="_blank">GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank">LinkedIn</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<footer class="footer text-center">
+  <div class="container">
+    <span class="text-muted"> &copy; 2018</span>
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  </body>
+</html> -->
