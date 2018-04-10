@@ -63,7 +63,19 @@ a:hover {
 .background {
   background-image: url('background.jpg');
   background-size: cover;
-  opacity: .8;
+  opacity: 1;
+}
+
+.background-lemon {
+  background-image: url('lemonade.jpg');
+  background-size: cover;
+  opacity: 1;
+}
+
+.background-fire {
+  background-image: url('fire.jpg');
+  background-size: cover;
+  opacity: 1;
 }
 
 .shadow-background {
@@ -108,6 +120,14 @@ img {
 .text-highlight-article h1 {
   background: transparent;
   color: black;
+  display: inline;
+  line-height: 0.3;
+  font-size: 5em
+}
+
+.text-highlight-article-white h1 {
+  background: transparent;
+  color: white;
   display: inline;
   line-height: 0.3;
   font-size: 5em
