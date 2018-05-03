@@ -14,7 +14,7 @@
       5. Replace the <link... down below
       6. Edit custom.css with your new font names. Be sure to add the weight!
     -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Slabo+27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700Roboto+Slab:700|Slabo+27px" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -27,30 +27,36 @@
   <body>
 
 
-    <!-- <div class="fancy-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-9 text-left">
-            <h1 class="display-3">Sophie Beiers</h1>
-            <p>A quantitative data analyst passionate about using & visualizing
-               data for social good and bad tv.
-              Currently a Master’s student in Applied Statistics at Columbia.
-              Wanna <strong><a href="mailto:sophiebeiers@gmail.com">chat</a></strong>?</p>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
 <div class="fancy-header background text-highlight">
   <div class="container">
     <div class="row">
       <div class="col-sm-8 text-left">
         <h1 class="display-3"><strong>Sophie</strong> Beiers</h1>
+        <!-- <p class="lead"></p> -->
       </div>
     </div>
   </div>
 </div>
-<br>
+
+<div class="fancy-header-about ">
+  <div class="container section-about text-about">
+    <div class="row">
+      <div class="col-sm-12 text-left">
+        <p>
+            Hey, I'm Sophie! I'm a quantitative analyst passionate about visualizing
+            data for social good. I recently graduated from
+            Columbia's <a href= "http://www.qmss.columbia.edu/"><b>Applied Statistics</b></a>
+            Master's program and I'm currently helping others tell stories through interactive
+            graphics and code at the <a href = "http://ledeprogram.com/"><b>LEDE Data Journalism </b></a>
+            summer program. <br><br> I used to do things
+            like research <a href= "http://scholarship.claremont.edu/cgi/viewcontent.cgi?article=1045&context=pitzer_theses"><b>perceptive infants</b></a>
+            and analyze student experiences with <a href= "http://www.youthtruthsurvey.org/school-culture/"><b>school culture</b></a>.
+            Sometimes, I genuinely enjoy running.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container section">
   <div class="row">
     <div class="col-sm">
@@ -77,33 +83,34 @@
           </div>
         </div> -->
 
-        <div class="row">
-        <div class="col-sm">
+      <div class="row">
+
+      <div class="col-sm">
         <div class="image-container">
           <div class="content">
-            <a href="./proj_flow/index.html" target="_new">
+            <a href="http://danakraushar.shinyapps.io/USAbortion/" >
               <div class="content-overlay"></div>
-              <img class="content-image" src="./proj_flow/test.png">
+              <img class="content-image" src="./proj_abortion/abortion2.png">
               <div class="content-details fadeIn-bottom">
-                <p class="content-text">California Freshmen: <br> Where do they go?</p>
+                <p class="content-text">U.S. Abortions</p>
               </div>
             </a>
           </div>
         </div>
       </div>
-        <div class="col-sm">
-          <div class="image-container">
-            <div class="content">
-              <a href="./proj_olympics/index.html" >
-                <div class="content-overlay"></div>
-                <img class="content-image" src="./proj_olympics/olymp.jpg">
-                <div class="content-details fadeIn-bottom">
-                  <p class="content-text">Winter Olympics</p>
-                </div>
-              </a>
+      <div class="col-sm">
+      <div class="image-container">
+        <div class="content">
+          <a href="./proj_flow/index.html" target="_new">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="./proj_flow/test.png">
+            <div class="content-details fadeIn-bottom">
+              <p class="content-text">California Freshmen: <br> Where do they go?</p>
             </div>
-          </div>
+          </a>
         </div>
+      </div>
+    </div>
         <div class="col-sm">
           <div class="image-container">
             <div class="content">
@@ -193,6 +200,19 @@
         <div class="col-sm">
           <div class="image-container">
             <div class="content">
+              <a href="./proj_olympics/index.html" >
+                <div class="content-overlay"></div>
+                <img class="content-image" src="./proj_olympics/olymp.jpg">
+                <div class="content-details fadeIn-bottom">
+                  <p class="content-text">Winter Olympics</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="image-container">
+            <div class="content">
               <a href="./proj_elec/index.html" >
                 <div class="content-overlay"></div>
                 <img class="content-image" src="./proj_elec/elec.png">
@@ -204,14 +224,13 @@
             </div>
           </div>
         </div>
-
-        <div class="col-sm">
+        <!-- <div class="col-sm">
           <div class="image-container">
 
                 <img class="content-image" src="blank.png">
 
             </div>
-          </div>
+          </div> -->
 
 
 
@@ -226,29 +245,28 @@
 
 <!-- footer -->
 <br>
-    <footer class="footer">
+    <footer class="footer text-right">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
-            <span class="text-muted">Quantitative analyst passionate about visualizing
-               data for social good. <br>
-               Wanna chat data or bad tv? Feel free to reach out. </span>
-          </div>
-          <div class="col-sm-3">
+          <!-- <div class="col-sm-6">
+            <span class="text-muted"> Feel free to reach out. </span>
+          </div> -->
+          <div class="col-sm-10">
             <p>New York, NY</p>
             <p><a href="mailto:sophiebeiers@gmail.com" target="_blank">sophiebeiers@gmail.com</a>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm">
             <p><a href="https://www.github.com/sophiebeiers" target="_blank">GitHub</a></p>
             <p><a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank">LinkedIn</a></p>
           </div>
         </div>
       </div>
     </footer>
+    
 
     <footer class="footer text-center">
       <div class="container">
-        <span class="text-muted"> &copy; 2018</span>
+        <span class="text-muted"> 2018</span>
       </div>
     </footer>
 
