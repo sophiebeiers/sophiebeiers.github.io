@@ -1,0 +1,108 @@
+---
+title: "dogs_nyc"
+author: "Sophie Beiers"
+date: "5/7/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+setwd("~/Documents/GitHub/sophiebeiers.github.io/proj_dogs")
+library(tidyverse, quietly = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+dogs <- read_csv("NYCDogs.csv")
+```
+### Overall 
+```{r}
+# ALL NAMES
+names <- dogs %>% 
+  group_by(dog_name) %>% 
+  tally(sort = TRUE)
+names <- names[-1,] # got rid of NA
+
+```
+
+### Gender
+```{r}
+names_by_gender <- dogs %>% 
+  group_by(dog_name, gender) %>% 
+  tally(sort = TRUE)
+names_by_gender <- names_by_gender[-(1:2),] # got rid of NA
+
+
+# MALE DOGS 
+male_dogs <- names_by_gender %>% 
+  filter(gender == "M")
+write_csv(male_dogs, "male_dogs.csv")
+
+# FEMALE DOGS 
+female_dogs <- names_by_gender %>% 
+  filter(gender == "F")
+write_csv(female_dogs, "female_dogs.csv")
+```
+
+### Breeds
+```{r}
+breeds <- dogs %>% 
+  group_by(breed) %>% 
+  tally(sort = TRUE)
+
+breeds_by_boro <- dogs %>% 
+  group_by(borough, breed) %>% 
+  tally(sort = TRUE) %>% 
+  filter(breed != "Mixed/Other")
+
+bronx_breeds <- breeds_by_boro %>% 
+  filter(borough == "Bronx") %>% 
+  slice(1:5)
+man_breeds <- breeds_by_boro %>% 
+  filter(borough == "Manhattan") %>% 
+  slice(1:5)
+brook_breeds <- breeds_by_boro %>% 
+  filter(borough == "Brooklyn") %>% 
+  slice(1:5)
+queens_breeds <- breeds_by_boro %>% 
+  filter(borough == "Queens") %>% 
+  slice(1:5)
+staten_breeds <- breeds_by_boro %>% 
+  filter(borough == "Staten Island") %>% 
+  slice(1:5)
+top5_breeds_boro <- rbind(bronx_breeds, man_breeds, brook_breeds, queens_breeds, staten_breeds)
+write_csv(top5_breeds_boro, "top5breeds.csv")  
+```
+
+### Colors
+```{r}
+colors <- dogs %>% 
+  group_by(dominant_color) %>% 
+  tally(sort = TRUE)
+write_csv(colors, "colors.csv")
+```
+
+### What dog do you have?
+```{r}
+guess <- dogs %>% 
+  group_by(borough, dog_name, gender, dominant_color) %>% 
+  filter(dog_name != "n/a") %>% 
+  tally(sort = TRUE) %>% 
+  ungroup() %>% 
+  group_by(borough) %>% 
+  top_n(n = 3)
+write_csv(guess, "guess.csv")
+
+bottom <- dogs %>% 
+  group_by(borough, dog_name, gender, dominant_color) %>% 
+  filter(dog_name != "n/a") %>% 
+  tally(sort = TRUE) %>% 
+  filter(n == 1)
+  
+  
+```
+
