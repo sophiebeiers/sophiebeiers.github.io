@@ -184,7 +184,7 @@ img {
 
 
 
-/* NEW  */
+/* HOVER FEATURES */
 
 *, *:before, *:after{
   margin: 0;
@@ -271,4 +271,61 @@ img {
 
 .fadeIn-bottom{
   top: 80%;
+}
+
+
+/* STICKY */
+svg {
+  display: block;
+  margin: 0 auto;
+}
+
+img.block {
+  display: block;
+  border: solid #333 1p;
+  margin: 0 auto;
+}
+
+svg {
+  margin-bottom: 15px;
+}
+
+.step {
+  padding-bottom: 90px;
+  margin-bottom: 10px;
+}
+
+.step, .row {
+  padding-top: 2rem;
+}
+
+.step:last-of-type {
+  padding-bottom: 150px;
+}
+
+/* .active {
+  background: beige;
+} */
+
+
+/*
+  The following allows us to make the graphic
+  "sticky" to the top of the page. The "top"
+  attribute should probably be the same as
+  the offset for scrollama (but % instead of decimal)
+*/
+
+.sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  height: fit-content;
+  /* IF YOU CHANGE THIS CHANGE THE JAVASCRIPT NEAR THE BOTTOM */
+  top: 33%;
+}
+
+img {
+  max-width: 100%;
 }
