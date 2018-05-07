@@ -12,9 +12,13 @@
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
   d3.queue()
-    .defer(d3.csv, "basics.csv")
+    .defer(d3.csv, "female_dogs.csv")
+    .defer(d3.csv, "male_dogs.csv")
+    .defer(d3.csv, "colors.csv")
+    .defer(d3.csv, "top5breeds.csv")
+    .defer(d3.csv, "guess.csv")
     .await(ready)
-
+console.log(female_dogs)
   // Start setting up scales
   var widthScale = d3.scaleLinear()
     .range([0, width])
