@@ -110,9 +110,7 @@
          </div>
          <div class="step" id="second-step">
            <h3>This is another step</h3>
-           <p>Blah blah blah blah</p>
-           <p>Blah blah blah blah</p>
-           <p>Blah blah blah blah</p>
+           <p>DOGS DOGS</p>
          </div>
          <div class="step" id="third-step">
            <p>Blah blah blah blah</p>
@@ -121,7 +119,7 @@
          </div>
        </div>
        <div class="col-sm-8 graphic sticky">
-         <p>I am the graphic. <strong>Remove this text</strong></p>
+         <!-- <p></p> -->
          <div id="graphic-1"></div>
        </div>
      </div>
@@ -207,10 +205,17 @@
          d3.select(response.element).classed('active', false)
        })
    </script>
-
-   <script src='03-chart-1.js'></script>
-   <script src='03-chart-2.js'></script>
- </body>
+   <!--  -->
+   <svg id="mySvg" width="80" height="80">
+    <defs id="mdef">
+    <pattern id="image" x="0" y="0" height="40" width="40">
+      <image x="0" y="0" width="40" height="40" xlink:href="http://www.e-pint.com/epint.jpg"></image>
+    </pattern>
+</defs>
+<!--  -->
+   <script src='chart-1.js'></script>
+   <!-- <script src='03-chart-2.js'></script> -->
+ <!-- </body> -->
 
 
 <!-- //footer -->
