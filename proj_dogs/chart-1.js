@@ -44,6 +44,7 @@
     svg.selectAll("circle")
       .data(female_dogs)
       .enter().append("circle")
+      .filter(function(d) { return d.n > 300 })
       .attr("class", "logo")
       .attr("cy", height/2)
       .attr("cx", function(d){
@@ -99,7 +100,7 @@
     svg.selectAll("circle")
       .data(male_dogs)
       .enter().append("circle")
-      .filter(function(d) { return d.n < 291 })
+      .filter(function(d) { return d.n > 240 })
       .attr("cy", height/2)
       .attr("cx", function(d){
         return scalePoint_m(d.dog_name)
