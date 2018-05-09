@@ -17,10 +17,6 @@
 
     //  Setting up scales
 
-    // var scalePoint_s = d3.scalePoint()
-    //   .domain([ 'Yorkshire Terrier', 'Shih Tzu', 'Labrador Retriever', 'Maltese', 'Chihuahua'])
-    //   .range([30, width - 70])
-
     var widthScale = d3.scaleLinear()
         .domain([0, 23578])
         .range([0, width])
@@ -54,7 +50,7 @@
      .attr('width', function(d){
        return widthScale(d.n)
        })
-     .attr("height", 25)
+     .attr("height", 35)
      .attr('fill', function(d){
        return colorScale(d.dominant_color)
        })
@@ -71,7 +67,7 @@
        .attr("y", function(d) {
          return yPositionScale(d.dominant_color) - 3
        })
-       .attr("height", 28)
+       .attr("height", 40)
        .attr("opacity", 0.7)
        d3.select('.infobox3 .dominant_color')
         .text('There are ' + d['n'] + ' primarily '+ d['dominant_color'] + ' dogs in NYC.')
