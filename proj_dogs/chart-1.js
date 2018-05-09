@@ -1,6 +1,6 @@
 (function() {
 
-  var margin = { top: 20, right: 0, bottom: 50, left: 100 }
+  var margin = { top: 20, right: 10, bottom: 50, left: 10 }
 
   var width = 700 - margin.left - margin.right,
       height = 100 - margin.top - margin.bottom
@@ -12,170 +12,218 @@
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
   d3.queue()
-    .defer(d3.csv, "./data/female_dogs.csv")
-    .defer(d3.csv, "./data/male_dogs.csv")
-    // .defer(d3.csv, "./data/colors.csv")
-    // .defer(d3.csv, "./data/top5breeds.csv")
-    // .defer(d3.csv, "./data/guess.csv")
+    .defer(d3.csv, "./data/names_gender.csv")
     .await(ready)
 
   // Start setting up scales
-  var radiusScale_f = d3.scaleSqrt()
-    .range([0, 25])
+  var radiusScale = d3.scaleSqrt()
+    .range([0, 30])
+    .domain([0, 900])
 
-  var yPositionScale = d3.scaleBand()
-    .range([0, height])
-    .padding(0.5)
-
-  function ready(error, female_dogs, male_dogs) {
-    console.log(female_dogs)
+  function ready(error, names_gender) {
+    console.log(names_gender)
 
     //  Setting up scales
-    var girlmaxNames = d3.max(female_dogs, function(d) { return d.n })
-    radiusScale_f.domain([0, girlmaxNames])
+    // var girlmaxNames = d3.max(names_gender, function(d) { filter(d.gender === "F"), return d.n })
+    // radiusScale.domain([0, girlmaxNames])
 
 
     var scalePoint = d3.scalePoint()
       .domain(['Bella', 'Princess', 'Lola', 'Lucy', 'Daisy', 'Coco', 'Molly',
       'Chloe', 'Maggie', 'Ginger'])
-      .range([10, width - 10])
+      .range([20, width - 20])
+    var scalePoint_m = d3.scalePoint()
+      .domain(['Max', 'Rocky', 'Lucky', 'Buddy', 'Charlie', 'Jack', 'Teddy',
+      'Toby', 'Buster', 'Gizmo'])
+      .range([20, width - 20])
 
    // initial chart
+
     svg.selectAll("circle")
-      .data(female_dogs)
+      .data(names_gender)
       .enter().append("circle")
-      .filter(function(d) { return d.n > 300 })
-      .attr("class", "logo")
+      .filter(function(d) {return d.n > 300 && d.gender === "F"})
       .attr("cy", height/2)
+      .attr("class", "yay")
       .attr("cx", function(d){
         return scalePoint(d.dog_name)
       })
       .attr("r", function(d){
-        return radiusScale_f(d.n)
+        return radiusScale(d.n)
       })
-      .attr("fill", "lightpink")
+      .attr("fill", "#8c6bb1")
       .on("mouseover", function(d){
               d3.select(this)
                   .transition()
                   .duration(100)
-                  .attr("fill", "red")
-                  .attr('r', 30)
+                  .attr("fill", "#810f7c")
+                  .attr('r', function(d){
+                    return radiusScale(d.n) + 5
+                  })
+                  .style("cursor", "pointer")
+
               d3.select('.infobox .dog_name').text(d['dog_name'])
               d3.select(".infobox").style('visibility', 'visible')
-
-
         })
          .on("mouseout", function(){
               d3.select(".infobox").style('visibility', 'hidden')
               d3.select(this)
                   .transition()
                   .duration(100)
-                  .attr("fill", "lightpink")
+                  .attr("fill", "#8c6bb1")
                   .attr('r', function(d){
-                    return radiusScale_f(d.n)
+                    return radiusScale(d.n)
                   })
-        });
+        })
+        // this adds the dogs
+        svg.append('g').selectAll('.myPoint')
+          .data(names_gender)
+          .enter().append('image')
+          .filter(function(d) {return d.n > 300 && d.gender === "F"})
+          .attr("xlink:href", "dog.svg")
+          .attr("x", function(d){ return scalePoint(d.dog_name) - 18 })
+          .attr("y", function(d){ return (height/2) -10 })
+          .attr("width", 35)
+          .attr("height", function(d){
+            return radiusScale(d.n) + 5
+          })
 
-    // scales
-    var radiusScale_m = d3.scaleSqrt()
-      .range([0, 25])
-    var boymaxNames = d3.max(male_dogs, function(d) { return d.n })
-    radiusScale_m.domain([0, boymaxNames])
 
-
-    var scalePoint_m = d3.scalePoint()
-      .domain(['Max', 'Rocky', 'Lucky', 'Buddy', 'Charlie', 'Jack', 'Teddy', 'Toby', 'Buster'])
-      .range([10, width - 10])
-
-    // step 1
+// first step zooms in on Bella
     d3.select("#first-step")
-    .on('stepin', function() {
-      svg.selectAll("circle")
-        .transition()
-        .duration(200)
-        .attr("cx", 0)
-        .attr("cy", 0)
-        .attr("r", 0)
+          .on('stepin', function() {
+            d3.select(".titlebox1").style('visibility', 'visible')
+            d3.select(".infobox2").style('visibility', 'visible')
+            svg.selectAll("image").remove()
+            svg.selectAll("circle")
+              .attr("class", "Bella")
+              .transition()
+              .duration(2000)
+              .attr("fill", function(d){
+                if(d.dog_name === "Bella"){
+                  return '#810f7c'
 
-    svg.selectAll("circle")
-      .data(male_dogs)
-      .enter().append("circle")
-      .filter(function(d) { return d.n > 240 })
-      .attr("cy", height/2)
-      .attr("cx", function(d){
-        return scalePoint_m(d.dog_name)
-      })
-      .attr("r", function(d){
-        return radiusScale_m(d.n)
-        console.log(d.n)
-      })
-      .attr("fill", "lightblue")
-      .on("mouseover", function(d){
-              d3.select(this)
-                  .transition()
-                  .duration(100)
-                  .attr("fill", "red")
-                  .attr('r', 30)
-              d3.select('.infobox .dog_name').text(d['dog_name'])
-              d3.select(".infobox").style('visibility', 'visible')
-        })
-         .on("mouseout", function(){
-              d3.select(".infobox").style('visibility', 'hidden')
-              d3.select(this)
-                  .transition()
-                  .duration(100)
-                  .attr("fill", "lightblue")
-                  .attr('r', function(d){
-                    return radiusScale_m(d.n)
-                  })
-        })
-        })
+                } else {
+                  return 'lightgrey'
+                }
+                })
+              .attr("r", function(d){
+                if(d.dog_name === "Bella"){
+                  return 50
+
+                } else {
+                  return 0
+                }
+                })
+              .attr("cx", function(d){
+                if(d.dog_name === "Bella"){
+                  return width/2
+
+                } else {
+                  return 0
+                }
+
+                })
+              .attr("cy", 30)
+
+              svg.append('g').selectAll('.myPoint')
+                .data(names_gender)
+                .enter().append('image')
+                .filter(function(d) {return d.dog_name === "Bella"})
+                .transition()
+                .duration(2000)
+                  .attr("xlink:href", "dog.svg")
+                  .attr("x", width/2 - 28)
+                  .attr("y",  12)
+                  .attr("width", 60)
+                  .attr("height", 60)
+
+
+          })
+
+// step 2 introduces boy dogs
+// this needs help!
+
+    d3.select("#second-step")
+          .on('stepin', function() {
+            d3.select(".titlebox2").style('visibility', 'visible')
+            d3.select(".titlebox1").style('visibility', 'hidden')
+            d3.select(".infobox2").style('visibility', 'hidden')
+
+            console.log("step 2")
+            svg.selectAll(".Bella")
+              .transition()
+              .duration(1000)
+                .attr("cx", 0)
+              .transition()
+              .duration(3000)
+                .attr("opacity", 0)
+            svg.selectAll("image").remove()
+            svg.selectAll(".yay")
+              .data(names_gender)
+              .enter().append("circle")
+              .filter(function(d) {return d.n > 290 && d.gender === "M"})
+              .transition()
+              .duration(2000)
+              .attr("cy", height/2)
+              .attr("cx", function(d){
+                return scalePoint_m(d.dog_name)
+              })
+              .attr("r", function(d){
+                return radiusScale(d.n)
+              })
+              .attr("fill", "#9ebcda")
+              // .on("mouseover", function(d){
+              //         d3.select(this)
+              //             .transition()
+              //             .duration(100)
+              //             .attr("fill", "#810f7c")
+              //             .attr('r', function(d){
+              //               return radiusScale(d.n) + 5
+              //             })
+              //             .style("cursor", "pointer")
+              //
+              //         // d3.select('.infobox .dog_name').text(d['dog_name'])
+              //         // d3.select(".infobox").style('visibility', 'visible')
+              //   })
+
+            svg.append('g').selectAll('.myPoint')
+              .data(names_gender)
+              .enter().append('image')
+              .filter(function(d) {return d.n > 290 && d.gender === "M"})
+              .attr("xlink:href", "dog2.svg")
+              .transition()
+              .duration(2000)
+              .attr("x", function(d){ return scalePoint_m(d.dog_name) - 18 })
+              .attr("y", function(d){ return (height/2) -10 })
+              .attr("width", 35)
+              .attr("height", function(d){
+                return radiusScale(d.n) + 5
+              })
 
 
 
 
-    // d3.select("#second-step")
-    //   .on('stepin', function() {
-    //
-    //     svg.selectAll("rect")
-    //       .transition()
-    //       .duration(750)
-    //       .attr("fill", function(d) {
-    //         if(d.name === "Atlantis") {
-    //           return 'red'
-    //         } else {
-    //           return 'pink'
-    //         }
-    //       })
-    //
-    //     console.log("I was stepped into")
-    //   })
+          })
 
-    // d3.select("#third-step")
-    //   .on('stepin', function() {
-    //
-    //     var sorted = datapoints.sort(function(a, b) {
-    //       return b.population - a.population
-    //     })
-    //
-    //     var names = sorted.map(function(d) { return d.name })
-    //     yPositionScale.domain(names) /*changes scales to reflect order we just created*/
-    //
-    //
-    //      svg.selectAll("rect")
-    //       .transition()
-    //       .duration(750)
-    //       .attr("y", function(d) {
-    //         return yPositionScale(d.name)
-    //       })
-    //
-    //   var yAxis = d3.axisLeft(yPositionScale)
-    //   svg.select(".y-axis").call(yAxis)
-    //     .transition()
-    //     .duration()
-    //     .call(yAxis)
+// third step gets rid of circles
 
-     // })
+      d3.select("#third-step")
+            .on('stepin', function() {
+              d3.select(".titlebox2").style('visibility', 'hidden')
+              svg.selectAll("circle")
+                // .attr("class", "test")
+                .transition()
+                .duration(2000)
+                  .attr("cx", 0)
+                .transition()
+                .duration(2000)
+                  .attr("opacity", 0)
+              svg.selectAll("image").remove()
+            })
+
+
+
 
   }
 
