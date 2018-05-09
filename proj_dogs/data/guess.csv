@@ -1,17 +1,6 @@
 borough,dog_name,gender,dominant_color,n
-Queens,Max,M,BLACK,81
-Manhattan,Lucy,F,BLACK,77
-Brooklyn,Max,M,BLACK,72
-Manhattan,Lola,F,BLACK,72
-Manhattan,Max,M,BLACK,72
-Queens,Rocky,M,BLACK,59
-Queens,Max,M,WHITE,58
-Brooklyn,Lucky,M,WHITE,55
-Staten Island,Bella,F,BLACK,53
-Brooklyn,Max,M,WHITE,50
-Staten Island,Max,M,BLACK,43
-Bronx,Max,M,BLACK,39
-Staten Island,Bella,F,WHITE,39
-Staten Island,Rocky,M,BLACK,39
-Bronx,Max,M,WHITE,37
-Bronx,Princess,F,BLACK,34
+Queens,Max,Male,BLACK,81
+Manhattan,Lucy,Female,BLACK,77
+Brooklyn,Max,Male,BLACK,72
+Staten Island,Bella,Female,BLACK,53
+Bronx,Max,Male,BLACK,39
