@@ -153,10 +153,10 @@
             console.log("step 2")
             svg.selectAll(".Bella")
               .transition()
-              .duration(1000)
+              .duration(700)
                 .attr("cx", 0)
               .transition()
-              .duration(3000)
+              .duration(1000)
                 .attr("opacity", 0)
             svg.selectAll("image").remove()
             svg.selectAll(".yay")
@@ -200,10 +200,6 @@
               .attr("height", function(d){
                 return radiusScale(d.n) + 5
               })
-
-
-
-
           })
 
 // third step gets rid of circles
@@ -214,15 +210,13 @@
               svg.selectAll("circle")
                 // .attr("class", "test")
                 .transition()
-                .duration(2000)
+                .duration(1000)
                   .attr("cx", 0)
                 .transition()
-                .duration(2000)
+                .duration(1000)
                   .attr("opacity", 0)
               svg.selectAll("image").remove()
             })
-
-
 
 
   }

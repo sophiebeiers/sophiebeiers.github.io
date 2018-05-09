@@ -13,6 +13,7 @@
 
     <!-- Our custom CSS file -->
     <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="../d3-tip.css">
 
     <title>NYC Dawgs</title>
   </head>
@@ -20,7 +21,7 @@
 
   <body>
 <!-- header -->
-    <div class="fancy-header-article background text-highlight-article">
+    <div class="fancy-header-article background-teal text-highlight-article">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 text-left">
@@ -45,6 +46,17 @@
       </nav>
 
 <!-- Stuff down here -->
+<div class="row">
+  <div class= "col-sm-4">
+    <p><img src= "dog-imgs/dogs1.png"></p>
+</div>
+<div class= "col-sm-4">
+  <p><img src= "dog-imgs/dogs2.png"></p>
+</div>
+<div class= "col-sm-4">
+  <p><img src= "dog-imgs/dogs1.png"></p>
+</div>
+</div>
   <div class="row">
     <div class="col-sm-8 offset-sm-2 text-center">
         <h1>DAWGS of NYC </h1>
@@ -71,7 +83,6 @@
 <!-- graphic 1  -->
          <div class="col-sm-8 offset-sm-2 text-center graphic sticky">
            <div id="graphic-1"></div>
-
          </div>
 
           <br>
@@ -100,70 +111,98 @@
               </div>
             </div>
 <!-- step 3  -->
+          <br>
+          <br>
           <div class="col-sm-8 offset-sm-2 text-center">
             <div class="step" id="third-step"></div>
           </div>
-
-        </div> <!-- end of row  -->
-  </div>  <!-- end of container  -->
-
-
-  <div class="container">
-    <div class="row">
-        <div class="col-sm-8 offset-sm-2 text-center">
-        <div class = "infobox", style = "visibility: hidden;">
-          <h4 class ="dog_name"></h4>
-        </div>
-      </div>
-
 <!-- graphic 2  -->
-    <div class="col-sm-8 offset-sm-2 text-center">
-      <h3> Borough Breeds </h3>
-    </div>
-    <div class="col-sm-8 offset-sm-2 text-center graphic sticky">
-      <div id="graphic-2"></div>
-    </div>
-    <div class="col-sm-8 offset-sm-2 text-center">
-      <p> Hellllllla small dogs in Bronx! </p>
-    </div>
-
-
-         <br>
-         <br>
-<!-- step 1 -->
-         <div class="col-sm-8 offset-sm-2 text-center">
-           <div class="step" id="first-step">
-             <h4>Something here</h4>
-             <p>These are the Manhattan dawgs.</p>
-               <div class = "infobox2", style = "visibility: hidden;">
-                 <h3>Dog's Name:</h3>
-                 <h4 class = "dog_name"></h4>
-               </div>
-           </div>
-         </div>
-<!-- step 2 -->
           <div class="col-sm-8 offset-sm-2 text-center">
-             <div class="step" id="second-step">
+          <h2> Borough Breeds </h2>
+          </div>
+          <br>
+          <br>
+          <div class="col-sm-8 offset-sm-2 text-center">
+          <h3> Bronx </h3>
+          </div>
+          <div class="col-sm-8 offset-sm-2 text-center graphic sticky">
+            <div id="graphic-2"></div>
+          </div>
+          <br>
+          <br>
+          <div class="col-sm-8 offset-sm-2 text-center">
+             <div class="step" id="fourth-step">
+               <div class= "titlebox3", style = "visibility: visible;">
+               <h3>Manhattan</h3>
+               <p>DOGS DOGS DOGS  </p>
+                 </div>
              </div>
            </div>
-<!-- step 3  -->
-         <div class="col-sm-8 offset-sm-2 text-center">
-           <div class="step" id="third-step"></div>
-         </div>
-       </div> <!-- end of row  -->
- </div>
+          <br>
+          <br>
+          <div class="col-sm-8 offset-sm-2 text-center">
+             <div class="step" id="fifth-step">
+               <div class= "titlebox4", style = "visibility: visible;">
+               <h3>Brooklyn</h3>
+               <p>DOGS DOGS DOGS  </p>
+                 </div>
+             </div>
+           </div>
+           <div class="col-sm-8 offset-sm-2 text-center">
+              <div class="step" id="sixth-step">
+                <div class= "titlebox5", style = "visibility: visible;">
+                <h3>Queens</h3>
+                <p>DOGS DOGS DOGS  </p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-8 offset-sm-2 text-center">
+               <div class="step" id="seventh-step">
+                 <div class= "titlebox6", style = "visibility: visible;">
+                 <h3>Staten Island</h3>
+                 <p>DOGS DOGS DOGS  </p>
+                   </div>
+               </div>
+             </div>
+             <div class="col-sm-8 offset-sm-2 text-center">
+
+        </div> <!-- end of container-->
+</div>  <!-- end of row  -->
 
 
-     <!-- <div class="row">
-       <div class="col">
-         <h3>We can also put a wide graphic in here</h3>
-         <div id="graphic-3"></div>
-         <p>It doesn't need to be in one of those sticky things!</p>
-         <p>If you want to make it do a transition thing though you'll need to use a <code>.step</code></p>
-       </div>
-     </div>
+<!-- third graphic -->
+<div class="col-sm-8 offset-sm-2 text-center">
+<h2> Dawg Colors </h2>
+<p> Ever wondered what the top 10 most common dominant dog <b>colors</b> are? Me neither.</p>
+<div class= "infobox3", style = "visibility: hidden;">
+  <p class ="dominant_color"></p>
+  </div>
+<div id="graphic-3"></div>
+</div>
 
-   </div> -->
+
+<!-- Buttons  -->
+<div class="container">
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2 text-center">
+        <button id = 'Man-button' class = 'btn btn-primary btn-sml'>Manhattan</button>
+        <button id = 'Brooklyn-button' class = 'btn btn-primary btn-sml'>Brooklyn</button>
+        <button id = 'Queens-button' class = 'btn btn-primary btn-sml'>Queens</button>
+        <button id = 'Bronx-button' class = 'btn btn-primary btn-sml'>Bronx</button>
+        <button id = 'Staten-button' class = 'btn btn-primary btn-sml'>Staten Island</button>
+      </div>
+    </div>
+  </div>
+
+<!-- Dog images at end -->
+<div class="row">
+  <div class= "col-sm-6">
+    <p><img src= "dog-imgs/dogs4.png"></p>
+</div>
+<div class= "col-sm-6">
+  <p><img src= "dog-imgs/dogs5.png"></p>
+</div>
+</div>
 
 
 
@@ -207,7 +246,9 @@
  <!-- source in charts  -->
    <script src='chart-1.js'></script>
    <script src='chart-2.js'></script>
-   <!-- <script src='chart-2.js'></script> -->
+   <script src='chart-3.js'></script>
+   <script src="../d3-tip.js"></script> <!-- for tooltip -->
+
 
 
 <p> <a href='https://www.freepik.com/free-vector/coloured-dogs-collection_944975.htm'>Designed by Freepik</a>

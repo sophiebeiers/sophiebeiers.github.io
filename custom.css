@@ -99,6 +99,12 @@ background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
   opacity: 1;
 }
 
+.background-teal {
+  background-image: url('teal.jpg');
+  background-size: cover;
+  opacity: 0.5;
+}
+
 .shadow-background {
   color: white;
   text-shadow: rgba(0,0,0,0.4) 0 0 30px;
@@ -303,10 +309,6 @@ svg {
   padding-bottom: 150px;
 }
 
-.dog_name h4{
-  color: #224b8e;
-  font-weight:bold;
-}
 
 /* .active {
   background: beige;
