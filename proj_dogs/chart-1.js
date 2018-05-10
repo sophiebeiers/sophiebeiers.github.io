@@ -1,6 +1,6 @@
 (function() {
 
-  var margin = { top: 20, right: 10, bottom: 50, left: 10 }
+  var margin = { top: 20, right: 10, bottom: 20, left: 15 }
 
   var width = 700 - margin.left - margin.right,
       height = 100 - margin.top - margin.bottom
@@ -17,8 +17,8 @@
 
   // Start setting up scales
   var radiusScale = d3.scaleSqrt()
-    .range([0, 30])
-    .domain([0, 900])
+    .range([0, 32])
+    .domain([0, 766])
 
   function ready(error, names_gender) {
     console.log(names_gender)
@@ -31,7 +31,7 @@
     var scalePoint = d3.scalePoint()
       .domain(['Bella', 'Princess', 'Lola', 'Lucy', 'Daisy', 'Coco', 'Molly',
       'Chloe', 'Maggie', 'Ginger'])
-      .range([20, width - 20])
+      .range([25, width - 20])
     var scalePoint_m = d3.scalePoint()
       .domain(['Max', 'Rocky', 'Lucky', 'Buddy', 'Charlie', 'Jack', 'Teddy',
       'Toby', 'Buster', 'Gizmo'])
@@ -52,6 +52,8 @@
         return radiusScale(d.n)
       })
       .attr("fill", "#8c6bb1")
+      .attr("stroke", "#810f7c")
+      .attr("stroke-width", 3)
       .on("mouseover", function(d){
               d3.select(this)
                   .transition()
@@ -87,8 +89,63 @@
           .attr("height", function(d){
             return radiusScale(d.n) + 5
           })
+// zero-eth step trial
+    d3.select("#zero-step")
+        .on('stepin', function() {
+            console.log("back to step 0")
+            svg.selectAll("circle").remove()
+            svg.selectAll("image").remove()
+              svg.selectAll("circle")
+                .data(names_gender)
+                .enter().append("circle")
+                .filter(function(d) {return d.n > 300 && d.gender === "F"})
+                .attr("cy", height/2)
+                .attr("class", "yay")
+                .attr("cx", function(d){
+                  return scalePoint(d.dog_name)
+                })
+                .attr("r", function(d){
+                  return radiusScale(d.n)
+                })
+                .attr("fill", "#8c6bb1")
+                .attr("stroke", "#810f7c")
+                .attr("stroke-width", 3)
+                .on("mouseover", function(d){
+                        d3.select(this)
+                            .transition()
+                            .duration(100)
+                            .attr("fill", "#810f7c")
+                            .attr('r', function(d){
+                              return radiusScale(d.n) + 5
+                            })
+                            .style("cursor", "pointer")
 
+                        d3.select('.infobox .dog_name').text(d['dog_name'])
+                        d3.select(".infobox").style('visibility', 'visible')
+                  })
+                   .on("mouseout", function(){
+                        d3.select(".infobox").style('visibility', 'hidden')
+                        d3.select(this)
+                            .transition()
+                            .duration(100)
+                            .attr("fill", "#8c6bb1")
+                            .attr('r', function(d){
+                              return radiusScale(d.n)
+                            })
+                  })
+                  svg.append('g').selectAll('.myPoint')
+                    .data(names_gender)
+                    .enter().append('image')
+                    .filter(function(d) {return d.n > 300 && d.gender === "F"})
+                    .attr("xlink:href", "dog.svg")
+                    .attr("x", function(d){ return scalePoint(d.dog_name) - 18 })
+                    .attr("y", function(d){ return (height/2) -10 })
+                    .attr("width", 35)
+                    .attr("height", function(d){
+                      return radiusScale(d.n) + 5
+                    })
 
+              })
 
 // first step zooms in on Bella
     d3.select("#first-step")
@@ -150,15 +207,21 @@
             d3.select(".titlebox2").style('visibility', 'visible')
             d3.select(".titlebox1").style('visibility', 'hidden')
             d3.select(".infobox2").style('visibility', 'hidden')
+            .on("mouseover", function(d){
+                    d3.select(this)
+                        .transition()
+                        .duration(100)
+                        .attr("fill", "#810f7c")
+                        .attr('r', function(d){
+                          return radiusScale(d.n) + 5
+                        })
+                        .style("cursor", "pointer")
 
+                    d3.select('.infobox .dog_name').text(d['dog_name'])
+                    d3.select(".infobox").style('visibility', 'visible')
+              })
             console.log("step 2")
-            svg.selectAll(".Bella")
-              .transition()
-              .duration(700)
-                .attr("cx", 0)
-              .transition()
-              .duration(1000)
-                .attr("opacity", 0)
+
             svg.selectAll("image").remove()
             svg.selectAll(".yay")
               .data(names_gender)
@@ -174,19 +237,14 @@
                 return radiusScale(d.n)
               })
               .attr("fill", "#9ebcda")
-              // .on("mouseover", function(d){
-              //         d3.select(this)
-              //             .transition()
-              //             .duration(100)
-              //             .attr("fill", "#810f7c")
-              //             .attr('r', function(d){
-              //               return radiusScale(d.n) + 5
-              //             })
-              //             .style("cursor", "pointer")
-              //
-              //         // d3.select('.infobox .dog_name').text(d['dog_name'])
-              //         // d3.select(".infobox").style('visibility', 'visible')
-              //   })
+              svg.selectAll(".Bella")
+                .transition()
+                .duration(700)
+                  .attr("cx", 0)
+                .transition()
+                .duration(1000)
+                  .attr("opacity", 0)
+
 
             svg.append('g').selectAll('.myPoint')
               .data(names_gender)
@@ -218,34 +276,7 @@
                   .attr("opacity", 0)
               svg.selectAll("image").remove()
             })
-      d3.select("#zero-step")
-        .on('stepin', function() {
-          console.log("ya")
-            svg.selectAll("circle")
-              .data(names_gender)
-              .enter().append("circle")
-              .filter(function(d) {return d.n > 300 && d.gender === "F"})
-              .attr("cy", height/2)
-              .attr("class", "yay")
-              .attr("cx", function(d){
-                return scalePoint(d.dog_name)
-              })
-              .attr("r", function(d){
-                return radiusScale(d.n)
-              })
-              .attr("fill", "#8c6bb1")
-            svg.append('g').selectAll('.myPoint')
-              .data(names_gender)
-              .enter().append('image')
-              .filter(function(d) {return d.n > 300 && d.gender === "F"})
-              .attr("xlink:href", "dog.svg")
-              .attr("x", function(d){ return scalePoint(d.dog_name) - 18 })
-              .attr("y", function(d){ return (height/2) -10 })
-              .attr("width", 35)
-              .attr("height", function(d){
-                return radiusScale(d.n) + 5
-              })
-              })
+
 
 
   }
