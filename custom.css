@@ -17,6 +17,7 @@ a {
   font-weight:bold;
 }
 
+
 a:hover {
   color: #85144b;
 }
@@ -57,7 +58,7 @@ a:hover {
 .fancy-header-about {
   background-color: #f1dfd1;
   background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
-  padding: 2.0em 0;
+  padding: 1.5em;
 }
 /* background-color: #d9d9d9;
 background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
@@ -128,11 +129,12 @@ img {
   padding-bottom: 30px;
 }
 
-.section-about p{
-  padding-top: 0.5px;
-  padding-bottom: 1px;
+/*This isn't working.  */
+/* .section-about p{
+  padding-top: 1px;
+  padding-bottom: 4px;
   line-height: 1.5;
-}
+} */
 
 
 /* For pink highlight */
