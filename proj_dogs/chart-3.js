@@ -50,7 +50,7 @@
      .attr('width', function(d){
        return widthScale(d.n)
        })
-     .attr("height", 35)
+     .attr("height", 25)
      .attr('fill', function(d){
        return colorScale(d.dominant_color)
        })
@@ -64,10 +64,6 @@
      .on("mouseover", function(d){
        d3.select(this)
        .style("cursor", "pointer")
-       .attr("y", function(d) {
-         return yPositionScale(d.dominant_color) - 3
-       })
-       .attr("height", 40)
        .attr("opacity", 0.7)
        d3.select('.infobox3 .dominant_color')
         .text('There are ' + d['n'] + ' primarily '+ d['dominant_color'] + ' dogs in NYC.')
@@ -78,11 +74,7 @@
 
       .on("mouseout", function(){
         d3.select(this)
-        .attr("y", function(d) {
-          return yPositionScale(d.dominant_color)
-        })
         .attr("opacity", 1)
-        .attr("height", 25)
         d3.select(".infobox3").style('visibility', 'hidden')
 
      })

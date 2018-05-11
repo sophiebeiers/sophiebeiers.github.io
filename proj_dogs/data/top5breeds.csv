@@ -1,4 +1,12 @@
 borough,breed,n,img
+All,Yorkshire Terrier,4915,"./dog-imgs/yterrier.png"
+All,Shih Tzu,4765,"./dog-imgs/shihtzu.png"
+All,Chihuahua,3604,"./dog-imgs/chi.png"
+All,Maltese,2916,"./dog-imgs/maltese.png"
+All,Labrador Retriever,2635,"./dog-imgs/labretreiver.png"
+All,American Pit Bull Terrier/Pit Bull,1662,"./dog-imgs/pitbull.png"
+All,Beagle,1475,"./dog-imgs/beagle.png"
+All,Spaniel,1463,"./dog-imgs/spaniel.png"
 Bronx,Yorkshire Terrier,767,"./dog-imgs/yterrier.png"
 Bronx,Shih Tzu,763,"./dog-imgs/shihtzu.png"
 Bronx,Chihuahua,664,"./dog-imgs/chi.png"

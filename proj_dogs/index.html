@@ -16,10 +16,14 @@
     <link rel="stylesheet" href="../d3-tip.css">
 
     <title>NYC Dawgs</title>
-    <!-- <style>
-      body {background-color: #AFEEEE;}
-      #canvas {background-color: #AFEEEE;}
-    </style> -->
+
+    <style>
+      .col-sm-8 { pointer-events: none }
+      .graphic { pointer-events: all }
+      .btn { pointer-events: all }
+
+    </style>
+
   </head>
 
 
@@ -70,8 +74,9 @@
           <a href="https://fusiontables.google.com/data?docid=1pKcxc8kzJbBVzLu_kgzoAMzqYhZyUhtScXjB0BQ"> dog license registration database </a>
           from the NYC Department of Health and Mental Hygiene and is limited to 2012. Obviously, not all dogs
           are registered with the city; these graphics are about the ones that are.</p>
-
-        <br>
+          </div>
+    <div class="step" id="zero-step"></div>
+    <div class="col-sm-8 offset-sm-2 text-center">
         <div class = "titlebox1", style = "visibility: visible;">
         <h3> Lady dogs </h3>
         <p>Out of 37,156 lady dogs that existed in NYC in 2012, you'd think we'd have moved
@@ -82,27 +87,29 @@
           Hover over each circle to see the top ten lady dog names in NYC; and, because it's cool,
           I just want to point out that "Sophie" rings in at number 15 most common female dog name
           in NYC. Pretty sure my name more commonly refers to a dog than a human.</p>
-
         </div>
-        <div class="col-sm-8 offset-sm-2 text-center">
-        <div class="step" id="zero-step"></div>
-      </div>
+        </div>
 
-    </div>
+    <!-- </div> -->
   </div> <!-- end of row  -->
 
-   <div class="container">
+<div class="container">
      <div class="row">
          <div class="col-sm-8 offset-sm-2 text-center">
          <div class = "infobox", style = "visibility: hidden;">
            <h4 class ="dog_name"></h4>
+
          </div>
        </div>
+     </div>
 
 <!-- graphic 1  -->
-         <div class="col-sm-8 offset-sm-2 text-center graphic sticky">
-           <div id="graphic-1"></div>
-         </div>
+<div class="row">
+<div class="col-sm-8 offset-sm-2 graphic sticky">
+ <div id="graphic-1"></div>
+</div>
+
+
 
           <br>
           <br>
@@ -113,20 +120,19 @@
                 <p>There are 766 dogs in NYC named Bella (eye roll) -- more than 2% of all female dogs.
                </p>
              </div>
-                <!-- <div class = "infobox2", style = "visibility: hidden;">
-                  <h3>Dog's Name:</h3>
-                  <h4 class = "dog_name"></h4>
-                </div> -->
             </div>
           </div>
 <!-- step 2 -->
            <div class="col-sm-8 offset-sm-2 text-center">
               <div class="step" id="second-step">
-                <div class= "titlebox2", style = "visibility: visible;">
+                <!-- <div class= "titlebox2", style = "visibility: visible;"> -->
                 <h3>What about the dude dogs?</h3>
                 <p>Literally all boy dogs are named Max. And if not, their name likely
-                  has two syllables and ends in a "y." </p>
-                  </div>
+                  has two syllables and ends in a "y." <br> <br></p>
+                  <!-- </div> -->
+                  <div class = "infobox1-1", style = "visibility: hidden;">
+                    <h3 class ="dog_name"></h3>
+                 </div>
               </div>
             </div>
 <!-- step 3  -->
@@ -135,74 +141,97 @@
           <div class="col-sm-8 offset-sm-2 text-center">
             <div class="step" id="third-step"></div>
           </div>
-<!-- graphic 2  -->
-          <div class="col-sm-8 offset-sm-2 text-center">
-          <h2> Borough Breeds </h2>
-          <p> I recently learned how to spot a Maltese in the NYC wild -- and that
-          New Yorkers love their tiny pups. Keep scrolling to check out the top 5 most common
-          dog breeds (after mixed breeds) in each borough.</p>
           </div>
-          <br>
-          <br>
+<!-- graphic 2  -->
+<div class="row">
+<div class="step" id="thirdish-step"></div>
+</div>
+<!-- <div class="col-sm-8 offset-sm-2 text-center"> -->
+
           <div class="col-sm-8 offset-sm-2 text-center">
-          <h3> Bronx </h3>
-          <p> Hover over each dog to see the breed and number of dogs in that borough. </p>
+          <h2><b> Borough Breeds</b> </h2>
+          <p> I recently learned how to spot a Maltese in the NYC wild -- and that
+          New Yorkers love their tiny pups. Hover over each dog to see the breed and
+          total number of dogs in NYC.
+          Keep scrolling to check out the top 5 most common
+          dog breeds (after mixed breeds) in each borough.</p>
           </div>
           <div class="col-sm-8 offset-sm-2 text-center graphic sticky">
             <div id="graphic-2"></div>
           </div>
+
           <br>
           <br>
+          <!-- step 4 -->
+
+        <div class="col-sm-8 offset-sm-2 text-center">
+             <h3>Bronx</h3>
+             <p></p>
+         </div>
+         <div class="step" id="fourth-step">
+         </div>
+
+     <div class="col-sm-8 offset-sm-2 graphic sticky">
+       <div id="graphic-2"></div>
+     </div>
+
+          <br>
+          <br>
+<!-- fifth step -->
           <div class="col-sm-8 offset-sm-2 text-center">
-             <div class="step" id="fourth-step">
+             <div class="step" id="fifth-step">
                <div class= "titlebox3", style = "visibility: visible;">
                <h3>Manhattan</h3>
                <p>Let's swap that Pit Bull for a Lab/Retriever.</p>
                  </div>
              </div>
            </div>
-          <br>
-          <br>
+<!-- step 6 -->
+
           <div class="col-sm-8 offset-sm-2 text-center">
-             <div class="step" id="fifth-step">
+             <div class="step" id="sixth-step">
                <div class= "titlebox4", style = "visibility: visible;">
                <h3>Brooklyn</h3>
                <p>Popped in these groomed-out Maltese and Shih Tzus for dramatic effect.</p>
                  </div>
              </div>
            </div>
+    <!-- seventh step -->
            <div class="col-sm-8 offset-sm-2 text-center">
-              <div class="step" id="sixth-step">
+              <div class="step" id="seventh-step">
                 <div class= "titlebox5", style = "visibility: visible;">
                 <h3>Queens</h3>
                 <p>DOGS DOGS DOGS</p>
                   </div>
               </div>
             </div>
+      <!-- step eight -->
             <div class="col-sm-8 offset-sm-2 text-center">
-               <div class="step" id="seventh-step">
+               <div class="step" id="eighth-step">
                  <div class= "titlebox6", style = "visibility: visible;">
                  <h3>Staten Island</h3>
                  <p>Same pups, new order.</p>
                    </div>
                </div>
              </div>
-             <div class="col-sm-8 offset-sm-2 text-center">
 
-        </div> <!-- end of container-->
-</div>  <!-- end of row  -->
+</div>
+        </div> <!-- end of row-->
+</div>  <!-- end of container-->
 
 
 <!-- third graphic -->
 <div class="col-sm-8 offset-sm-2 text-center">
 <h2> <b>Dawg Colors </b> </h2>
 <p> Ever wondered what the top 10 most common dominant dog <b>colors</b> are in NYC? Click on the bars
-  below to see how many dogs have <i>mainly</i>that color fur.</p>
+  below to see how many dogs have <i>mainly</i> that color fur.</p>
 <div class= "infobox3", style = "visibility: hidden;">
   <p class ="dominant_color"></p>
   </div>
-<div id="graphic-3"></div>
 </div>
+<div class="col-sm-8 offset-sm-2 text-center graphic">
+  <div id="graphic-3"></div>
+  </div>
 
 
 <!-- Buttons  -->
