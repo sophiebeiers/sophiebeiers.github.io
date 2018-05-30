@@ -14,7 +14,8 @@
     <!-- Our custom CSS file -->
     <link rel="stylesheet" href="../custom.css">
     <link rel="stylesheet" href="../d3-tip.css">
-
+    <!-- The "Top" -->
+    <a id="top"></a>
     <title>NYC Dawgs</title>
 
     <style>
@@ -287,6 +288,7 @@ likely option.</p>
     </div>
   </div>
 
+
 <!-- Dog images at end -->
 <div class="row">
   <div class= "col">
@@ -297,7 +299,18 @@ likely option.</p>
 </div>
 </div>
 
-
+<!-- Back up nav bar   -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><a class="nav-link" href="#top"> Back Up &uarr;<span class="sr-only text-center">(current)</span></a></li>
+    </ul>
+  </div>
+</nav>
 
    <!-- This is D3, our graphing library -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
@@ -359,13 +372,11 @@ likely option.</p>
         <span class="text-muted text-left">Wanna chat?
            Feel free to reach out. </span>
       </div>
-      <div class="col-sm-3 text-right">
-        <p>New York, NY</p>
-        <p><a href="mailto:sophiebeiers@gmail.com" target="_blank">sophiebeiers@gmail.com</a>
-      </div>
-      <div class="col-sm-3 text-right">
-        <p><a href="https://www.github.com/sophiebeiers" target="_blank">GitHub</a></p>
-        <p><a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank">LinkedIn</a></p>
+      <div class="col text-right">
+        <a href="mailto:sophiebeiers@gmail.com" target="_blank"><img src= "../icons/email.png" width="30" height="30"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank"><img src= "../icons/linkedin.png" width="30" height="30"></a>&nbsp;&nbsp;
+        <a href="https://www.github.com/sophiebeiers" target="_blank"><img src= "../icons/github.png" width="33" height="33"></a>&nbsp;&nbsp;
+        <a href="https://twitter.com/sophiebeiers" target="_blank"><img src= "../icons/twitter.png" width="33" height="33"></a>
       </div>
     </div>
   </div>
