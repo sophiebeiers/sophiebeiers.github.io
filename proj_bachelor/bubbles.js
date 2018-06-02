@@ -1,6 +1,6 @@
 (function() {
-  var width = 1000;
-  height = 500;
+  var width = 1500;
+  height = 900;
 
 
   var svg = d3.select("#chart")
@@ -12,19 +12,6 @@
 
 // defs for photos
   var defs = svg.append("defs");
-  defs.append("pattern")
-    .attr("id", "alex")
-    .attr("height", "100%")
-    .attr("width", "100%")
-    .attr("patternContentUnits", "objectBoundingBox")
-    .append("image")
-    .attr("height", 1)
-    .attr("width", 1)
-    .attr("preserveAspectRatio", "none")
-    .attr("xmlns:xlink", "http://www.w3.org/1999/xlink")
-    .attr("xlink:href", "./men_img/alex.png");
-
-
 
   var radiusScale = d3.scaleSqrt()
     .domain([0, 3])
@@ -33,17 +20,55 @@
 // and how we want our circles to interact.
 // STEP ONE: Get to middle.
 // STEP TWO: Make them not collide. Radius should equal radius of circle.
+  var forceXAll = d3.forceX(width/2).strength(0.05)
+
+  var forceXOne = d3.forceX(function(d){
+   if(d.week == 1) {
+     return 250
+   } else {
+     return 1200
+   }
+ }).strength(0.1)
+
+ var forceXTwo = d3.forceX(function(d){
+  if(d.week > 1) {
+    return 1200
+  } else {
+    return 250
+  }
+}).strength(0.05)
+
+  var forceCollide = d3.forceCollide(function(d){
+    return radiusScale(d.week) + 4;
+  })
+
   var simulation = d3.forceSimulation()
-    .force("x", d3.forceX(width / 2).strength(0.05))
+    .force("x", forceXAll)
     .force("y", d3.forceY(height / 2).strength(0.05))
-    .force("collide", d3.forceCollide(function(d){
-      return radiusScale(d.week);
-    }))
+    .force("collide", forceCollide)
+
+  // var tip = d3.tip()
+  //   .attr('class', 'd3-tip')
+  //   .offset([-10, 0])
+  //   .html(function(d) {
+  //     return "<span style='color:black'>" + "Breed: " +  "</span>" +
+  //     "<span style='font-weight:bold'>" + d.age + "</span>" +
+  //     "<br>" + "Total dogs: " +  "<span style='font-weight:bold'>" +
+  //     d.job + "</span>" + "</span>";
+  //   })
+  //   .style('font-size', "11px")
+  //   console.log(tip)
+
+  // svg.call(tip)
+
+
+
 
   d3.queue()
     .defer(d3.csv, "bach.csv")
     .await(ready)
 
+// do stuff down here
   function ready (error, datapoints) {
     var circles = svg.selectAll(".men")
       .data(datapoints)
@@ -55,6 +80,43 @@
       .attr("fill", function(d){
         return "url(#" + d.id + ")"
       })
+     //  .on("mouseover", function(d){
+     //    d3.select(this)
+     //    .style("cursor", "pointer")
+     //    tip.show(d);
+     // })
+    d3.select("#all").on('click', function(){
+      simulation
+        .force("x", forceXAll)
+        .alphaTarget(0.5)
+        .restart()
+    })
+
+    d3.select("#one")
+    .on('click', function(){
+      simulation
+       .force("x", forceXOne).alphaTarget(0.5).restart()
+      d3.selectAll("circle").attr("opacity", function(d){
+        if(d.week == 1){
+          return 0.5
+        } else {
+          return 1
+        }
+      })
+    })
+
+    d3.select("#two")
+    .on('click', function(){
+      simulation
+       .force("x", forceXTwo).alphaTarget(0.5).restart()
+      d3.selectAll("circle").attr("opacity", function(d){
+        if(d.week > 1){
+          return 1
+        } else {
+          return 0.5
+        }
+      })
+    })
 
     defs.selectAll(".men-pattern")
     .data(datapoints)

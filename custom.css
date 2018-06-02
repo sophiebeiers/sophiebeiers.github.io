@@ -53,15 +53,12 @@ a:hover {
 }
 
 .fancy-header {
-  /* background-color: #95B1AF; */
-  /* background-image: linear-gradient(to left bottom, #3e7a78, #528e8c, #67a3a1, #7cb8b6, #91cecc); */
   background-image: url('teal.jpg');
   padding: 5em 0;
 }
 
 .fancy-header-article {
   background-color: #00bfb2;
-  /* background-image: linear-gradient(315deg, #00bfb2 0%, #028090 74%); */
   padding: 4em 0;
 }
 
@@ -112,6 +109,13 @@ background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
   background-size: cover;
   opacity: 0.9;
 }
+
+.background-pink {
+  background-image: url('./proj_bachelor/rose.jpg');
+  background-size: cover;
+  opacity: 0.9;
+}
+
 
 .shadow-background {
   color: white;
