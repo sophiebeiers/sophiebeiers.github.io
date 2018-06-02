@@ -102,12 +102,25 @@
           .attr("y", 0)
 
 
-// zero-eth step trial
+// zero-eth step brings in lady dogs
     d3.select("#zero-step")
         .on('stepin', function() {
-            // svg.selectAll("images").remove()
+            d3.select(".infobox1-1").style('visibility', 'hidden')
             console.log("back to step 0")
             svg.selectAll(".female")
+                .attr("cy", height/2)
+                .attr("cx", function(d){
+                  return scalePoint(d.dog_name)
+                })
+                .attr("r", function(d){
+                  return radiusScale(d.n)
+                })
+                .attr("fill", "#8c6bb1")
+                .attr("opacity", 1)
+                .attr("stroke", "#810f7c")
+                .attr("stroke-width", 3)
+            // the scroll up stuff
+            svg.selectAll(".Bella")
                 .attr("cy", height/2)
                 .attr("cx", function(d){
                   return scalePoint(d.dog_name)
@@ -134,29 +147,46 @@
 
 
 
-// first step zooms in on Bella
+// Bella
     d3.select("#first-step")
           .on('stepin', function() {
+            console.log("step 1")
             d3.select(".titlebox1").style('visibility', 'visible')
             d3.select(".infobox2").style('visibility', 'visible')
+            svg.selectAll(".Bella")
+               .transition()
+               .duration(800)
+               .attr("r", 40)
+               .attr("stroke", "yellow")
+           svg.selectAll(".female_img")
+               .attr("xlink:href", "dog.svg")
+               .attr("x", function(d){
+                 return scalePoint(d.dog_name) - 15})
+               .attr("y",  function(d){ return (height/2) -8 })
+               .attr("width", 30)
+               .attr("height", 30)
+            // scroll up stuff
             svg.selectAll(".female")
-              .transition()
-              .duration(1000)
-              .attr("cx", width)
-              .attr("r", 1)
-              .attr("opacity", 0)
-            svg.selectAll("image").remove()
+              .attr("cy", height/2)
+              .attr("cx", function(d){
+                return scalePoint(d.dog_name)
+              })
+              .attr("r", function(d){
+                return radiusScale(d.n)
+              })
+              .attr("fill", "#8c6bb1")
+              .attr("opacity", 1)
+              .attr("stroke", "#810f7c")
+              .attr("stroke-width", 3)
+            svg.selectAll(".male_img")
+              .attr("x", 0)
+              .attr("width", 0)
+              .attr("height", 0)
+              .attr("y", 0)
             svg.selectAll(".male")
               .transition()
               .attr("cx", width)
               .attr("opacity", 0)
-            svg.selectAll(".Bella")
-              .transition()
-              .duration(2000)
-              .attr("r", 50)
-              .attr("cx", width/2)
-              .attr("cy", 30)
-              // adding a bella_img doesn't work.
 
   })
 
@@ -178,18 +208,6 @@
               .attr("opacity", 1)
               .attr("stroke", "#5f8bb7")
               .attr("stroke-width", 3)
-            // d3.select(".titlebox2").style('visibility', 'visible')
-            // d3.select(".titlebox1").style('visibility', 'hidden')
-            d3.select(".infobox1-1").style('visibility', 'hidden')
-            // svg.selectAll("image").remove()
-            svg.selectAll(".Bella")
-              .transition()
-              .duration(700)
-                .attr("cx", 0)
-              .transition()
-              .duration(1000)
-                .attr("opacity", 0)
-              .remove()
             svg.selectAll(".male_img")
                 .attr("xlink:href", "dog2.svg")
                 .attr("x", function(d){
@@ -197,16 +215,22 @@
                 .attr("y",  function(d){ return (height/2) -8 })
                 .attr("width", 30)
                 .attr("height", 30)
-            svg.append('g').selectAll('.male')
-              .data(names_gender)
-              .enter().append('image')
-              .filter(function(d){return d.gender === 'M'&& d.n > 290})
-              .attr("xlink:href", "dog2.svg")
-              .attr("x", function(d){
-                return scalePoint_m(d.dog_name) - 15})
-              .attr("y",  function(d){ return (height/2) -8 })
-              .attr("width", 30)
-              .attr("height", 30)
+            d3.select(".infobox1-1").style('visibility', 'hidden')
+            // the scroll up stuff
+            svg.selectAll(".female")
+              .transition()
+              .duration(500)
+                .attr("cx", 1000)
+                .attr("cy", 0)
+              .transition()
+              .duration(600)
+                .attr("opacity", 0)
+            svg.selectAll(".female_img")
+              .transition()
+              .attr("x", 0)
+              .attr("width", 0)
+              .attr("height", 0)
+              .attr("y", 0)
 
           })
 
@@ -216,16 +240,20 @@
 
       d3.select("#third-step")
             .on('stepin', function() {
+              console.log("step 3")
               d3.select(".titlebox2").style('visibility', 'hidden')
-              svg.selectAll("circle")
-                // .attr("class", "test")
+              svg.selectAll(".male")
                 .transition()
-                .duration(500)
+                .duration(300)
                   .attr("cx", 0)
                 .transition()
                 .duration(200)
                   .attr("opacity", 0)
-              svg.selectAll("image").remove()
+              svg.selectAll(".male_img")
+              .attr("x", 0)
+              .attr("width", 0)
+              .attr("height", 0)
+              .attr("y", 0)
             })
 
 
