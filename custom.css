@@ -278,8 +278,14 @@ background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
 
 /* STICKY */
 svg {
-  display: block;
-  margin: 0 auto;
+  /* display: inline;
+  margin: auto; */
+  /* This centers the svg */
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 img.block {
@@ -287,10 +293,10 @@ img.block {
   border: solid #333 1p;
   margin: 0 auto;
 }
-
+/*
 svg {
   margin-bottom: 15px;
-}
+} */
 
 .step {
   padding-bottom: 90px;
