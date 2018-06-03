@@ -2,11 +2,11 @@
   line-height: 1;
   /* font-weight: bold; */
   padding: 12px;
-  /* background: rgba(0, 0, 0, 0.8);
-  color: white; */
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
   border-radius: 2px;
   pointer-events: none;
-  font-size: 8px;
+  font-size: 15px;
 }
 
 /*
@@ -14,7 +14,7 @@
   with the class of d3-tip
 */
 .d3-tip span {
-  color: coral;
+  color: red;
 }
 
 /* Creates a small triangle extender for the tooltip */

@@ -1,5 +1,5 @@
 (function() {
-  var width = 1500;
+  var width = 1200;
   height = 900;
 
 
@@ -24,15 +24,15 @@
 
   var forceXOne = d3.forceX(function(d){
    if(d.week == 1) {
-     return 250
+     return 300
    } else {
-     return 1200
+     return 900
    }
  }).strength(0.1)
 
  var forceXTwo = d3.forceX(function(d){
   if(d.week > 1) {
-    return 1200
+    return 900
   } else {
     return 250
   }
@@ -47,19 +47,20 @@
     .force("y", d3.forceY(height / 2).strength(0.05))
     .force("collide", forceCollide)
 
-  // var tip = d3.tip()
-  //   .attr('class', 'd3-tip')
-  //   .offset([-10, 0])
-  //   .html(function(d) {
-  //     return "<span style='color:black'>" + "Breed: " +  "</span>" +
-  //     "<span style='font-weight:bold'>" + d.age + "</span>" +
-  //     "<br>" + "Total dogs: " +  "<span style='font-weight:bold'>" +
-  //     d.job + "</span>" + "</span>";
-  //   })
-  //   .style('font-size', "11px")
-  //   console.log(tip)
+  var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+      return "<span style='color:white'>"  + "Name: " +  "</span>" +
+      "<span style='font-weight:bold'>" + d.name + "</span>" + "<br>" +
+      "Age: " +  "</span>" + "<span style='font-weight:bold'>" + d.age + "</span>" +
+      "<br>" + "Occupation: " +  "<span style='font-weight:bold'>" +
+      d.job + "</span>" + "</span>";
+    })
+    .style('font-size', "50px")
+    console.log(tip)
 
-  // svg.call(tip)
+  svg.call(tip)
 
 
 
@@ -80,12 +81,25 @@
       .attr("fill", function(d){
         return "url(#" + d.id + ")"
       })
-     //  .on("mouseover", function(d){
-     //    d3.select(this)
-     //    .style("cursor", "pointer")
-     //    tip.show(d);
-     // })
+      .on("mouseover", function(d){
+        d3.select(this)
+        .attr("r", 60)
+        .style("cursor", "pointer")
+        tip.show(d)
+
+     })
+     .on("mouseout", function(d){
+       d3.select(this)
+       .attr("r", function(d){
+         return radiusScale(d.week);
+       })
+       .style("cursor", "pointer")
+       tip.hide(d)
+    })
+
+    // selecting buttons
     d3.select("#all").on('click', function(){
+      d3.selectAll("circle").attr("opacity", 1)
       simulation
         .force("x", forceXAll)
         .alphaTarget(0.5)

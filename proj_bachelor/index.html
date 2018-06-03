@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    svg {
-      background: #f1f1f1;
-    }
+
     </style>
     <!-- Source in things  -->
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../custom.css">
-    <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="../d3-tip.css">
 
 
 
@@ -27,13 +26,26 @@
         </div>
       </div>
     </div>
+    <!-- Nav bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="../index.html"> &larr; Back <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div>
+      </nav>
 
     <div class="container section">
-      <h2> The Bachelorette - Season 14 </h2>
-      <p>Blah blah blah blah blah </p>
+      <h1> The Bachelorette - Season 14 <img src="rose.png"></h1>
+      <p>This season will be the most *dramatic* yet and some men
+        won't be there for the right reasons!! - Chris Harrison</p>
       <br>
       <br>
-    <button id ="all" class="btn btn-danger">All Men</button>
+    <button id ="all" class="btn btn-danger">All Men<img src="rose.png"></button>
     <button id ="one" class="btn btn-danger">Week 1</button>
     <button id ="two" class="btn btn-danger">Week 2</button>
 
@@ -42,10 +54,37 @@
     <!-- end of container -->
     <div id="chart"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="d3_tip.js"></script>
     <script src="bubbles.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
 
+    <div><font size="1">Icon by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></font></div>
+    <footer class="footer text-right">
+      <div class="container">
+        <div class="row">
+          <!-- <div class="col-sm-3">
+            <span class="text-muted"> Feel free to reach out. </span>
+          </div> -->
+
+          <div class="col-sm-11 text-right">
+            <a href="mailto:sophiebeiers@gmail.com" target="_blank"><img src= "../icons/email.png" width="30" height="30"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank"><img src= "../icons/linkedin.png" width="30" height="30"></a>&nbsp;&nbsp;
+            <a href="https://www.github.com/sophiebeiers" target="_blank"><img src= "../icons/github.png" width="33" height="33"></a>&nbsp;&nbsp;
+            <a href="https://twitter.com/sophiebeiers" target="_blank"><img src= "../icons/twitter.png" width="33" height="33"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--content here-->
+
+    <footer class="footer text-center">
+      <div class="container">
+        <span class="text-muted"> New York, NY <br>2018</span>
+      </div>
+    </footer>
 
 
 
