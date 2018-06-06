@@ -31,7 +31,7 @@
  }).strength(0.1)
 
  var forceXTwo = d3.forceX(function(d){
-  if(d.week > 1) {
+  if(d.week > 2) {
     return 900
   } else {
     return 250
@@ -44,7 +44,7 @@
 
   var simulation = d3.forceSimulation()
     .force("x", forceXAll)
-    .force("y", d3.forceY(height / 2).strength(0.05))
+    .force("y", d3.forceY(height / 2).strength(0.07))
     .force("collide", forceCollide)
 
   var tip = d3.tip()
@@ -124,7 +124,7 @@
       simulation
        .force("x", forceXTwo).alphaTarget(0.5).restart()
       d3.selectAll("circle").attr("opacity", function(d){
-        if(d.week > 1){
+        if(d.week > 2){
           return 1
         } else {
           return 0.5
