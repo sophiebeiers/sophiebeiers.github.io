@@ -352,3 +352,20 @@ svg {
 img {
   max-width: 100%;
 }
+
+/*
+
+/* TOOLTIP */
+  div#tooltip {
+  position: absolute;
+  /*display: inline-block;*/
+  /* font-weight: bold; */
+  font-size: 10px;
+  padding: 9px;
+  color: black;
+  background-color: rgba(200, 247, 234, 0.8)
+  visibility: hidden;/* is changed on action */
+  border-radius: 1px;
+    pointer-events: none;
+  z-index: 1;
+}

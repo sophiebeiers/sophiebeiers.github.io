@@ -25,19 +25,19 @@
 
   function ready(error, breeds) {
     console.log(breeds)
-
+ var element = document.getElementById("test")
 // Tooltip
 /* Initialize tooltip */
-var tip = d3.tip()
-  .attr('class', 'd3-tip')
-  .offset([-10, 0])
-  .html(function(d) {
-    return "<span style='color:black'>" + "Breed: " +  "</span>" + "<span style='font-weight:bold'>" + d.breed + "</span>" +
-    "<br>" + "Total dogs: " +  "<span style='font-weight:bold'>" + d.n + "</span>" + "</span>";
-  })
-  .style('font-size', "11px")
-  console.log(tip)
-svg.call(tip)
+  // var tip = d3.tip()
+  //   .attr('class', 'd3-tip')
+  //   .offset([-10, 0])
+  //   .html(function(d) {
+  //     return "<span style='color:black'>" + "Breed: " +  "</span>" + "<span style='font-weight:bold'>" + d.breed + "</span>" +
+  //     "<br>" + "Total dogs: " +  "<span style='font-weight:bold'>" + d.n + "</span>" + "</span>";
+  //   })
+  //   .style('font-size', "11px")
+  //   tip.direction('s')
+  // svg.call(tip)
 
 
 //  Setting up scales
@@ -68,9 +68,10 @@ svg.call(tip)
 
 
    // initial chart
-   svg.append('g').selectAll('.myPoint')
+   svg.append('g').selectAll('image')
      .data(breeds)
      .enter().append('image')
+     .attr("id", "test")
      .classed("All", function(d){
        return d.borough === "All"})
      .classed("Bronx", function(d){
@@ -90,19 +91,37 @@ svg.call(tip)
      .attr("y", 0)
      .attr("width", 0)
      .attr("height", 0)
-     .on("mouseover", function(d){
-       d3.select(this)
-       .style("cursor", "pointer")
-       .attr("width", 80)
-       .attr("height", 80)
-       tip.show(d);
+
+     .on("mouseover", function(d) {
+     var tooltipData = d
+     console.log(tooltipData)
+     d3.select('#tooltip')
+      .style("visibility","visible")
+      .style('top', d3.event.pageY + 5 + 'px')
+      .style('left', d3.event.pageX + 5 + 'px')
+      .style("cursor", "pointer")
+      .html(function(d){
+        return "Breed: " + "<span style='font-weight:bold'>" + tooltipData.breed + "</span>" +
+        "<br>" + "Total dogs: " +  "<span style='font-weight:bold'>" + tooltipData.n + "</span>" + "</span>";
+        // Here you add the info you wanna show
+        // in the tooltip, using html formatting
+      })
+    d3.select(this)
+      .style("cursor", "pointer")
+      .attr("width", 80)
+      .attr("height", 80)
     })
-      .on("mouseout", function(d){
-        d3.select(this)
+
+     .on("mouseout", function(d) {
+	     d3.select('#tooltip')
+				.style("visibility","hidden")
+				.style('top', d3.event.pageY + 5 + 'px')
+				.style('left', d3.event.pageX + 5 + 'px')
+       d3.select(this)
         .attr("width", 70)
         .attr("height", 70)
-        tip.hide(d);
-     })
+});
+
 
 
     // step 1 -- All dogs
