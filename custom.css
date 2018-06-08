@@ -21,15 +21,15 @@ h1 {
 }​
 
 
-a {
-  color: #224b8e;
-  font-weight:bold;
+a, a:link, a:visited  {
+  color: #355764;
+  font-weight: normal;
 }
-
-
+/* not working */
 a:hover {
-  color: #85144b;
+  color: #355764;
 }
+
 
 .snippet-header {
   padding: 60px 0;
@@ -45,7 +45,7 @@ a:hover {
 }
 
 .nav.colored {
-  background: #333;
+  background: #E6F4F1;
 }
 
 .nav.colored a {
