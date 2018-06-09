@@ -46,9 +46,15 @@ a:hover {
 }
 
 /* Create three equal columns that sits next to each other */
-.column {
+/* .column {
     -ms-flex: 33.3%; /* IE 10 */
-    flex: 33.3%;
+    /* flex: 33.3%;
+    padding: 0 4px; */
+/* } */
+
+.column {
+    -ms-flex: 25%; /* IE 10 */
+    flex: 25%;
     padding: 0 4px;
 }
 
@@ -70,6 +76,27 @@ a:hover {
   position: relative;
 }
 
+.fancy-header-article {
+  background-color: url('../teal.jpg');
+  padding: 3em 0;
+}
+
+.text-article h1 {
+  background: transparent;
+  color: black;
+  display: inline;
+  line-height: 0.3;
+  font-size: 3em
+}
+
+.text-article-white h1 {
+  background: transparent;
+  color: white;
+  display: inline;
+  line-height: 0.3;
+  font-size: 5em
+}
+
 .center {
     display: block;
     margin-left: auto;
@@ -77,8 +104,37 @@ a:hover {
     width: 50%;
 }
 
-.container {
+p.about {
+    margin: 30px 150px 30px;
+    /* text-align: center; */
+}
+/* .container p{
   margin: 40px
+} */
+
+/* Backgrounds */
+.background-lemon {
+  background-image: url('lemonade.jpg');
+  background-size: cover;
+  opacity: 1;
+}
+
+.background-fire {
+  background-image: url('fire.jpg');
+  background-size: cover;
+  opacity: 1;
+}
+
+.background-teal {
+  background-image: url('teal.jpg');
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.background-pink {
+  background-image: url('./proj_bachelor/rose.jpg');
+  background-size: cover;
+  opacity: 0.9;
 }
 /* Hovering */
 *, *:before, *:after{
@@ -196,9 +252,90 @@ a:hover {
 }
 
 .footer .container {
-  padding: 30px 0;
+  padding: 35px 0;
 }
 
 .about .container {
   padding: 30px 0;
+}
+
+
+/* STICKY */
+svg {
+  /* display: inline;
+  margin: auto; */
+  /* This centers the svg */
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+img.block {
+  display: block;
+  border: solid #333 1p;
+  margin: 0 auto;
+}
+/*
+svg {
+  margin-bottom: 15px;
+} */
+
+.step {
+  padding-bottom: 90px;
+  margin-bottom: 10px;
+}
+
+.step, .row {
+  padding-top: 2rem;
+}
+
+.step:last-of-type {
+  padding-bottom: 150px;
+}
+
+
+/* .active {
+  background: beige;
+} */
+
+
+/*
+  The following allows us to make the graphic
+  "sticky" to the top of the page. The "top"
+  attribute should probably be the same as
+  the offset for scrollama (but % instead of decimal)
+*/
+
+.sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  height: fit-content;
+  /* IF YOU CHANGE THIS CHANGE THE JAVASCRIPT NEAR THE BOTTOM */
+  top: 33%;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*
+
+/* TOOLTIP */
+  div#tooltip {
+  position: absolute;
+  /*display: inline-block;*/
+  /* font-weight: bold; */
+  font-size: 10px;
+  padding: 9px;
+  color: black;
+  background-color: rgba(200, 247, 234, 0.8)
+  visibility: hidden;/* is changed on action */
+  border-radius: 1px;
+    pointer-events: none;
+  z-index: 1;
 }
