@@ -32,6 +32,7 @@ a:hover {
   color: #355764;
 }
 
+
 .header {
     text-align: center;
     padding: 32px;
@@ -94,7 +95,7 @@ a:hover {
   color: white;
   display: inline;
   line-height: 0.3;
-  font-size: 5em
+  font-size: 3.5em
 }
 
 .center {
@@ -108,9 +109,11 @@ p.about {
     margin: 30px 150px 30px;
     /* text-align: center; */
 }
-/* .container p{
-  margin: 40px
-} */
+
+.section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 
 /* Backgrounds */
 .background-lemon {
@@ -164,10 +167,10 @@ p.about {
 .content .content-overlay {
   background: rgba(0,0,0,0.7);
   position: absolute;
-  height: 99%;
+  height: 100%;
   width: 100%;
   left: 0;
-  top: 0;
+  top: 10;
   bottom: 0;
   right: 0;
   opacity: 0;
