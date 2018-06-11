@@ -11,33 +11,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <!-- Our custom CSS file -->
-    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="../test.css">
 
     <title>Kickstarter</title>
+    <style>
+    h4 {
+    text-decoration: underline #99d8c9;
+  }
+  </style>
+
   </head>
   <body>
 
 
-    <div class="fancy-header-article background text-highlight-article">
+    <div class="fancy-header-article background-teal text-article">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 text-left">
-            <h1 class="display-3">Sophie Beiers</h1>
+            <h1>Sophie <span class='notbold'>Beiers</span></h1>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Nav bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E6F4F1;">
           <a class="navbar-brand" href="#"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="../index.html"> &larr; Back <span class="sr-only">(current)</span></a></li>
-
+            <li class="nav-item active"><a class="nav-link" href="../"> &larr; Back <span class="sr-only">(current)</span></a></li>
           </ul>
         </div>
       </nav>
@@ -50,28 +55,28 @@
 
           <!-- The "Top" -->
           <a id="top"></a>
-          <h2>Kickstarter Campaigns</h2>
+          <h2><strong>Kickstarter Campaigns</strong></h2>
 
           <p>Kickstarter is a public-benefit corporation based in Brooklyn,
             New York, that maintains a global crowd funding platform focused on creativity.
-            The company’s stated mission is to “help bring creative projects to life”.
+            The company’s stated mission is to “help bring creative projects to life."
 
-          Kickstarter has reportedly received more than $1.9 billion in pledges from
-          9.4 million backers to fund 257,000 creative projects, such as films,
-          music, stage shows, comics, journalism, video games, technology and
-          food-related projects. Below, I analyze the descriptions of Kickstarter projects to
-          identify commonalities of successful (and unsuccessful projects)
-          using text mining techniques.</p>
+            Kickstarter has reportedly received more than $1.9 billion in pledges from
+            9.4 million backers to fund 257,000 creative projects, such as films,
+            music, stage shows, comics, journalism, video games, technology and
+            food-related projects. Below, descriptions of Kickstarter projects are analyzed to
+            identify commonalities of successful and unsuccessful projects
+            using text mining techniques.</p>
           <br>
           <h4> Successful Campaigns </h4>
           <p>To define “success,” I chose to create a ratio of pledged
-            amount of money over the monetary goal of the campaign.
+            amount of money divided by the monetary goal of the campaign.
             I removed any campaign with a goal of under $30 to ensure results were
-            a little less skewed and eliminated any campaigns deemed unsuccessful
+            a bit less skewed and eliminated any campaigns deemed "unsuccessful"
             since many of these campaigns dropped out or discontinued. I then broke
             out the results into categories of campaigns; we can see below that
             all campaign categories received an average of over 100% of their goal money,
-            which is surprising! The technology category seems to have the most
+            which is a little surprising! The technology category seems to have the most
             success while art campaigns were still highly successful (over 100% of
             goal money on average) but less exorbitantly successful than other
             campaign categories.</p>
@@ -81,9 +86,10 @@
           <p>I was curious to visualize success in San Francisco because
             it’s a tech hub and a hot spot for Kickstarter campaigns. Most campaigns
             from San Francisco received over 100% of their goal from their backers,
-            so “success” took on a new definition: popularity. Larger bubbles had more
+            so “success” took on a new definition: popularity. In the visualization below, larger bubbles
+            had more
             backers and bubbles placed higher up on the graph received the most pledged
-            money. The scales of the x axis versus the y axis tell us that no projects
+            money. The scales of the x-axis versus the y-axis show that no projects
             asked for over a million dollars, yet one received up to 6.5 million and
             multiple received multi-millions of dollars! Scroll over each bubble
             for more information about the project.<br> </p>
@@ -94,15 +100,15 @@
           <h4> Common Words </h4>
           <p> Each campaign contains a blurb – a short description
             of the project. While not the full description of the project, the short
-            headline is arguably important for inducing interest in the project
-            (and ultimately popularity and success). I hate word clouds but here we are.
+            headline is arguably important for eliciting interest in the project
+            (and ultimately popularity and success).
             Below is a visualization of the most common words used
             in Kickstarter blurbs.</p>
 
             <p>Most common words include “game,” “art,” “designed” and “homemade.”
             Many of the kickstarter projects must be game-related, and it’s not
             surprising that many projects are “homemade” and “artistically” “designed”
-            due to many people’s hipster, DIY aesthetic these days.<br> </p>
+            due to the popularity of the "DIY" aesthetic.<br> </p>
           <br>
           <p><img src="unnamed-chunk-4-1.png"></p>
           <br>
