@@ -11,33 +11,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <!-- Our custom CSS file -->
-    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="../test.css">
 
     <title>Twitter</title>
+    <style>
+    h4 {
+    text-decoration: underline #0084b4;
+  }
+    </style>
+
   </head>
   <body>
 
     <a id="top"></a>  <!-- top  -->
-    <div class="fancy-header-article background text-highlight-article">
+    <div class="fancy-header-article background-teal text-article">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 text-left">
-            <h1 class="display-3">Sophie Beiers</h1>
+            <h1>Sophie <span class='notbold'>Beiers</span></h1>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Nav bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E6F4F1;">
           <a class="navbar-brand" href="#"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="../index.html"> &larr; Back <span class="sr-only">(current)</span></a></li>
-
+            <li class="nav-item active"><a class="nav-link" href="../"> &larr; Back <span class="sr-only">(current)</span></a></li>
           </ul>
         </div>
       </nav>
@@ -49,28 +54,28 @@
         <div class="col-sm-8 offset-sm-2">
 
 
-          <h2>U.S. Senator Tweets</h2>
+          <h2><strong>U.S. Senator Tweets</strong></h2>
 
-          <p>Senators -- they're just like us! Below, I analyze 95 U.S. Senators' Twitter data;
+          <p>Senators... they're just like us! Below, I analyze 95 U.S. Senators' Twitter data;
             data was collected through Twitter's API (which has limitations), so these
-            tweets span roughly one year (up until March 2018). 46 Senators were Democrats, 47 Republicans and only
-            two -- Bernie and Angus King -- were Independents.
+            tweets span roughly one year up until March 2018. 46 Senators were Democrats, 47 Republicans and only
+            two -- Bernie Sanders and Angus King -- were Independents.
           </p>
-          <br>
+
           <h4> Most Common #Hashtags  </h4>
-          <p>Below ar the top 20 most common hashtags used by Senators in the dataset overall.
+          <p>Below are the top 20 most common hashtags used by Senators in the dataset overall.
             Interestingly, “trumpcare” and “obamacare” are neck-in-neck
             for first place. “Taxreform” comes next, a topic that
             both parties likely tweeted quite differing opinions about. Other
-            important tweets include “mepolitics”, “netneutrality” and “dreamers”;
-            all large and controversial recent political topics.</p>
+            common tweets include “mepolitics”, “netneutrality” and “dreamers”;
+            all large and particularly controversial recent political topics.</p>
             <p><img src="g.png"></p>
 
             <h4> Gun Control: Overall </h4>
            <p> To visualize the difference between Democrat and Republican use of gun related hashtags, I
              subset the data to only include the most common hashtags used in support of gun control and
-             the most common hashtags used in support of gun rights.
-            We can see that gun control hashtags like #nationalwalkoutday and #gunreformnow are most
+             the most common hashtags used in support of gun rights.</p>
+            <p>We can see that gun control hashtags like #nationalwalkoutday and #gunreformnow are most
             commonly used by Democrats while hashtags like #secondamendment and #freedom are used by
             Republicans. In general, it seems that Democrats voice their opinions on guns more frequently
             than Republicans. </p>
@@ -82,8 +87,8 @@
             I narrowed the time-range for tweets to one month after the shooting and visualized the use of the most
             popular Parkland-related hashtags. Clearly,
             Democrats tweeted more about the shooting than Republicans did,
-            yet Republicans seemed to tweet more about the “facts” (i.e. #parklandshooting and #florida) or descriptives of the shooting,
-            whereas Dems tweeted more about the student-led march and ending gun violence.  </p>
+            yet Republicans seemed to tweet more about the “facts” (i.e. #parklandshooting and #florida) or plain descriptives of the shooting,
+            whereas Dems tweeted more about taking action, i.e. the student-led march and ending gun violence.  </p>
           <p><img src="guncontrol2-1.png"></p>
 
 
