@@ -124,9 +124,10 @@ p.about {
 }
 
 .background-fire {
-  background-image: url('fire.jpg');
+  /* background-image: url('fire.jpg');
   background-size: cover;
-  opacity: 1;
+  opacity: 1; */
+  background-image: linear-gradient(to left bottom, #ffad1d, #ffb027, #feb42f, #feb737, #feba3e);
 }
 
 .background-teal {
