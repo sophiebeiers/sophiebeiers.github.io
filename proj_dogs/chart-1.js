@@ -2,7 +2,7 @@
 
   var margin = { top: 20, right: 20, bottom: 20, left: 15 }
 
-  var width = 700 - margin.left - margin.right,
+  var width = 800 - margin.left - margin.right,
       height = 100 - margin.top - margin.bottom
 
   var svg = d3.select("#graphic-1").append("svg")
@@ -29,11 +29,11 @@
     var scalePoint = d3.scalePoint()
       .domain(['Bella', 'Princess', 'Lola', 'Lucy', 'Daisy', 'Coco', 'Molly',
       'Chloe', 'Maggie', 'Ginger'])
-      .range([25, width - 30])
+      .range([40, width - 40])
     var scalePoint_m = d3.scalePoint()
       .domain(['Max', 'Rocky', 'Lucky', 'Buddy', 'Charlie', 'Jack', 'Teddy',
       'Toby', 'Buster', 'Gizmo'])
-      .range([20, width - 20])
+      .range([40, width - 40])
 
    // initial chart
 
