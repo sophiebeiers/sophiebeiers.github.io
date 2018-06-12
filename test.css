@@ -117,16 +117,10 @@ p.about {
 
 /* Backgrounds */
 .background-lemon {
-  /* background-image: url('lemonade.jpg');
-  background-size: cover;
-  opacity: 1; */
   background-image: linear-gradient(to right top, #fffc4c, #fff166, #ffe87e, #ffe195, #fedbab);
 }
 
 .background-fire {
-  /* background-image: url('fire.jpg');
-  background-size: cover;
-  opacity: 1; */
   background-image: linear-gradient(to left bottom, #ffad1d, #ffb027, #feb42f, #feb737, #feba3e);
 }
 
@@ -136,11 +130,6 @@ p.about {
   opacity: 0.9;
 }
 
-.background-pink {
-  background-image: url('./proj_bachelor/rose.jpg');
-  background-size: cover;
-  opacity: 0.9;
-}
 /* Hovering */
 *, *:before, *:after{
   margin: 0;
