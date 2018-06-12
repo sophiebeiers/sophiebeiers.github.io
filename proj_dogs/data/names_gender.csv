@@ -1,24 +1,24 @@
 dog_name,gender,n
-Max,M,991
-Bella,F,766
-Rocky,M,680
-Lucky,M,599
-Buddy,M,593
-Princess,F,574
-Lola,F,549
-Charlie,M,531
-Lucy,F,514
-Daisy,F,506
-Coco,F,440
-Molly,F,413
-Jack,M,349
-Chloe,F,329
-Maggie,F,316
-Ginger,F,303
-Teddy,M,297
-Toby,M,296
-Buster,M,292
-Gizmo,M,291
+1. Max,M,991
+1. Bella,F,766
+2. Rocky,M,680
+3. Lucky,M,599
+4. Buddy,M,593
+2. Princess,F,574
+3. Lola,F,549
+5. Charlie,M,531
+4. Lucy,F,514
+5. Daisy,F,506
+6. Coco,F,440
+7. Molly,F,413
+6. Jack,M,349
+8. Chloe,F,329
+9. Maggie,F,316
+10. Ginger,F,303
+7. Teddy,M,297
+8. Toby,M,296
+9. Buster,M,292
+10. Gizmo,M,291
 Lady,F,291
 Jake,M,274
 Roxy,F,274

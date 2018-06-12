@@ -27,12 +27,12 @@
 
 
     var scalePoint = d3.scalePoint()
-      .domain(['Bella', 'Princess', 'Lola', 'Lucy', 'Daisy', 'Coco', 'Molly',
-      'Chloe', 'Maggie', 'Ginger'])
+      .domain(['1. Bella', '2. Princess', '3. Lola', '4. Lucy', '5. Daisy', '6. Coco', '7. Molly',
+      '8. Chloe', '9. Maggie', '10. Ginger'])
       .range([40, width - 40])
     var scalePoint_m = d3.scalePoint()
-      .domain(['Max', 'Rocky', 'Lucky', 'Buddy', 'Charlie', 'Jack', 'Teddy',
-      'Toby', 'Buster', 'Gizmo'])
+      .domain(['1. Max', '2. Rocky', '3. Lucky', '4. Buddy', '5. Charlie', '6. Jack', '7. Teddy',
+      '8. Toby', '9. Buster', '10. Gizmo'])
       .range([40, width - 40])
 
    // initial chart
@@ -47,7 +47,7 @@
       return d.gender === 'M'&& d.n > 290
     })
       .classed("Bella", function(d) {
-      return d.dog_name === "Bella"
+      return d.dog_name === "1. Bella"
     })
       .attr("cx", 0)
       .attr("cy", 0)
@@ -64,8 +64,8 @@
                     return radiusScale(d.n) + 5
                   })
                   .style("cursor", "pointer")
-              d3.select('.infobox .dog_name').text(d['dog_name'])
-              d3.select('.infobox1-1 .dog_name').text(d['dog_name'])
+              d3.select('.infobox .dog_name').text(d['dog_name']).style("color", "#810f7c").style("font-size", "20px").style("font-weight", "700")
+              d3.select('.infobox1-1 .dog_name').text(d['dog_name']).style("color", "#5f8bb7").style("font-size", "20px").style("font-weight", "700")
               d3.select('.infobox1-1').style('visibility', 'visible')
               d3.select(".infobox").style('visibility', 'visible')
         })
@@ -94,7 +94,7 @@
           return d.gender === 'M'&& d.n > 290
         })
           .classed("Bella_img", function(d) {
-          return d.dog_name === "Bella"
+          return d.dog_name === "1. Bella"
         })
           .attr("x", 0)
           .attr("width", 0)
