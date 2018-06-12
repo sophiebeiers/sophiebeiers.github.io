@@ -117,9 +117,10 @@ p.about {
 
 /* Backgrounds */
 .background-lemon {
-  background-image: url('lemonade.jpg');
+  /* background-image: url('lemonade.jpg');
   background-size: cover;
-  opacity: 1;
+  opacity: 1; */
+  background-image: linear-gradient(to right top, #fffc4c, #fff166, #ffe87e, #ffe195, #fedbab);
 }
 
 .background-fire {
