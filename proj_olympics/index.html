@@ -11,32 +11,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <!-- Our custom CSS file -->
-    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="../test.css">
     <!-- Top  -->
     <a id="top"></a>
     <title>Winter Olympics</title>
+    <style>
+    h4 {
+    text-decoration: underline #8EC5DA; */
+  }
+
+    </style>
   </head>
   <body>
 
-    <div class="fancy-header-article background text-highlight-article">
+    <div class="fancy-header-article background-teal text-article">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 text-left">
-            <h1 class="display-3">Sophie Beiers</h1>
+            <h1>Sophie <span class='notbold'>Beiers</span></h1>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Nav bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E6F4F1;">
           <a class="navbar-brand" href="#"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="../index.html"> &larr; Back <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item active"><a class="nav-link" href="../"> &larr; Back <span class="sr-only">(current)</span></a></li>
 
           </ul>
         </div>
@@ -47,29 +53,27 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 offset-sm-2">
-          <h2>Winter Olympics: 1924 - 2014</h2>
-          <p>The Olympics is the best so let's talk about it.<br> <br>
-          Between 1924 and 2014, the US has competed and medaled in over 20 winter Olympics games.
-          Because some countries that competed under different designations in the past (e.g. Germany and Russia), I chose to combine Russia with URS, Germany with EUA, FRG and GDR, YUG with Bosnia and Czech Republic with TCH.
-          I felt these designations were fair and didn’t overweight countries unfairly.
-          Below are the other countries that participated in and medaled in over 5 winter games since
+          <h2><center><strong>Winter Olympics: 1924 - 2014</strong></center></h2>
+          <p><br>The Olympics is the best so let's talk about it.</p>
+          <p>Between 1924 and 2014, the US has competed and medaled in over 20 winter Olympic games.
+          Because some countries competed under different designations in the past (e.g. Germany and Russia), the following analyses
+          combined Russia with URS, Germany with EUA, FRG and GDR, YUG with Bosnia and Czech Republic with TCH.
+          Seen below are the countries that participated in and medaled in over five winter games since
           1924. </p>
           <p><img src="unnamed-chunk-2-1.png"></p>
           <h4> Olympic Medals Over Time </h4>
-          <p>The below visualization represents the top 10 medal-winning countries over the
-          1920-2014 Winter Olympics. Something that immediately jumps out is that while Canada
-          and the USA seem to have won similarly large amounts of medals over time, the US has won many
-          more silver and gold, while Canada seems to focus on gold.</p>
+          <p>The below visualization represents the top 10 medal-winning countries throughout all
+          Winter Olympics (1920-2014). While Canada
+          and the USA seem to have won similarly large amounts of medals over time, the USA has won many
+          more silver and gold, while Canada seems to win *just* gold. Keepin' their eyes on the prize!</p>
           <br>
           <p><img src="unnamed-chunk-5-1.png"></p>
           <br>
           <h4> Olympic Medals Overall </h4>
 
-          <p>To visualize the total amount of medals won by the top 10 medal-winning countries,
-            I produced a bar chart that includes countries that have won at least 100 medals
-            over time with the same gold, silver and bronze coloring to add more information and
-            to make the stacks immediately obvious to the reader. One hundred medals felt like a natural cut-off
-            point between the highest perorming countries and the mid-performing countries.
+          <p>The below visualization includes only countries that have won at least 100 medals, overall,
+            over time. Russia and Canada have won an obscene amount of gold medals in their time -- the USA again
+            seems to be fairly balanced in the colors of medals won. These are the countries to watch!
           </p>
           <br>
           <p><img src="unnamed-chunk-6-2.png"></p>
@@ -77,63 +81,63 @@
 
           <h4>Medal Counts adjusted by Population </h4>
 
-          <p>The next visualization shows the countries lined up by population size and compares
-            how many medals they’ve won in total. Countries with the fewest medals are “shamed”
-            by being highlighted in yellow. My argument for showing the data in this matter is
-            that countries with larger populations have more opportunity for top-performing athletes.
-            China and Japan are both countries with particularly large populations that don’t tend
-            to win as many medals as other countries with large populations. </p>
+          <p>Next, the countries are lined up by population size and the height of each bar
+            represents how many medals that country has won overall. Countries with the fewest medals are “shamed”
+            by being highlighted in yellow. We'd think that larger populations have more opportunity
+            for fostering top-performing athletes (which seems to be true for the USA and Russia) but,
+            it seems like that's not always the case.
+            China, Japan and the UK are all countries with particularly large populations that don’t tend
+            to win as many medals as the other countries with as large populations. </p>
           <br>
           <p><img src="unnamed-chunk-8-1.png"></p>
 
 
-          <p>I then visualized the percentage of medals won by the country’s population and showed
-            how many total medals countries won overall via the size of each bubble. From this viz,
-            it’s clear that Norway and Finland do well for themselves given the large amount of
-            medals they’ve won despite their smaller populations.</p>
+          <p>Due to wildly varying country populations, it's important to take into account medal-per-capita to give
+            credit to those countries with tiny populations but tons of incredibly strong athletes. The x-axis again
+            represents country population, while the y-axis represents the percentage of medals won per-capita.
+            The size of the circles represent how many medals have been won overall.
+
+            Norway and Finland deserve all the love -- given their smaller populations, they've sure won a lot of
+            medals!</p>
           <br>
           <p><img src="unnamed-chunk-11-1.png"></p>
 
 
           <h4> Home Team Advantage </h4>
 
-          <p>I calculated whether countries won more medals when they hosted Winter Olympics
-            as opposed to when they were visiting participants. I chose to only use countries that have
-            hosted the Olympics in my plots and calculations for a more intuitive comparison. Most countries do exceedingly better,
-            if not, at least as good as they’ve ever done, when they host.
+          <p>Do Olympic athletes performing in their own country win more medals than when they're just visiting participants?
+            Only countries that have hosted the Winter Olympics were included in this analysis-- we can see that most of them
+            have done exceedingly better, if not, at least as well as they’ve ever done, when they've hosted.
           </p>
           <br>
           <p><img src="unnamed-chunk-13-1.png"></p>
-          <p> This plot, again, includes only countries that have hosted an Olympics
-            and shows how many medals each country won at each winter Olympics.
+          <p> Another way to represent this home-court advantage is below.
             Tiles outlined in black indicate that the country hosted that year. </p>
           <br>
           <p><img src="unnamed-chunk-14-1.png"></p>
 
           <h4> Top 10 Medal-Winning Countries by Sport </h4>
-          <br>
           The top ten medal-winning countries happen to be best at Skiing and Skating sports
           as indicated by the darker blues. Germany, Norway and Russia seem to outperform
-          the other countries in Biathlon, specifically, and Germany is talented in the Luge.
+          the other countries in Biathlon while the USA, Canada and Russia have impressive skaters.
+          The luge is my person nightmare, but Germany takes the cake for its luge athletes.
+          <br>
           <br>
           <p><img src="unnamed-chunk-17-1.png"></p>
 
           <h4> Most Successful Athletes </h4>
 
           <p>Below is a visual display of the most successful winter Olympic athletes of all time.
-          I manipulated the data such that I could create a count of medals won per Olympic athlete.
-          Some athletes had multiple country designations, so I tried to choose which country made
-          the most sense for the individual and labeled them as being part of that country.
-          I created a category for “multiple sports” if a top medal-winning athlete participated and
-          won medals in multiple disciplines. Norway tends to produce the top medal-winning winter athletes,
+          Some athletes have won medals in multiple sports, hence the designation. Norway tends to
+          produce the top medal-winning winter athletes,
           which is not surprising given Norway’s clear success in prior plots. </p>
 
           <br>
           <p><img src="unnamed-chunk-18-1.png"></p>
 
-          <p>I then split the athletes by gender. From the plots, we can see that women dominate in Cross Country Skiing
+          <p>When split by gender, it's clear that the most talented women dominate in Cross Country Skiing
           while men dominate in the Biathlon.
-          The top medal-winning men have won a few more medals than the top women.</p>
+          Just to note: the top medal-bearing men have won a few more medals than the top women.</p>
           <br>
           <p><img src="unnamed-chunk-20-1.png"></p>
 
