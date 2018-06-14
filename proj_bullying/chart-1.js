@@ -54,8 +54,6 @@ function ready(error, data) {
   });
 
 
-
-
   // add the line path.
   lineGraph = svg.append("path")
       .data([data.filter(function(d){return d.group == 'all';})])
@@ -68,7 +66,7 @@ function ready(error, data) {
     // get total length of path
     var lineLength = lineGraph.node().getTotalLength();
 
-
+// the animation
     function tween() {
       // get values between lineLength and 0
       var interpolate = d3.interpolate(lineLength, 0);
@@ -89,95 +87,15 @@ function ready(error, data) {
         .tickFormat(formatPercent)
         .ticks(5))
 
-
-// hover over events
-function findTheMouse(){
-  var coordinates = d3.mouse(this);
-  x.textContent = coordinates[0];
-  // y.textContent = coordinates[1];
-}
-
-  var focus = svg.append("g")
-          .attr("class", "focus")
-          .style("display", "none");
-
-      focus.append("line")
-          .attr("class", "x-hover-line hover-line")
-          .attr("y1", 0)
-          .attr("y2", height);
-
-      focus.append("line")
-          .attr("class", "y-hover-line hover-line")
-          .attr("x1", width)
-          .attr("x2", width);
-
-      focus.append("circle")
-          .attr("r", 7.5);
-
-      focus.append("text")
-          .attr("x", 15)
-        	.attr("dy", ".31em");
-
-      svg.append("rect")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-          .attr("class", "overlay")
-          .attr("width", width)
-          .attr("height", height)
-          .on("mouseover", function() { focus.style("display", null); })
-          .on("mouseout", function() { focus.style("display", "none"); })
-          .on("mousemove", determineData);
-
-        // custom invert function
-        xScale.invert = (function(){
-            var domain = xScale.domain()
-            var range = xScale.range()
-            var scale = d3.scaleQuantize().domain(range).range(domain)
-
-            return function(x){
-                return scale(x)
-            }
-        })()
-
-        var bisector = d3.bisector(function(d){ return d.year; }).left;
-
-
-        function determineData(d){
-          // get x coordinate for the mouse
-          var xCoordinate = d3.mouse(this)[0];
-          // invert the scale to get the domain value
-          var domainX = xScale.invert(xCoordinate);
-          // bisect the data to get insertion position
-          var pos = bisector(data, domainX);
-          // get the closest smaller and larger values in the data array
-          var smaller = data[pos-1];
-          var larger = data[pos];
-          // figure out which one is closer to the domain value
-          var closest = domainX - smaller.xScale < larger.xScale - domainX ? smaller : larger;
-          // do something with closest
-        }
-
-
-      // }
-
-      // function mousemove() {
-      //   var x0 = findTheMouse,
-      //       // x0 = x.invert(d3.mouse(this)[0]),
-      //       i = bisectDate(data, x0, 1),
-      //       d0 = data[i - 1],
-      //       d1 = data[i],
-      //       d = x0 - d0.year > d1.year - x0 ? d1 : d0;
-      //   focus.attr("transform", "translate(" + x(d.year) + "," + y(d.value) + ")");
-      //   focus.select("text").text(function() { return d.value; });
-      //   focus.select(".x-hover-line").attr("y2", height - y(d.value));
-      //   focus.select(".y-hover-line").attr("x2", width + width);
-      // }
+var all = data.filter(function(d){return d.group == 'all'})
 
 //steps
 d3.select("#first-step")
     .on('stepin', function() {
       console.log("step 1")
-      svg.append("path")
-          .data([data.filter(function(d){return d.group == 'all';})])
+      svg.append("g")
+          .data([data.filter(function(d){return d.group == 'all'})])
+      svg.selectAll(".line-all")
           .transition()
           .duration(4000)
           .attr('stroke-dasharray', lineLength + ' ' + lineLength)
@@ -187,13 +105,49 @@ d3.select("#first-step")
           .attr("d", valueline)
           .attr("stroke", "#ffe700")
 
-          svg.selectAll(".g-line")
-              .attr("stroke", "transparent")
+      svg.selectAll(".g-line")
+          .attr("stroke", "transparent")
+      // circles
+      svg.selectAll("circle")
+        .data(all)
+        .enter().append("circle")
+        .attr("class", "circle-all")
+        .attr("cx", function(d){
+          return xScale(d.year)
+        })
 
-      })
+        .attr("cy", function(d){
+          return yScale(d.rate)
+        })
+        .attr("r", 7.5)
+        .attr("stroke", "transparent")
+          .transition()
+          .duration(4000)
+          .attr("stroke", "white")
+          .attr("fill", "transparent")
+      // mouseover events   
+      svg.selectAll(".circle-all")
+        .on("mouseover", function(d){
+                console.log("hey")
+                d3.select(this)
+                  .style("cursor", "pointer")
+                  .attr("fill", "white")
+                  .attr("r", 9)
+                  })
+        .on("mouseout", function(d){
+                console.log("out")
+                d3.select(this)
+                  .style("cursor", "pointer")
+                  .attr("fill", "transparent")
+                  .attr("r", 7.5)
+                  })
+        })
+        // end of step 1
+
+
   d3.select("#second-step")
       .on('stepin', function() {
-        console.log("step 1")
+        console.log("step 2")
         svg.append("path")
             .data([data.filter(function(d){return d.group == 'girls';})])
             .transition()
