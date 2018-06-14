@@ -87,7 +87,10 @@ function ready(error, data) {
         .tickFormat(formatPercent)
         .ticks(5))
 
+// filtering
 var all = data.filter(function(d){return d.group == 'all'})
+var girls = data.filter(function(d){return d.group == 'girls'})
+var boys = data.filter(function(d){return d.group == 'boys'})
 
 //steps
 d3.select("#first-step")
@@ -104,9 +107,11 @@ d3.select("#first-step")
           .attr("class", "line-all")
           .attr("d", valueline)
           .attr("stroke", "#ffe700")
-
+      // get rid of girls on scroll up
       svg.selectAll(".g-line")
           .attr("stroke", "transparent")
+      svg.selectAll(".circle-g")
+          .attr("fill", "transparent")
       // circles
       svg.selectAll("circle")
         .data(all)
@@ -125,7 +130,7 @@ d3.select("#first-step")
           .duration(4000)
           .attr("stroke", "white")
           .attr("fill", "transparent")
-      // mouseover events   
+      // mouseover events
       svg.selectAll(".circle-all")
         .on("mouseover", function(d){
                 console.log("hey")
@@ -149,7 +154,7 @@ d3.select("#first-step")
       .on('stepin', function() {
         console.log("step 2")
         svg.append("path")
-            .data([data.filter(function(d){return d.group == 'girls';})])
+            .data([data.filter(function(d){return d.group == 'girls'})])
             .transition()
             .duration(2000)
             .attr('stroke-dasharray', lineLength + ' ' + lineLength)
@@ -158,8 +163,40 @@ d3.select("#first-step")
             .attr("class", "g-line")
             .attr("d", valueline)
             .attr("stroke", "#f000ff")
-            svg.selectAll(".b-line")
-                .attr("stroke", "transparent")
+        svg.selectAll(".b-line")
+            .attr("stroke", "transparent")
+        svg.selectAll(".circle-b")
+            .attr("fill", "transparent")
+        svg.selectAll("circle-g")
+          .data(girls)
+          .enter().append("circle")
+          .attr("class", "circle-g")
+
+          .attr("cx", function(d){
+            return xScale(d.year)
+          })
+
+          .attr("cy", function(d){
+            return yScale(d.rate)
+          })
+          .attr("r", 4.5)
+          .attr("fill", "#f000ff")
+          .on("mouseover", function(d){
+                  console.log("hey")
+                  d3.select(this)
+                    .style("cursor", "pointer")
+                    .attr("fill", "white")
+                    .attr("r", 6)
+                    })
+          .on("mouseout", function(d){
+                  console.log("out")
+                  d3.select(this)
+                    .style("cursor", "pointer")
+                    .attr("fill", "#f000ff")
+                    .attr("r", 4.5)
+                    })
+
+
         })
 
   d3.select("#third-step")
@@ -175,25 +212,34 @@ d3.select("#first-step")
             .attr("class", "b-line")
             .attr("d", valueline)
             .attr("stroke", "#4deeea")
+        svg.selectAll("circle-b")
+          .data(boys)
+          .enter().append("circle")
+          .attr("cx", function(d){
+            return xScale(d.year)
+          })
+
+          .attr("cy", function(d){
+            return yScale(d.rate)
+          })
+          .attr("r", 4.5)
+          .attr("fill", "#4deeea")
+          .attr("class", "circle-b")
+          .on("mouseover", function(d){
+                  console.log("hey")
+                  d3.select(this)
+                    .style("cursor", "pointer")
+                    .attr("fill", "white")
+                    .attr("r", 6)
+                    })
+          .on("mouseout", function(d){
+                  console.log("out")
+                  d3.select(this)
+                    .style("cursor", "pointer")
+                    .attr("fill", "#4deeea")
+                    .attr("r", 4.5)
+                    })
         })
-
-    // svg.append("line")
-    //       .attr(
-    //       {
-    //           "class":"horizontalGrid",
-    //           "x1" : 0,
-    //           "x2" : width,
-    //           "y1" : y(0),
-    //           "y2" : y(0),
-    //           "fill" : "none",
-    //           "shape-rendering" : "crispEdges",
-    //           "stroke" : "black",
-    //           "stroke-width" : "1px",
-    //           "stroke-dasharray": ("3, 3")
-    //       });
-
-
-
 
 
 }
