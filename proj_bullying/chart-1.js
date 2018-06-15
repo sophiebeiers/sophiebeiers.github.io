@@ -32,6 +32,12 @@ var formatYear = d3.timeFormat("%Y");
 var valueline = d3.line()
     .x(function(d) { return xScale(d.year); })
     .y(function(d) { return yScale(d.rate); });
+var vertline = d3.line()
+    .x(function(d) { return xScale(2016); })
+    .y(function(d) { return yScale(d.rate) + 60; })
+var vertline2 = d3.line()
+    .x(width-100)
+    .y(height)
 
 //-------------------------//
 // DATA
@@ -53,15 +59,28 @@ function ready(error, data) {
       d.rate = +d.rate;
   });
 
-
+    console.log(vertline)
   // add the line path.
   lineGraph = svg.append("path")
       .data([data.filter(function(d){return d.group == 'all';})])
       .attr("class", "line-all")
       .attr("d", valueline)
       .attr("stroke", "transparent")
-      svg.selectAll(".g-line")
-          .attr("stroke", "transparent")
+
+  svg.selectAll(".g-line")
+      .attr("stroke", "transparent")
+
+// dotted line
+  svg.append("line")
+    .attr("x1", xScale(2016))  //<<== change your code here
+    .attr("y1", 0)
+    .attr("x2", xScale(2016))  //<<== and here
+    .attr("y2", height)
+    .style("stroke-width", 1)
+    .style("stroke-dasharray", ("3, 3"))
+    .style("stroke", "lightgrey")
+    .style("fill", "none");
+
 
     // get total length of path
     var lineLength = lineGraph.node().getTotalLength();
@@ -100,13 +119,14 @@ d3.select("#first-step")
           .data([data.filter(function(d){return d.group == 'all'})])
       svg.selectAll(".line-all")
           .transition()
-          .duration(4000)
+          .duration(3000)
           .attr('stroke-dasharray', lineLength + ' ' + lineLength)
           // here we transition the stroke-dashoffset to simulate 'drawing' the line
           .attrTween('stroke-dashoffset', tween)
           .attr("class", "line-all")
           .attr("d", valueline)
           .attr("stroke", "#ffe700")
+          .attr("stroke-opacity", 1)
       // get rid of girls on scroll up
       svg.selectAll(".g-line")
           .attr("stroke", "transparent")
@@ -134,6 +154,18 @@ d3.select("#first-step")
       svg.selectAll(".circle-all")
         .on("mouseover", function(d){
                 console.log("hey")
+                var tooltipData = d
+                d3.select('#tooltip-b')
+                 .style("visibility","visible")
+                 .style('top', d3.event.pageY + 5 + 'px')
+                 .style('left', d3.event.pageX + 5 + 'px')
+                 .style("cursor", "pointer")
+                 .html(function(d){
+                   return (d3.format(".00%")(tooltipData.rate)) + " of all middle and high schoolers " + "<br>"
+                   + " were bullied in " + tooltipData.year;
+                   // Here you add the info you wanna show
+                   // in the tooltip, using html formatting
+                 })
                 d3.select(this)
                   .style("cursor", "pointer")
                   .attr("fill", "white")
@@ -141,6 +173,10 @@ d3.select("#first-step")
                   })
         .on("mouseout", function(d){
                 console.log("out")
+                d3.select('#tooltip-b')
+                  .style("visibility","hidden")
+                  .style('top', d3.event.pageY + 5 + 'px')
+                  .style('left', d3.event.pageX + 5 + 'px')
                 d3.select(this)
                   .style("cursor", "pointer")
                   .attr("fill", "transparent")
@@ -163,15 +199,21 @@ d3.select("#first-step")
             .attr("class", "g-line")
             .attr("d", valueline)
             .attr("stroke", "#f000ff")
+            .attr("stroke-opacity", 1)
+        // scroll up stuff
         svg.selectAll(".b-line")
             .attr("stroke", "transparent")
         svg.selectAll(".circle-b")
             .attr("fill", "transparent")
+        // fade other lines
+        svg.selectAll(".line-all")
+           .attr("stroke", "lightgrey")
+           .attr("stroke-opacity", 0.5)
+        // add circles
         svg.selectAll("circle-g")
           .data(girls)
           .enter().append("circle")
           .attr("class", "circle-g")
-
           .attr("cx", function(d){
             return xScale(d.year)
           })
@@ -183,6 +225,19 @@ d3.select("#first-step")
           .attr("fill", "#f000ff")
           .on("mouseover", function(d){
                   console.log("hey")
+                  var tooltipData = d
+                  d3.select('#tooltip-b')
+                   .style("visibility","visible")
+                   .style('top', d3.event.pageY + 5 + 'px')
+                   .style('left', d3.event.pageX + 5 + 'px')
+                   .style("cursor", "pointer")
+                   .html(function(d){
+                     return "<span style='font-weight:bold;color:red;font-size:13px'>" + (d3.format(".00%")(tooltipData.rate)) + "</span>" +
+                     " of middle and high school " + "<br>" + "<span style='font-weight:bold;color:#f000ff;'>" + tooltipData.group + "</span>" +
+                     " were bullied in " + "<span style='font-weight:bold;color:#43464c;'>" + tooltipData.year + "</span>";
+                     // Here you add the info you wanna show
+                     // in the tooltip, using html formatting
+                   })
                   d3.select(this)
                     .style("cursor", "pointer")
                     .attr("fill", "white")
@@ -190,6 +245,10 @@ d3.select("#first-step")
                     })
           .on("mouseout", function(d){
                   console.log("out")
+                  d3.select('#tooltip-b')
+             				.style("visibility","hidden")
+             				.style('top', d3.event.pageY + 5 + 'px')
+             				.style('left', d3.event.pageX + 5 + 'px')
                   d3.select(this)
                     .style("cursor", "pointer")
                     .attr("fill", "#f000ff")
@@ -212,7 +271,13 @@ d3.select("#first-step")
             .attr("class", "b-line")
             .attr("d", valueline)
             .attr("stroke", "#4deeea")
-        svg.selectAll("circle-b")
+        svg.selectAll(".g-line")
+           .attr("stroke", "lightgrey")
+           .attr("stroke-opacity", 0.5)
+        svg.selectAll(".circle-g")
+           .attr("fill", "lightgrey")
+           .attr("opacity", 0.5)
+        svg.selectAll(".circle-b")
           .data(boys)
           .enter().append("circle")
           .attr("cx", function(d){
@@ -226,6 +291,20 @@ d3.select("#first-step")
           .attr("fill", "#4deeea")
           .attr("class", "circle-b")
           .on("mouseover", function(d){
+            var tooltipData = d
+            console.log(tooltipData)
+                d3.select('#tooltip-b')
+                 .style("visibility","visible")
+                 .style('top', d3.event.pageY + 5 + 'px')
+                 .style('left', d3.event.pageX + 5 + 'px')
+                 .style("cursor", "pointer")
+                 .html(function(d){
+                   return "<span style='font-weight:bold;color:red;font-size:13px'>" + (d3.format(".00%")(tooltipData.rate)) + "</span>" +
+                   " of middle and high school " + "<br>" + "<span style='font-weight:bold;color:#4deeea;'>" + tooltipData.group + "</span>" +
+                   " were bullied in " + "<span style='font-weight:bold;color:#43464c;'>" + tooltipData.year + "</span>";
+                   // Here you add the info you wanna show
+                   // in the tooltip, using html formatting
+                 })
                   console.log("hey")
                   d3.select(this)
                     .style("cursor", "pointer")
@@ -234,6 +313,10 @@ d3.select("#first-step")
                     })
           .on("mouseout", function(d){
                   console.log("out")
+                  d3.select('#tooltip-b')
+             				.style("visibility","hidden")
+             				.style('top', d3.event.pageY + 5 + 'px')
+             				.style('left', d3.event.pageX + 5 + 'px')
                   d3.select(this)
                     .style("cursor", "pointer")
                     .attr("fill", "#4deeea")
