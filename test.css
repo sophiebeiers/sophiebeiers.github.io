@@ -32,6 +32,11 @@ a:hover {
   color: #355764;
 }
 
+.zoom
+{
+    zoom: 120%;
+}
+
 
 .header {
     text-align: center;
@@ -332,4 +337,19 @@ img {
   border-radius: 1px;
     pointer-events: none;
   z-index: 1;
+}
+
+
+div#tooltip-b {
+position: absolute;
+/*display: inline-block;*/
+/* font-weight: bold; */
+font-size: 0.6em;
+padding: 0.8em;
+color: white;
+background-color: #929daf;
+visibility: hidden;/* is changed on action */
+border-radius: 1em;
+  pointer-events: none;
+z-index: 1;
 }
