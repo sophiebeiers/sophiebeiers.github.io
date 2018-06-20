@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Source in things  -->
-    <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../test.css">
+    <link rel="stylesheet" href="sticky.css">
     <!-- <link rel="stylesheet" href="../d3-tip.css"> -->
   </head>
   <body>
@@ -15,10 +17,38 @@
     <style>
     body {background-color: #293851;}
     #canvas {background-color: #293851;}
-    /* .zoom
-{
-    zoom: 100%;
-} */
+
+    .axisWhite text{
+      fill: white;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .axisWhiteY text{
+      fill: white;
+      font-size: 10px;
+    }
+
+    .axisWhiteY path{
+      display: none;
+    }
+    .axisWhite path{
+      display: none;
+    }
+
+
+
+    .axis path,
+		.axis line {
+				fill: none;
+				stroke: black;
+				shape-rendering: crispEdges;
+			}
+
+    /* .girl-text {
+      shape-rendering:crispEdges;
+      stroke-width: 0
+    } */
 
     .line-all {
     fill: none;
@@ -31,6 +61,9 @@
       stroke-width: 2px
     }
 
+    /* .tick {
+      display: none;
+    } */
     .b-line {
       fill:none;
       stroke-width: 2px
@@ -42,16 +75,19 @@
 
     h1,h3, p {
       color: white;
+      font-family: 'Lato', sans-serif;
     }
 
     h4 {
       color: #c9ced6;
+      font-family: 'Lato', sans-serif;
 
     }
 
     h5 {
       color: #c9ced6;
       line-height: 1.6;
+      font-family: 'Lato', sans-serif;
     }
 
     .overlay {
@@ -71,6 +107,13 @@
       stroke-dasharray: 3,3;
     }
 
+
+    .darkbackground {
+      min-height: 100vh;
+      background-color: #1a2435;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
     </style>
 
 <!--
@@ -98,9 +141,13 @@
 
 <!-- The stuff -->
 <div id="tooltip-b"></div>
+<div class="darkbackground">
 <div class="container">
+
   <div class="row">
     <div class="column">
+
+
     <h1><center><strong> Bullying in Trump's America </strong></center></h1>
     <p>Lorem ipsum dolor amet godard banh mi chicharrones ennui selvage, fixie typewriter man bun gluten-free seitan bespoke. Single-origin coffee wayfarers butcher, PBR&B tote bag bespoke kogi edison bulb schlitz humblebrag. VHS activated charcoal health goth schlitz meh selfies single-origin coffee tofu meggings neutra woke butcher. Tote bag tacos chicharrones biodiesel unicorn listicle try-hard. Chartreuse raw denim mixtape four dollar toast meggings, tilde iceland lomo pug unicorn. +1 butcher celiac, taxidermy jianbing gluten-free williamsburg neutra.
 
@@ -109,6 +156,7 @@
   </div>
   </div>
 </div>
+
 
 <div class="container">
 
@@ -121,24 +169,38 @@
     </div>
 
 </div>
+</div>
 
 <!-- The steps -->
 
 
 <div class="container">
+  <div class = "div2">
   <div class="row">
     <div class="col-sm-4">
       <div class="step" id="first-step">
-      <!-- <div class="step" id="first-step"> -->
-        <h4><span style="color:white;">In 2017:</span></h4>
-        <h5>Students were <span style="font-weight:bold;">30%</span> more likely to be bullied than in 2014, 2015 or 2016. Those
-          who experienced bulling rose to almost <span style="font-weight:bold;"> <br>1 in 3</span>.
-        </h5>
+        <h5><span style="color:white;">Bullying Over Time</span></h4>
+        <p>Over time, roughly a quarter of all middle and high school students have experienced
+        bullying of some kind. </p>
       </div>
 
       <!-- </div> -->
       <div class="step" id="second-step">
-        <h4>Girls</h4>
+        <h5>Before 2017</h5>
+        <p>Bullying had been on the rise by roughly one percentage point each year
+        between 2014, 2015, and 2016. </p>
+        <br>
+      </div>
+      <div class="step" id="third-step">
+        <h5>2017</h5>
+        <p>After Trump's election in late 2016, however, the percentage of students
+        who reported having been bullied that school year rose three percentage points.
+        Regression analysis indicated that in 2017, students were <strong> 30% more likely
+        to experience bullying in 2017 than in the three years prior. </strong></p>
+        <br>
+      </div>
+      <div class="step" id="fourth-step">
+        <h5>Girls</h5>
         <p>Vestibulum sapien risus, porttitor at aliquam quis, molestie non nulla.
           Morbi vel est enim. Aliquam vel tempor arcu, sed laoreet eros.
           Nunc rutrum elit risus, at aliquet tortor volutpat ornare. Vestibulum molestie venenatis
@@ -147,8 +209,8 @@
           varius risus. Donec eu iaculis libero, a cursus nunc. </p>
         <br>
       </div>
-      <div class="step" id="third-step">
-        <h4>Boys</h4>
+      <div class="step" id="fifth-step">
+        <h5>Boys</h5>
         <p>Nunc posuere odio eu vestibulum rhoncus. Sed ac tellus feugiat, scelerisque leo sit amet,
           rutrum velit. Pellentesque suscipit scelerisque varius. Nunc luctus sit amet risus id
           venenatis. Etiam at mauris rutrum, ornare odio quis, faucibus diam. Nulla nec nunc vitae
@@ -156,7 +218,7 @@
           Nulla vestibulum risus at felis tristique condimentum. Praesent at volutpat metus.</p>
         <br>
       </div>
-      <div class="step" id="fourth-step">
+      <div class="step" id="sixth-step">
         <h3></h3>
         <p>Quisque nec eros varius elit maximus rhoncus ut eget elit. Duis quis imperdiet mi.
           Nam ultricies rhoncus augue, eget pulvinar neque ultricies eu. Duis ultricies venenatis
@@ -167,10 +229,11 @@
       </div>
     </div>
     <div class="col-sm-8 graphic sticky">
-      <!-- <p>I am the graphic. <strong>Remove this text</strong></p> -->
+      <!-- <p>I am the graphic. </p> -->
       <div id="graphic-1"></div>
     </div>
   </div>
+</div>
 </div>
 
 <!-- This is D3, our graphing library -->
@@ -179,7 +242,7 @@
 <!-- include our scrolling library -->
 <script src='https://unpkg.com/intersection-observer'></script>
 <script src='https://unpkg.com/scrollama'></script>
-<script src='../stickyfill.min.js'></script>
+<script src='stickyfill.min.js'></script>
 
 <script>
   /* Allow position: sticky to work in old browsers */
