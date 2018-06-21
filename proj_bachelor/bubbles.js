@@ -28,7 +28,7 @@
    } else {
      return 900
    }
- }).strength(0.1)
+ }).strength(0.07)
 
  var forceXTwo = d3.forceX(function(d){
   if(d.week > 2) {
@@ -36,7 +36,23 @@
   } else {
     return 250
   }
-}).strength(0.05)
+}).strength(0.08)
+
+var forceXThree = d3.forceX(function(d){
+ if(d.week > 3) {
+   return 900
+ } else {
+   return 250
+ }
+}).strength(0.07)
+
+var forceXFour = d3.forceX(function(d){
+ if(d.week > 4) {
+   return 900
+ } else {
+   return 250
+ }
+}).strength(0.07)
 
   var forceCollide = d3.forceCollide(function(d){
     return radiusScale(d.week) + 4;
@@ -125,6 +141,32 @@
        .force("x", forceXTwo).alphaTarget(0.5).restart()
       d3.selectAll("circle").attr("opacity", function(d){
         if(d.week > 2){
+          return 1
+        } else {
+          return 0.5
+        }
+      })
+    })
+
+    d3.select("#three")
+    .on('click', function(){
+      simulation
+       .force("x", forceXThree).alphaTarget(0.5).restart()
+      d3.selectAll("circle").attr("opacity", function(d){
+        if(d.week > 3){
+          return 1
+        } else {
+          return 0.5
+        }
+      })
+    })
+
+    d3.select("#four")
+    .on('click', function(){
+      simulation
+       .force("x", forceXFour).alphaTarget(0.5).restart()
+      d3.selectAll("circle").attr("opacity", function(d){
+        if(d.week > 4){
           return 1
         } else {
           return 0.5
