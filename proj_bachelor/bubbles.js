@@ -1,26 +1,32 @@
 (function() {
   var width = 1200;
-  height = 600;
+  height = 700;
 
-
-  var svg = d3.select("#chart")
+  var svg = d3.select("div#container")
     .append("svg")
-    .attr("height", height)
-    .attr("width", width)
-    .append("g")
-    .attr("transform", "translate(0,0)")
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 1200 700")
+    .classed("svg-content", true);
+
+  // var svg = d3.select("#chart")
+  //   .append("svg")
+  //   .attr("height", height)
+  //   .attr("width", width)
+  //   .append("g")
+  //   .attr("transform", "translate(0,0)")
 
 // defs for photos
   var defs = svg.append("defs");
 
   var radiusScale = d3.scaleSqrt()
     .domain([0, 3])
-    .range([20, 50])
+    .range([20, 45])
 // collection of forces about where we want our circles to go
 // and how we want our circles to interact.
 // STEP ONE: Get to middle.
 // STEP TWO: Make them not collide. Radius should equal radius of circle.
   var forceXAll = d3.forceX(width/2).strength(0.05)
+
 
   var forceXOne = d3.forceX(function(d){
    if(d.week == 1) {
