@@ -54,6 +54,14 @@ var forceXFour = d3.forceX(function(d){
  }
 }).strength(0.07)
 
+var forceXFive = d3.forceX(function(d){
+ if(d.week > 5) {
+   return width - 225
+ } else {
+   return 275
+ }
+}).strength(0.07)
+
   var forceCollide = d3.forceCollide(function(d){
     return radiusScale(d.week) + 4;
   })
@@ -167,6 +175,19 @@ var forceXFour = d3.forceX(function(d){
        .force("x", forceXFour).alphaTarget(0.5).restart()
       d3.selectAll("circle").attr("opacity", function(d){
         if(d.week > 4){
+          return 1
+        } else {
+          return 0.5
+        }
+      })
+    })
+
+    d3.select("#five")
+    .on('click', function(){
+      simulation
+       .force("x", forceXFive).alphaTarget(0.5).restart()
+      d3.selectAll("circle").attr("opacity", function(d){
+        if(d.week > 5){
           return 1
         } else {
           return 0.5
