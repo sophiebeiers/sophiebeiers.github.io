@@ -2,14 +2,46 @@
 
   var margin = { top: 20, right: 20, bottom: 20, left: 15 }
 
-  var width = 800 - margin.left - margin.right,
-      height = 100 - margin.top - margin.bottom
+  var width = 1200 - margin.left - margin.right,
+      height = 120 - margin.top - margin.bottom
 
   var svg = d3.select("#graphic-1").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
+      .call(responsivefy)
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+
+// make svg responsive
+  function responsivefy(svg) {
+      // get container + svg aspect ratio
+      var container = d3.select(svg.node().parentNode),
+          width = parseInt(svg.style("width")),
+          height = parseInt(svg.style("height")),
+          aspect = width / height;
+
+      // add viewBox and preserveAspectRatio properties,
+      // and call resize so that svg resizes on inital page load
+      svg.attr("viewBox", "0 0 " + width  + " " + height)
+          .attr("preserveAspectRatio", "xMinYMid")
+          .call(resize);
+
+      // to register multiple listeners for same event type,
+      // you need to add namespace, i.e., 'click.foo'
+      // necessary if you call invoke this function for multiple svgs
+      // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+      d3.select(window).on("resize." + container.attr("id"), resize);
+
+      // get width of container and resize svg to fit it
+      function resize() {
+          var targetWidth = parseInt(container.style("width"));
+          svg.attr("width", targetWidth);
+          svg.attr("height", Math.round(targetWidth / aspect));
+      }
+    }
+
+// data
 
   d3.queue()
     .defer(d3.csv, "./data/names_gender.csv")
@@ -17,7 +49,7 @@
 
   // Start setting up scales
   var radiusScale = d3.scaleSqrt()
-    .range([0, 32])
+    .range([0, 40])
     .domain([0, 766])
 
   function ready(error, names_gender) {
