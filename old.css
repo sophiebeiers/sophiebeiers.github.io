@@ -1,0 +1,371 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-weight: 400;
+}
+
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Asap', sans-serif;
+  font-weight: 400;
+  /* font-family: 'Roboto Slab', serif; */
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+}
+
+.notbold {
+    font-weight: 400;
+}​
+
+
+a, a:link, a:visited  {
+  color: #355764;
+  font-weight: normal;
+}
+/* not working */
+a:hover {
+  color: #355764;
+}
+
+
+.snippet-header {
+  padding: 60px 0;
+}
+
+.simple-nav {
+  padding: 10px;
+}
+
+.simple-nav h4 {
+  display: inline;
+  margin-right: 15px;
+}
+
+.nav.colored {
+  background: #E6F4F1;
+}
+
+.nav.colored a {
+  color: #fff;
+}
+
+.fancy-header {
+  background-image: url('teal.jpg');
+  padding: 5em 0;
+}
+
+.fancy-header-article {
+  background-color: #00bfb2;
+  padding: 4em 0;
+}
+
+.fancy-header-about {
+  background-color: #E6F4F1;
+  /* background-color: #95B1AF; */
+  vertical-align: middle;
+  /* background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%); */
+  padding: 1.9em;
+}
+/* background-color: #d9d9d9;
+background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
+
+
+
+.alt-color {
+  background-color: #f39f86;
+  background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%);
+}
+
+.alt-color-2 {
+  background-color: #f6f0c4;
+  background-image: linear-gradient(315deg, #f6f0c4 0%, #d99ec9 74%);
+}
+
+.background {
+  background-color: #95B1AF;
+  /* background-image: url('b3.jpg'); */
+  background-size: cover;
+  opacity: 1;
+}
+
+
+.background-lemon {
+  background-image: url('lemonade.jpg');
+  background-size: cover;
+  opacity: 1;
+}
+
+.background-fire {
+  background-image: url('fire.jpg');
+  background-size: cover;
+  opacity: 1;
+}
+
+.background-teal {
+  background-image: url('teal.jpg');
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.background-pink {
+  background-image: url('./proj_bachelor/rose.jpg');
+  background-size: cover;
+  opacity: 0.9;
+}
+
+
+.shadow-background {
+  color: white;
+  text-shadow: rgba(0,0,0,0.4) 0 0 30px;
+/*  color: black; */
+/*  text-shadow: rgba(255,255,255,0.4) 0 0 30px; */
+}
+
+/* img {
+  max-width: 100%;
+} */
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  /* padding-right: 70px;
+  padding-left: 70px; */
+}
+
+.section-about {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* padding-right: 70px;
+  padding-left: 70px; */
+}
+
+
+.text-highlight h1 {
+  background: transparent;
+  color: black;
+  /* color: #504e60; */
+  display: inline;
+  line-height: 1.15;
+  font-size: 6.8em
+}
+
+.text-highlight-article h1 {
+  background: transparent;
+  color: black;
+  display: inline;
+  line-height: 0.3;
+  font-size: 4.5em
+}
+
+.text-highlight-article-white h1 {
+  background: transparent;
+  color: white;
+  display: inline;
+  line-height: 0.3;
+  font-size: 5em
+}
+
+.text-about p {
+  background: transparent;
+  color: '#808080';
+  display: block;
+  vertical-align: middle;
+  line-height: 25px;
+  font-size: 1.1em
+}
+
+
+.footer {
+  background: #A7AABC;
+}
+
+.footer p {
+  margin-bottom: 3px;
+}
+
+.footer .container {
+  padding: 30px 0;
+}
+
+
+
+/* HOVER FEATURES */
+
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  box-sizing: border-box;
+}
+
+
+.image-container .title{
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 0.8em
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3{
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.content-details p{
+  color: #fff;
+  font-size: 0.9em;
+}
+
+.fadeIn-bottom{
+  top: 80%;
+}
+
+
+/* STICKY */
+svg {
+  /* display: inline;
+  margin: auto; */
+  /* This centers the svg */
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+img.block {
+  display: block;
+  border: solid #333 1p;
+  margin: 0 auto;
+}
+/*
+svg {
+  margin-bottom: 15px;
+} */
+
+.step {
+  padding-bottom: 90px;
+  margin-bottom: 10px;
+}
+
+.step, .row {
+  padding-top: 2rem;
+}
+
+.step:last-of-type {
+  padding-bottom: 150px;
+}
+
+
+/* .active {
+  background: beige;
+} */
+
+
+/*
+  The following allows us to make the graphic
+  "sticky" to the top of the page. The "top"
+  attribute should probably be the same as
+  the offset for scrollama (but % instead of decimal)
+*/
+
+.sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  height: fit-content;
+  /* IF YOU CHANGE THIS CHANGE THE JAVASCRIPT NEAR THE BOTTOM */
+  top: 33%;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*
+
+/* TOOLTIP */
+  div#tooltip {
+  position: absolute;
+  /*display: inline-block;*/
+  /* font-weight: bold; */
+  font-size: 10px;
+  padding: 9px;
+  color: black;
+  background-color: rgba(200, 247, 234, 0.8)
+  visibility: hidden;/* is changed on action */
+  border-radius: 1px;
+    pointer-events: none;
+  z-index: 1;
+}

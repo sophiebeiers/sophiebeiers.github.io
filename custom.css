@@ -1,12 +1,15 @@
-body {
-  font-family: 'PT Sans', sans-serif;
-  /* font-family: 'Roboto', sans-serif; */
-  font-weight: 400;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+}
 
 h2, h3, h4, h5, h6 {
-  font-family: 'Asap', sans-serif;
+  font-family: 'Merriweather', sans-serif;
   font-weight: 400;
   /* font-family: 'Roboto Slab', serif; */
 }
@@ -20,7 +23,6 @@ h1 {
     font-weight: 400;
 }​
 
-
 a, a:link, a:visited  {
   color: #355764;
   font-weight: normal;
@@ -30,103 +32,76 @@ a:hover {
   color: #355764;
 }
 
-
-.snippet-header {
-  padding: 60px 0;
+.zoom
+{
+    zoom: 120%;
 }
 
-.simple-nav {
-  padding: 10px;
+
+.header {
+    text-align: center;
+    padding: 32px;
 }
 
-.simple-nav h4 {
-  display: inline;
-  margin-right: 15px;
+.row {
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE 10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
 }
 
-.nav.colored {
-  background: #E6F4F1;
+/* Create three equal columns that sits next to each other */
+/* .column {
+    -ms-flex: 33.3%; /* IE 10 */
+    /* flex: 33.3%;
+    padding: 0 4px; */
+/* } */
+
+.column {
+    -ms-flex: 25%; /* IE 10 */
+    flex: 25%;
+    padding: 0 4px;
 }
 
-.nav.colored a {
-  color: #fff;
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
 }
 
 .fancy-header {
   background-image: url('teal.jpg');
-  padding: 5em 0;
-}
-
-.fancy-header-article {
-  background-color: #00bfb2;
   padding: 4em 0;
 }
 
-.fancy-header-about {
-  background-color: #E6F4F1;
-  /* background-color: #95B1AF; */
-  vertical-align: middle;
-  /* background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%); */
-  padding: 1.9em;
-}
-/* background-color: #d9d9d9;
-background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
-
-
-
-.alt-color {
-  background-color: #f39f86;
-  background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%);
+.text-header h1 {
+  text-align: center;
+  background: transparent;
+  color: black;
+  font-size: 5em;
+  position: relative;
 }
 
-.alt-color-2 {
-  background-color: #f6f0c4;
-  background-image: linear-gradient(315deg, #f6f0c4 0%, #d99ec9 74%);
+.fancy-header-article {
+  background-color: url('../teal.jpg');
+  padding: 3em 0;
 }
 
-.background {
-  background-color: #95B1AF;
-  /* background-image: url('b3.jpg'); */
-  background-size: cover;
-  opacity: 1;
+.text-article h1 {
+  background: transparent;
+  color: black;
+  display: inline;
+  line-height: 0.3;
+  font-size: 3em
 }
 
-
-.background-lemon {
-  background-image: url('lemonade.jpg');
-  background-size: cover;
-  opacity: 1;
-}
-
-.background-fire {
-  background-image: url('fire.jpg');
-  background-size: cover;
-  opacity: 1;
-}
-
-.background-teal {
-  background-image: url('teal.jpg');
-  background-size: cover;
-  opacity: 0.9;
-}
-
-.background-pink {
-  background-image: url('./proj_bachelor/rose.jpg');
-  background-size: cover;
-  opacity: 0.9;
-}
-
-
-.shadow-background {
+.text-article-white h1 {
+  background: transparent;
   color: white;
-  text-shadow: rgba(0,0,0,0.4) 0 0 30px;
-/*  color: black; */
-/*  text-shadow: rgba(255,255,255,0.4) 0 0 30px; */
+  display: inline;
+  line-height: 0.3;
+  font-size: 3.5em
 }
-
-/* img {
-  max-width: 100%;
-} */
 
 .center {
     display: block;
@@ -135,72 +110,32 @@ background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
     width: 50%;
 }
 
+p.about {
+    margin: 30px 150px 30px;
+    /* text-align: center; */
+}
+
 .section {
   padding-top: 30px;
   padding-bottom: 30px;
-  /* padding-right: 70px;
-  padding-left: 70px; */
 }
 
-.section-about {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  /* padding-right: 70px;
-  padding-left: 70px; */
+/* Backgrounds */
+.background-lemon {
+  background-image: linear-gradient(to right top, #fffc4c, #fff166, #ffe87e, #ffe195, #fedbab);
 }
 
-
-.text-highlight h1 {
-  background: transparent;
-  color: black;
-  /* color: #504e60; */
-  display: inline;
-  line-height: 1.15;
-  font-size: 6.8em
+.background-fire {
+  background-image: linear-gradient(to left bottom, #ffad1d, #ffb027, #feb42f, #feb737, #feba3e);
 }
 
-.text-highlight-article h1 {
-  background: transparent;
-  color: black;
-  display: inline;
-  line-height: 0.3;
-  font-size: 4.5em
+.background-teal {
+  background-image: url('teal.jpg');
+  background-size: cover;
+  opacity: 0.9;
 }
 
-.text-highlight-article-white h1 {
-  background: transparent;
-  color: white;
-  display: inline;
-  line-height: 0.3;
-  font-size: 5em
-}
-
-.text-about p {
-  background: transparent;
-  color: '#808080';
-  display: block;
-  vertical-align: middle;
-  line-height: 25px;
-  font-size: 1.1em
-}
-
-
-.footer {
-  background: #A7AABC;
-}
-
-.footer p {
-  margin-bottom: 3px;
-}
-
-.footer .container {
-  padding: 30px 0;
-}
-
-
-
-/* HOVER FEATURES */
-
+/* Hovering */
 *, *:before, *:after{
   margin: 0;
   padding: 0;
@@ -220,7 +155,7 @@ background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
 .content {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   margin: auto;
   overflow: hidden;
 }
@@ -228,10 +163,10 @@ background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
 .content .content-overlay {
   background: rgba(0,0,0,0.7);
   position: absolute;
-  height: 99%;
+  height: 100%;
   width: 100%;
   left: 0;
-  top: 0;
+  top: 10;
   bottom: 0;
   right: 0;
   opacity: 0;
@@ -290,70 +225,40 @@ background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
 }
 
 
-/* STICKY */
-svg {
-  /* display: inline;
-  margin: auto; */
-  /* This centers the svg */
+.navbar-nav > li {
+  float: none;
   position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+  text-align: center;
+}
+.navbar-light .navbar-nav .active a::after {
+  border-bottom: 5px solid #355764;
+  bottom: -10px;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
 }
 
-img.block {
-  display: block;
-  border: solid #333 1p;
-  margin: 0 auto;
-}
-/*
-svg {
-  margin-bottom: 15px;
-} */
-
-.step {
-  padding-bottom: 90px;
-  margin-bottom: 10px;
+/* #355764 */
+/* #699286 */
+/* Footer  */
+.footer {
+  background: #A7AABC;
 }
 
-.step, .row {
-  padding-top: 2rem;
+.footer p {
+  margin-bottom: 3px;
 }
 
-.step:last-of-type {
-  padding-bottom: 150px;
+.footer .container {
+  padding: 20px 0;
+}
+
+.about .container {
+  padding: 30px 0;
 }
 
 
-/* .active {
-  background: beige;
-} */
-
-
-/*
-  The following allows us to make the graphic
-  "sticky" to the top of the page. The "top"
-  attribute should probably be the same as
-  the offset for scrollama (but % instead of decimal)
-*/
-
-.sticky {
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
-  height: fit-content;
-  /* IF YOU CHANGE THIS CHANGE THE JAVASCRIPT NEAR THE BOTTOM */
-  top: 33%;
-}
-
-img {
-  max-width: 100%;
-}
-
-/*
 
 /* TOOLTIP */
   div#tooltip {
@@ -368,4 +273,19 @@ img {
   border-radius: 1px;
     pointer-events: none;
   z-index: 1;
+}
+
+
+div#tooltip-b {
+position: absolute;
+/*display: inline-block;*/
+/* font-weight: bold; */
+font-size: 0.6em;
+padding: 0.8em;
+color: white;
+background-color: #929daf;
+visibility: hidden;/* is changed on action */
+border-radius: 1em;
+  pointer-events: none;
+z-index: 1;
 }
