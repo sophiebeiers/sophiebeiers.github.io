@@ -217,6 +217,32 @@ var forceXSeven = d3.forceX(function(d){
       })
     })
 
+    d3.select("#six")
+    .on('click', function(){
+      simulation
+       .force("x", forceXSix).alphaTarget(0.5).restart()
+      d3.selectAll("circle").attr("opacity", function(d){
+        if(d.week > 6){
+          return 1
+        } else {
+          return 0.5
+        }
+      })
+    })
+
+    d3.select("#seven")
+    .on('click', function(){
+      simulation
+       .force("x", forceXSeven).alphaTarget(0.5).restart()
+      d3.selectAll("circle").attr("opacity", function(d){
+        if(d.week > 7){
+          return 1
+        } else {
+          return 0.5
+        }
+      })
+    })
+
     defs.selectAll(".men-pattern")
     .data(datapoints)
     .enter().append("pattern")
