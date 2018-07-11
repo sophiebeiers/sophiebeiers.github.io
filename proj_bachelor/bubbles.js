@@ -64,7 +64,23 @@ var forceXFive = d3.forceX(function(d){
  if(d.week > 5) {
    return width - 225
  } else {
-   return 275
+   return 270
+ }
+}).strength(0.07)
+
+var forceXSix = d3.forceX(function(d){
+ if(d.week > 6) {
+   return width - 225
+ } else {
+   return 270
+ }
+}).strength(0.07)
+
+var forceXSeven = d3.forceX(function(d){
+ if(d.week > 7) {
+   return width - 225
+ } else {
+   return 270
  }
 }).strength(0.07)
 
