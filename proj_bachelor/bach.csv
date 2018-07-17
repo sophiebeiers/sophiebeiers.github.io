@@ -1,6 +1,6 @@
 ﻿id,age,name,roses,week,job,image_path
 Alex,31,Alex,0,2,Construction Manager,./men_img/alex.png
-Blake,28,Blake,2,8,Sales Rep,./men_img/blake.png
+Blake,28,Blake,2,9,Sales Rep,./men_img/blake.png
 Chase,27,Chase,0,1,Advertising VP,./men_img/chase.png
 Chris,30,Chris,2,6,Sales Trainer,./men_img/chris.png
 Christon,31,Christon,2,4,Former Harlem Globetrotter,./men_img/christon.png
@@ -10,10 +10,10 @@ Colton,26,Colton,2,8,Former Pro Football Player,./men_img/colton.png
 Connor,25,Connor,2,6,Fitness Coach,./men_img/connor.png
 David,25,David,0,5,Venture Capitalist,./men_img/david.png
 Darius,26,Darius,0,1,Pharmaceutical Sales Rep,./men_img/darius.png
-Garrett,29,Garrett,2,8,Medical Sales Rep,./men_img/garrett.png
+Garrett,29,Garrett,2,9,Medical Sales Rep,./men_img/garrett.png
 Grant,27,Grant,0,1,Electrician,./men_img/grant.png
 Jake,29,Jake,0,1,Marketing Consultant,./men_img/grant.png
-Jason,29,Jason,2,8,Sr. Corporate Banker,./men_img/jason.png
+Jason,29,Jason,2,9,Sr. Corporate Banker,./men_img/jason.png
 JeanBlanc,31,Jean Blanc,2,4,Funemployed?,./men_img/jeanblanc.png
 Joe,31,Joe,0,1,Grocery Store Owner,./men_img/joe.png
 John,28,John,2,5,Software Engineer,./men_img/john.png

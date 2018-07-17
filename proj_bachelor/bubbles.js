@@ -78,7 +78,15 @@ var forceXSix = d3.forceX(function(d){
 
 var forceXSeven = d3.forceX(function(d){
  if(d.week > 7) {
-   return width - 225
+   return width - 210
+ } else {
+   return 270
+ }
+}).strength(0.07)
+
+var forceXEight = d3.forceX(function(d){
+ if(d.week > 8) {
+   return width - 200
  } else {
    return 270
  }
@@ -107,8 +115,6 @@ var forceXSeven = d3.forceX(function(d){
     console.log(tip)
 
   svg.call(tip)
-
-
 
 
   d3.queue()
@@ -234,8 +240,30 @@ var forceXSeven = d3.forceX(function(d){
     .on('click', function(){
       simulation
        .force("x", forceXSeven).alphaTarget(0.5).restart()
-      d3.selectAll("circle").attr("opacity", function(d){
+    d3.selectAll("circle")
+      .attr("opacity", function(d){
         if(d.week > 7){
+          return 1
+        } else {
+          return 0.5
+        }
+      })
+      .attr("stroke", function(d){
+        if(d.week > 7){
+          return 'red'
+        } else {
+          return 'transparent'
+        }
+      })
+    })
+
+
+    d3.select("#eight")
+    .on('click', function(){
+      simulation
+       .force("x", forceXEight).alphaTarget(0.5).restart()
+    d3.selectAll("circle").attr("opacity", function(d){
+        if(d.week > 8){
           return 1
         } else {
           return 0.5
