@@ -117,6 +117,45 @@ var forceXEight = d3.forceX(function(d){
   svg.call(tip)
 
 
+// attempt at annotations
+const annotations = [
+     {
+       //below in makeAnnotations has type set to d3.annotationLabel
+       //you can add this type value below to override that default
+       type: d3.annotationCalloutCircle,
+       note: {
+         label: "Fantasy suites!",
+         wrap: 190
+       },
+       //settings for the subject, in this case the circle radius
+       subject: {
+         radius: 155
+       },
+       x: 990,
+       y: 350,
+       dy: 190,
+       dx: 50
+     }]
+
+var makeAnnotations = d3.annotation()
+    .type(d3.annotationLabel)
+    .annotations(annotations)
+
+d3.select("svg")
+  .append("g")
+  // .attr("class", "annotation-note")
+  .call(makeAnnotations)
+
+d3.selectAll(".annotation-note-bg")
+  .attr("fill", "transparent")
+d3.selectAll(".annotation-connector")
+  .attr("fill", "transparent")
+  .attr("stroke", "transparent")
+d3.selectAll(".annotation-subject").attr("fill", "transparent").attr("stroke", "transparent")
+d3.selectAll(".annotation-note-label").attr("fill", "transparent")
+
+
+// data
   d3.queue()
     .defer(d3.csv, "bach.csv")
     .await(ready)
@@ -269,9 +308,20 @@ var forceXEight = d3.forceX(function(d){
           return 0.5
         }
       })
+      // transition()
+      // duration(100)
+    d3.selectAll(".annotation-note-bg")
+      .attr("fill", "transparent")
+    d3.selectAll(".annotation-connector")
+      .attr("fill", "transparent")
+      .attr("stroke", "black")
+    d3.selectAll(".annotation-subject").attr("fill", "transparent").attr("stroke", "black")
+    d3.selectAll(".annotation-note-label").attr("fill", "black")
     })
 
-    defs.selectAll(".men-pattern")
+
+// the images
+  defs.selectAll(".men-pattern")
     .data(datapoints)
     .enter().append("pattern")
     .attr("class", "men-pattern")
@@ -302,6 +352,11 @@ var forceXEight = d3.forceX(function(d){
           return d.y
         })
     }
-  }
 
-})();
+// attempt at annotations
+
+
+
+  } // end of data section
+
+})(); // end of script
