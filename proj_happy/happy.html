@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Source in things  -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../custom.css">
+    <link rel="stylesheet" href="sticky.css">
+    <!-- <link rel="stylesheet" href="../d3-tip.css"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+
+  </head>
+  <body>
+
+    <style>
+
+    body {background-color: white;}
+    #canvas {background-color: white;}
+
+    /* also a good color #A85959 */
+
+    .pinkbackground {
+      min-height: 60vh;
+      background-color: #E87171;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    h1,h3,p {
+      font-family: 'Lato', sans-serif;
+    }
+
+    h4,h5 {
+      color: #A85959;
+      font-family: 'Lato', sans-serif;
+
+    }
+
+
+
+
+    </style>
+
+    <!-- Nav bar -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E6F4F1;">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="../"> &larr; Back <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div>
+      </nav>
+
+<!-- The stuff -->
+<div id="tooltip-b"></div>
+<div class="pinkbackground">
+<div class="container">
+
+  <div class="row">
+    <div class="column">
+
+
+    <h1><center><strong> Happiness </strong></center></h1>
+    <p>Lorem ipsum dolor amet godard banh mi chicharrones ennui selvage, fixie typewriter man bun gluten-free seitan bespoke. Single-origin coffee wayfarers butcher, PBR&B tote bag bespoke kogi edison bulb schlitz humblebrag. VHS activated charcoal health goth schlitz meh selfies single-origin coffee tofu meggings neutra woke butcher. Tote bag tacos chicharrones biodiesel unicorn listicle try-hard. Chartreuse raw denim mixtape four dollar toast meggings, tilde iceland lomo pug unicorn. +1 butcher celiac, taxidermy jianbing gluten-free williamsburg neutra.
+
+    Yuccie lo-fi chartreuse post-ironic artisan hot chicken, cred vice swag. Jianbing polaroid mlkshk echo park pug authentic blog kale chips tattooed typewriter banh mi. Stumptown farm-to-table PBR&B freegan artisan normcore. Pop-up jean shorts prism semiotics, kickstarter iPhone XOXO selfies readymade literally ugh.
+    </p>
+	<p>Hover over the stars to see more information.</p>
+  </div>
+  </div>
+</div>
+
+
+
+</div>
+
+<!-- The steps -->
+
+
+<div class="container">
+  <div class = "div2">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="step" id="first-step">
+        <h4>LALA HAPPY</h4>
+        <p>Happy things happen. </p>
+      </div>
+
+      <!-- </div> -->
+      <div class="step" id="second-step">
+        <h5>Happy first</h5>
+        <p>yayyyyyy </p>
+        <br>
+      </div>
+      <div class="step" id="third-step">
+        <h5>Happy second</h5>
+        <p>YESSS</p>
+        <br>
+      </div>
+
+
+    </div>
+    <div class="col-sm-8 graphic sticky">
+      <!-- <p>I am the graphic. </p> -->
+      <div id="graphic-1"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- This is D3, our graphing library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<!-- include our scrolling library -->
+<script src='https://unpkg.com/intersection-observer'></script>
+<script src='https://unpkg.com/scrollama'></script>
+<script src='stickyfill.min.js'></script>
+
+<script>
+  /* Allow position: sticky to work in old browsers */
+  var elements = document.querySelectorAll('.sticky');
+  Stickyfill.add(elements);
+
+  // instantiate the scrollama
+  var scroller = scrollama();
+
+  scroller
+    .setup({
+      // IF YOU CHANGE THIS CHANGE THE .sticky CSS
+      offset: 0.33, // how far from the top?
+      step: '.step', // class for stepping through
+      debug: false, // shows the line
+      container: 'container'
+    })
+    .onStepEnter(function(response) {
+      // trigger the stepin event
+      d3.select(response.element).dispatch('stepin')
+      d3.select(response.element).classed('active', true)
+    })
+    .onStepExit(function(response) {
+      // trigger the stepout event
+      d3.select(response.element).dispatch('stepout')
+      d3.select(response.element).classed('active', false)
+    })
+</script>
+
+<!-- source in charts  -->
+<script src='test.js'></script>
+
+</body>
+</html>
