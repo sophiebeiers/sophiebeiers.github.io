@@ -67,20 +67,56 @@ a:hover {
 .column img {
     margin-top: 8px;
     vertical-align: middle;
+    filter: opacity(100%);
 }
 
+/* img:hover{
+    filter:opacity(5%);
+    cursor:pointer;
+} */
+
 .fancy-header {
-  background-image: url('teal.jpg');
-  padding: 4em 0;
+  /* background-image: url('teal.jpg'); */
+  padding: 2em 0;
+  margin: 2;
 }
 
 .text-header h1 {
-  text-align: center;
+  text-align: left;
   background: transparent;
   color: black;
-  font-size: 5em;
+  font-size: 4em;
   position: relative;
+  padding-left: 0.7em;
+
 }
+
+.social-header {
+  text-align: right;
+  margin: 0 auto;
+  position: fixed;
+  right: 0;
+  bottom: 10;
+  padding-right: 0.7em;
+  padding-top: 0.8em;
+}
+
+.icons{
+	font-size:25px;
+	color: #66b2b2;
+	margin-bottom:1em;
+	margin-right:15px;
+	cursor:pointer;
+	transition: 0.4s;
+	margin-top:0.5em;
+
+}
+
+.icons:hover{
+	color:#f49e89;
+}
+
+
 
 .fancy-header-article {
   background-color: url('../teal.jpg');
@@ -161,7 +197,7 @@ p.about {
 }
 
 .content .content-overlay {
-  background: rgba(0,0,0,0.7);
+  /* background: rgba(0,0,0,0.7); */
   position: absolute;
   height: 100%;
   width: 100%;
@@ -175,9 +211,9 @@ p.about {
   transition: all 0.4s ease-in-out 0s;
 }
 
-.content:hover .content-overlay{
-  opacity: 1;
-}
+/* .content:hover .content-overlay{
+  opacity: 0.5;
+} */
 
 .content-image {
   width: 100%;
@@ -201,11 +237,12 @@ p.about {
   transition: all 0.3s ease-in-out 0s;
 }
 
-.content:hover .content-details{
+/* .content:hover .content-details{
   top: 50%;
   left: 50%;
   opacity: 1;
-}
+  filter:invert();
+} */
 
 .content-details h3{
   color: #fff;
@@ -215,15 +252,48 @@ p.about {
   text-transform: uppercase;
 }
 
-.content-details p{
+/* .content-details p{
   color: #fff;
   font-size: 0.9em;
 }
 
 .fadeIn-bottom{
   top: 80%;
+} */
+
+.image-container:hover .content {
+  opacity: 0.3;
+  cursor:pointer;
 }
 
+.image-container:hover .hover {
+  opacity: 1;
+}
+
+.hover-text {
+  background-color: #4CAF50;
+  color: black;
+  font-size: 16px;
+  /* padding: 16px 32px;  */
+}
+.cube{
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.hover {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
 
 .navbar-nav > li {
   float: none;
