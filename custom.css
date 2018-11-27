@@ -64,11 +64,10 @@ a:hover {
 .items img{
   filter: grayscale(85%);
 }
-.center-element{
+.items-padding{
   margin: 0 auto;
   float: none;
   padding-left: 20px;
-
 }
 
 /* text overlay and hovering */
