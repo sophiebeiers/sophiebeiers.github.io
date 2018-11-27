@@ -5,20 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--
-      1. To change fonts, visit https://fonts.google.com/
-      2. After you pick your fonts, click 'Customize'
-      3. Pick a few weights for your body font
-          400 = regular, regular italic, 700 = bold
-      4. And whichever weight you want for your title font (regular? bold?)
-      5. Replace the <link... down below
-      6. Edit custom.css with your new font names. Be sure to add the weight!
-    -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700Roboto+Slab:700|Slabo+27px" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.1/masonry.pkgd.min.js"></script>
+    <script src="masonry-settings.js"></script>
     <!-- Our custom CSS file -->
     <link rel="stylesheet" href="./custom.css">
 
@@ -28,222 +24,164 @@
   <body>
 
 <!-- Header -->
-<div class="fancy-header background text-header">
+<div class="fancy-header text-header">
     <div class="row">
-      <div class="col-sm text-center">
+      <div class="col-sm-8 text-left">
         <h1> Sophie <span class='notbold'>Beiers</span></h1>
       </div>
+
+<div class= "social-header">
+      <div class="col-sm">
+       <a href="https://twitter.com/sophiebeiers" target="_blank"><span><i class="fab fa-twitter icons"></i></span></a>
+       <a href="https://github.com/sophiebeiers/" target="_blank"><span><i class="fab fa-github icons"></i></span></a>
+       <a href="mailto:sophiebeierso@gmail.com"><span><i class="fas fa-envelope icons"></i></span></a>
+       <a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank"><span><i class="fab fa-linkedin icons"></i></span></a>
+      </div>
     </div>
+
+  </div>
 </div>
 
 
+
+
 <!-- Nav bar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E6F4F1;">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light" id="navbar_blue" style="background-color: #E6F4F1;">
       <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <!<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
+      <!-- <nav class="navbar navbar-expand-lg navbar-light id="navbar_blue"" style="background-color: #E6F4F1;">
+
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active"><a class="nav-link" href="#"> Viz <span class="sr-only">(current)</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="./about/">About </a>
-      </li>
+        <li class="nav-item"><a class="nav-link" href="./about/">About </a></li>
       </ul>
-    </div>
-  </nav>
+      <a href="https://twitter.com/sophiebeiers" target="_blank"><span><i class="fab fa-twitter icons"></i></span></a>
+      <a href="https://github.com/sophiebeiers/" target="_blank"><span><i class="fab fa-github icons"></i></span></a>
+      <a href="mailto:sophiebeierso@gmail.com"><span><i class="fas fa-envelope icons"></i></span></a>
+      <a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank"><span><i class="fab fa-linkedin icons"></i></span></a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 
+    </div> -->
+  <!-- </nav>  -->
 
-  <!-- Photo Grid -->
-  <div class="row">
-    <div class="column">
-
-      <div class="image-container">
-        <div class="content">
-          <a href="https://sophbei.shinyapps.io/usabortion/" target="_new">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_abortion/abortion.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">U.S. Abortions <br> (R, Shiny)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_lemonade/" >
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_lemonade/lemon.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">Beyoncé: Lemonade <br> (R)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_flow/">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_flow/flow.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">California Freshmen: <br> Where do they go? <br> (Illustrator)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_run/">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_run/run.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">Just an SF 5k <br>(Illustrator)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- end of column -->
-    <!-- new column  -->
-    <div class="column">
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_dogs/" target="_new">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_dogs/dog-intro.gif" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">NYC Dawgs<br> (d3.js)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_bachelor/">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_bachelor/bach.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">The Bachelorette <br>Season 14 <br> (d3.js)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_olympics/" >
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_olympics/olymp.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">Winter Olympics <br> (R)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_elec/" >
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_elec/elec.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <!-- <h3 class="content-title">Project 1</h3> -->
-              <p class="content-text">2016 Election <br> Results by CA County <br> (QGIS, Illustrator)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- end of column -->
-      <!-- new column  -->
-      <!-- <img src="./background.jpg" style="width:100%"> -->
-    </div>
-    <div class="column">
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_fires/" >
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_fires/fires.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">NYC Fires <br> (Leaflet, R)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_ks/">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_ks/ks.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">Kickstarter <br> (R, Highcharter)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_flu/" >
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_flu/flu.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">2017-18 Flu <br> (QGIS)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-
-      <div class="image-container">
-            <img class="content-image" src="blank.png">
-        </div>
-      <!-- <img src="./background.jpg" style="width:100%"> -->
-    </div>
-    <!-- new column  -->
-
-    <div class="column">
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_manhattan/" >
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_manhattan/manhattan.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">Old & New NYC Buildings <br> (Javascript, Illustrator)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="image-container">
-        <div class="content">
-          <a href="./proj_tweets/" >
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_tweets/tweets.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">US Senators & Gun Control Tweets <br> (R)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="image-container">
-        <div class="content">
-          <a href="https://stat4243-ads-project4-group1.shinyapps.io/airbnb-shiny/" target="_new">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="./proj_airbnb/airbnb.png" style="width:100%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">Airbnb Data Science Challenge<br> (R, Shiny)</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-      <!-- end of column -->
+  <div class = "navbar" id="navbar_blue">
+    <div class ="navbar-links">
+    <a class="active" href="#"> Viz <span class="sr-only">(current)</span></a>
+    <a href="./about/">&nbsp&nbspAbout </a>
   </div>
-  <!-- end of row -->
+
+    <!-- <div class= "navbar social-header">
+           <a href="https://twitter.com/sophiebeiers" target="_blank"><span><i class="fab fa-twitter icons"></i></span></a>
+           <a href="https://github.com/sophiebeiers/" target="_blank"><span><i class="fab fa-github icons"></i></span></a>
+           <a href="mailto:sophiebeierso@gmail.com"><span><i class="fas fa-envelope icons"></i></span></a>
+           <a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank"><span><i class="fab fa-linkedin icons"></i></span></a> -->
+           <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+        <!-- </div> -->
+</div>
+<!-- Photo grid -->
+
+  <div class="row">
+     <div class="items items-padding">
+       <div class="col">
+
+
+         <div class="items-grid">
+           <a href="./proj_lemonade/" target="_new" class = "contents" id ="caption"><span class = "text"><h3>Beyoncé: Lemonade</h3></span>
+             <img class="content-image" src="./proj_lemonade/lemon.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="./proj_dogs" target="_new" class = "contents" id ="caption"><span class = "text"><h3>Dawgs of NYC</h3></span>
+             <img class="content-image" src="./proj_dogs/dog-intro.gif" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="./proj_bachelor" target="_new" class = "contents" id ="caption"><span class = "text"><h3>The Bachelorette: Season 14</h3></span>
+             <img class="content-image" src="./proj_bachelor/bach.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="./proj_tweets" target="_new" class = "contents" id ="caption"><span class = "text"><h3>Gun Control Tweets</h3></span>
+             <img class="content-image" src="./proj_tweets/tweets.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="./proj_flow" target="_new"class = "contents" id ="caption"><span class = "text"><h3>The Freshman Migration</h3></span>
+             <img class="content-image" src="./proj_flow/flow.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="./proj_olympics" target="_new" class = "contents" id ="caption"><span class = "text"><h3>Winter Olympics</h3></span>
+             <img class="content-image" src="./proj_olympics/olymp.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="https://sophbei.shinyapps.io/usabortion/" target="_new" class = "contents" id ="caption"><span class = "text"><h3>U.S. Abortions</h3></span>
+             <img class="content-image" src="./proj_abortion/abortion.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="./proj_elec" target="_new" class = "contents" id ="caption"><span class = "text"><h3>2016 U.S. Election</h3></span>
+             <img class="content-image" src="./proj_elec/elec.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="./proj_fires" target="_new" class = "contents" id ="caption"><span class = "text"><h3>NYC Fires</h3></span>
+             <img class="content-image" src="./proj_fires/fires.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="./proj_ks" target="_new" class = "contents" id ="caption"><span class = "text"><h3>Kickstarter Campaigns</h3></span>
+             <img class="content-image" src="./proj_ks/ks.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="./proj_flu" target="_new" class = "contents" id ="caption"><span class = "text"><h3>2017-18 Flu</h3></span>
+             <img class="content-image" src="./proj_flu/flu.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="./proj_manhattan" target="_new" class = "contents" id ="caption"><span class = "text"><h3>Manhattan Buildings</h3></span>
+             <img class="content-image" src="./proj_manhattan/manhattan.png" style="width:100%">
+             </div>
+           </a>
+
+
+         <div class="items-grid">
+           <a href="./proj_run" target="_new" class = "contents" id ="caption"><span class = "text"><h3>Just an SF 5k</h3></span>
+             <img class="content-image" src="./proj_run/run.png" style="width:100%">
+             </div>
+           </a>
+
+         <div class="items-grid">
+           <a href="https://stat4243-ads-project4-group1.shinyapps.io/airbnb-shiny/" target="_new" class = "contents" id ="caption"><span class = "text"><h3>Airbnb Data Science Challenge</h3></span>
+             <img class="content-image" src="./proj_airbnb/airbnb.png" style="width:100%">
+             </div>
+           </a>
+
+         </div>
+       </div>
+     </div>
+
+
 <br>
   <footer class="footer text-right">
     <div class="container">
       <div class="row">
-          <a href="mailto:sophiebeiers@gmail.com" target="_blank"><img src= "./icons/email.png" width="30" height="30"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank"><img src= "./icons/linkedin.png" width="30" height="30"></a>&nbsp;&nbsp;
-          <a href="https://www.github.com/sophiebeiers" target="_blank"><img src= "./icons/github.png" width="33" height="33"></a>&nbsp;&nbsp;
-          <a href="https://twitter.com/sophiebeiers" target="_blank"><img src= "./icons/twitter.png" width="33" height="33"></a>
       </div>
     </div>
   </footer>
@@ -256,3 +194,14 @@
     </div>
   </footer>
 </body>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("navbar_blue");
+    if (x.className === "navbar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar";
+    }
+}
+</script>
