@@ -284,8 +284,43 @@ p.about {
   right: 0;
 }
 
+@media only screen and (max-width: 480px), only screen and (min-width: 560px) and (max-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* iPhone only */
+    .icons{
+    	font-size:20px;
+    	color: #66b2b2;}
 
-@media screen and (max-width: 600px) {
+    .social-header {
+      text-align: left;
+      position: block;
+      margin-left: 3em;
+      margin-right: 5em;
+      padding-left: 0.7em;
+      padding-top: 0.9em; */
+    }
+    .fancy-header {
+      padding-top: 2em;
+      padding-bottom: 1em;
+      margin: 2;
+    }
+    .text-header h1 {
+      text-align: left;
+      background: transparent;
+      color: black;
+      font-size: 3em;
+      position: relative;
+      padding-left: 0.7em;
+    }
+
+    .items-grid{
+    	width: 175px;
+      margin: 5px;
+    	/* float: left; */
+    }
+}
+
+
+/* @media screen and (max-width: 600px) {
   .navbar a:not(:first-child) {display: none;}
   .navbar a.icon {
     float: right;
@@ -305,7 +340,7 @@ p.about {
     display: block;
     text-align: left;
   }
-}
+} */
 
 
 .navbar {
