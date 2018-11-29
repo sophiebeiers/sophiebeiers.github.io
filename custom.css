@@ -89,6 +89,7 @@ a:hover {
         background-color: #66b2b2;
         opacity: 0.9;
         font-size: large;
+        /* font-family: 'Amatic SC', sans-serif; */
         font-family: 'PT Sans', sans-serif;
         font-weight: 700;
         text-transform: uppercase;
@@ -400,7 +401,12 @@ p.about {
   padding: 30px 0;
 }
 
-
+.dawgs{
+  font-family: 'Black Han Sans', sans-serif;
+}
+.dawgs-sub{
+  font-family: 'Do Hyeon', sans-serif;
+}
 
 /* TOOLTIPS */
   div#tooltip {
