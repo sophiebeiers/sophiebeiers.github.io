@@ -207,13 +207,7 @@ p.about {
 }
 
 /* Backgrounds */
-.background-lemon {
-  background-image: linear-gradient(to right top, #fffc4c, #fff166, #ffe87e, #ffe195, #fedbab);
-}
 
-.background-fire {
-  background-image: linear-gradient(to left bottom, #ffad1d, #ffb027, #feb42f, #feb737, #feba3e);
-}
 
 .background-teal {
   background-image: url('teal.jpg');
@@ -404,9 +398,7 @@ p.about {
 .dawgs{
   font-family: 'Black Han Sans', sans-serif;
 }
-.dawgs-sub{
-  font-family: 'Do Hyeon', sans-serif;
-}
+
 
 /* TOOLTIPS */
   div#tooltip {
