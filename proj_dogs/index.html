@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700|Black+Han+Sans" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -40,7 +40,7 @@
   <div id="tooltip"></div>
 
   <body>
-    <div class="fancy-header-article background-teal text-article">
+    <!-- <div class="fancy-header-article background-teal text-article">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 text-left">
@@ -48,9 +48,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Nav bar -->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E6F4F1;">
+        <!-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E6F4F1;">
           <a class="navbar-brand" href="#"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -60,7 +60,12 @@
             <li class="nav-item active"><a class="nav-link" href="../"> &larr; Back <span class="sr-only">(current)</span></a></li>
           </ul>
         </div>
-      </nav>
+      </nav> -->
+      <div class = "navbar" id="navbar_blue">
+        <div class ="navbar-links">
+        <a class="active" href="../"> &larr; Back <span class="sr-only">(current)</span></a>
+      </div>
+    </div>
 
 
 <!-- Stuff down here -->
@@ -77,7 +82,7 @@
 </div>
   <div class="row">
     <div class="col-sm-8 offset-sm-2 text-center">
-        <h1>DAWGS of NYC </h1>
+        <h1 class="dawgs">DAWGS of NYC </h1>
         <p>Just because I can't imagine taking a care of dog in a six-floor walk-up in Manhattan doesn't mean
           superheros don't exist. This page is a lil' exploration in d3
           and data about dogs who live in tiny apartments (I'm projecting). Data is from the
@@ -88,7 +93,7 @@
     <div class="step" id="zero-step"></div>
     <div class="col-sm-8 offset-sm-2 text-center">
         <div class = "titlebox1", style = "visibility: visible;">
-        <h3> Lady dogs </h3>
+        <h3 class="dawgs text-left"> Lady dogs </h3>
         <p>Out of 37,156 lady dogs that existed in NYC in 2012, you'd think we'd have moved
           past Twilight's "Bella" (this was a <a href="https://www.theguardian.com/books/booksblog/2010/may/10/twilight-baby-names-stephenie-meyer">
           real</a> thing that happened
@@ -146,7 +151,7 @@
            <div class="col-sm-8 offset-sm-2 text-center">
               <div class="step" id="second-step">
                 <!-- <div class= "titlebox2", style = "visibility: visible;"> -->
-                <h3>What about the dude dogs?</h3>
+                <h3 class="dawgs text-left">Dude dawgs?</h3>
                 <p>Literally all boy dogs are named Max. And if not, their name likely
                   has two syllables and ends in a "y." Hover over the dogs to see the top
                   ten male dog names.<br> <br></p>
@@ -175,7 +180,7 @@
 </div>  <!-- had to make this a new row for centering to work ? -->
 
           <div class="col-sm-8 offset-sm-2 text-center">
-          <h2><b> Borough Breeds</b> </h2>
+          <h2 class="dawgs"><b> Borough Breeds</b> </h2>
           <p> I recently learned how to spot a Maltese in the NYC wild -- and that
           New Yorkers love their tiny pups. Hover over each dog to see the breed and
           total number of dogs in NYC.
@@ -195,7 +200,7 @@
 
         <div class="col-sm-8 offset-sm-2 text-center">
           <div class="step" id="fourth-step"> </div>
-             <h3>Bronx</h3>
+             <h3 class="dawgs">Bronx</h3>
 
          </div>
 
@@ -211,7 +216,7 @@
              <div class="step" id="fifth-step"></div>
                <!-- // this is if I wanted to make it hidden later -->
                <div class= "titlebox3", style = "visibility: visible;">
-               <h3>Manhattan</h3></div>
+               <h3 class="dawgs">Manhattan</h3></div>
                <p>Let's swap that Pit Bull for a Lab/Retriever.</p>
                <br>
                <br>
@@ -223,7 +228,7 @@
           <div class="col-sm-8 offset-sm-2 text-center">
              <div class="step" id="sixth-step"></div>
                <div class= "titlebox4", style = "visibility: visible;">
-               <h3>Brooklyn</h3></div>
+               <h3 class="dawgs">Brooklyn</h3></div>
                <p>Popped in these groomed-out Maltese and Shih Tzus for dramatic effect.</p>
                <br>
                <br>
@@ -235,7 +240,7 @@
            <div class="col-sm-8 offset-sm-2 text-center">
               <div class="step" id="seventh-step"></div>
                 <div class= "titlebox5", style = "visibility: visible;">
-                <h3>Queens</h3></div>
+                <h3 class="dawgs">Queens</h3></div>
                 <p>DOGS DOGS DOGS</p>
                 <br>
                 <br>
@@ -247,7 +252,7 @@
             <div class="col-sm-8 offset-sm-2 text-center">
                <div class="step" id="eighth-step"></div>
                  <div class= "titlebox6", style = "visibility: visible;">
-                 <h3>Staten Island</h3></div>
+                 <h3 class="dawgs">Staten Island</h3></div>
                  <p>Same pups, new order.</p>
 
                  <br>
@@ -264,7 +269,7 @@
 
 <!-- third graphic -->
 <div class="col-sm-8 offset-sm-2 text-center">
-<h2> <b>Dog Colors </b> </h2>
+<h2 class="dawgs"> <b>Dog Colors </b> </h2>
 <p> Ever wondered what the top 10 most common dominant dog <b>colors</b> are in NYC? Hover over the bars
   below to see how many dogs have <i>mainly</i> that color fur.</p>
 <div class= "infobox3", style = "visibility: hidden;">
@@ -278,7 +283,7 @@
 
 <!-- Buttons  -->
 <div class="col-sm-8 offset-sm-2 text-center">
-<h2> <b> Lemme Guess Your Dog </b></h2>
+<h2 class="dawgs"> <b> Lemme Guess Your Dog </b></h2>
 <p> Think I can guess your dog? Me neither. But click on your 'hood and I'll tell you the most
 likely option.</p>
 </div>
@@ -339,17 +344,13 @@ likely option.</p>
 </div>
 
 <!-- Back up nav bar   -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active"><a class="nav-link" href="javascript:window.location.href=window.location.href"> Back Up &uarr;<span class="sr-only text-center">(current)</span></a></li>
-    </ul>
-  </div>
-</nav>
+<div class = "navbar" id="navbar_blue">
+  <div class ="navbar-links">
+  <a class="active" href="javascript:window.location.href=window.location.href"> Back Up &uarr;<span class="sr-only text-center">(current)</span></a>
+</div>
+</div>
+
+
 
    <!-- This is D3, our graphing library -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
@@ -417,11 +418,11 @@ likely option.</p>
 
         <!--content here-->
 
-        <footer class="footer text-center">
+        <!-- <footer class="footer text-center">
           <div class="container">
             <span class="text-muted"> New York, NY <br>2018</span>
           </div>
-        </footer>
+        </footer> -->
 
 <!-- Icon citation -->
         <font size="1"><p>Icons from:

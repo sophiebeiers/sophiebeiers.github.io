@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,700|Codystar|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -18,6 +18,11 @@
     <style>
     h4 {
     text-decoration: underline yellow;
+    font-family: 'Codystar', cursive;
+  }
+  h2{
+    font-family: 'Codystar', cursive;
+    color:black;
   }
     </style>
   </head>
@@ -25,7 +30,7 @@
   <body>
     <!-- The "Top" -->
     <a id="top"></a>
-    <div class="fancy-header-article background-lemon text-article">
+    <!-- <div class="fancy-header-article background-lemon text-article">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 text-left">
@@ -33,27 +38,23 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Nav bar -->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E6F4F1;">
-          <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="../"> &larr; Back <span class="sr-only">(current)</span></a></li>
-          </ul>
-        </div>
-      </nav>
+
+
+      <div class = "navbar" id="navbar_blue">
+        <div class ="navbar-links">
+        <a class="active" href="../"> &larr; Back <span class="sr-only">(current)</span></a>
+      </div>
+    </div>
 
 
 <br>
     <div class="container">
       <div class="row">
         <div class="col-sm-8 offset-sm-2">
-          <h2><center><strong>    Beyoncé: Lemonade    </strong><img src="lemon_icon.png"></center></h2>
+          <h2><center><strong>    Beyoncé: Lemonade    </strong><img src="lemon_icon.png" id="lemon"></center></h2>
           <p>2016 may be long past, but Beyoncé’s vulnerable, emotional, and
             powerfully feminist album “Lemonade” will inarguably always be relevant.
             The album is accompanied by an hour-long film broken into twelve songs and
@@ -192,17 +193,11 @@
     </div>
 
     <!-- Back up nav bar   -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"><a class="nav-link" href="#top"> Back Up &uarr;<span class="sr-only text-center">(current)</span></a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class = "navbar" id="navbar_blue">
+      <div class ="navbar-links">
+      <a class="active" href="javascript:window.location.href=window.location.href"> Back Up &uarr;<span class="sr-only text-center">(current)</span></a>
+    </div>
+    </div>
 
     <!-- footer -->
         <footer class="footer text-right">
@@ -222,14 +217,15 @@
           </div>
         </footer>
 
-        <!--content here-->
 
-        <footer class="footer text-center">
+        <!-- <footer class="footer text-center">
           <div class="container">
             <span class="text-muted"> New York, NY <br>2018</span>
           </div>
-        </footer>
+        </footer> -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="../animations.js"></script>
   </body>
 </html>

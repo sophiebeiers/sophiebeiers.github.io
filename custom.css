@@ -89,6 +89,7 @@ a:hover {
         background-color: #66b2b2;
         opacity: 0.9;
         font-size: large;
+        /* font-family: 'Amatic SC', sans-serif; */
         font-family: 'PT Sans', sans-serif;
         font-weight: 700;
         text-transform: uppercase;
@@ -206,13 +207,7 @@ p.about {
 }
 
 /* Backgrounds */
-.background-lemon {
-  background-image: linear-gradient(to right top, #fffc4c, #fff166, #ffe87e, #ffe195, #fedbab);
-}
 
-.background-fire {
-  background-image: linear-gradient(to left bottom, #ffad1d, #ffb027, #feb42f, #feb737, #feba3e);
-}
 
 .background-teal {
   background-image: url('teal.jpg');
@@ -284,8 +279,43 @@ p.about {
   right: 0;
 }
 
+@media only screen and (max-width: 480px), only screen and (min-width: 560px) and (max-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* iPhone only */
+    .icons{
+    	font-size:20px;
+    	color: #66b2b2;}
 
-@media screen and (max-width: 600px) {
+    .social-header {
+      text-align: left;
+      position: block;
+      margin-left: 3em;
+      margin-right: 5em;
+      padding-left: 0.7em;
+      padding-top: 0.9em; */
+    }
+    .fancy-header {
+      padding-top: 2em;
+      padding-bottom: 1em;
+      margin: 2;
+    }
+    .text-header h1 {
+      text-align: left;
+      background: transparent;
+      color: black;
+      font-size: 3em;
+      position: relative;
+      padding-left: 0.7em;
+    }
+
+    .items-grid{
+    	width: 175px;
+      margin: 5px;
+    	/* float: left; */
+    }
+}
+
+
+/* @media screen and (max-width: 600px) {
   .navbar a:not(:first-child) {display: none;}
   .navbar a.icon {
     float: right;
@@ -305,7 +335,7 @@ p.about {
     display: block;
     text-align: left;
   }
-}
+} */
 
 
 .navbar {
@@ -365,6 +395,9 @@ p.about {
   padding: 30px 0;
 }
 
+.dawgs{
+  font-family: 'Black Han Sans', sans-serif;
+}
 
 
 /* TOOLTIPS */
