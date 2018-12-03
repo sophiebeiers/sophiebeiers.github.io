@@ -1,0 +1,130 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(tidyverse, quietly = TRUE)
+library(tidytext, quietly = TRUE)
+library(tm, quietly = TRUE)
+library(janitor, quietly = TRUE)
+library(aplpack, quietly = TRUE)
+library(assertthat, quietly = TRUE)
+```
+# Data
+```{r}
+data <- read_csv("./happydb/data/cleaned_hm.csv")
+demo <- read_csv("./happydb/data/demographic.csv")
+country_codes <- read_csv("./happydb/data/country_codes.csv")
+#words <- read_csv("./happydb/data/senselabel.csv")
+#food <- read_csv("./happydb/data/topic_dict/food-dict.csv")
+
+```
+## Cleaning
++ join together two tables, count number of happy moments that fall into certain predicted categories per country. 
+```{r}
+tabyl(data$predicted_category)
+
+full <- data %>% 
+  left_join(demo, by = "wid") %>% 
+  left_join(country_codes, by = c("country" = "CODE"))
+
+# counting number per predicted category in each country
+
+categories_countries <- full %>% 
+  group_by(COUNTRY, predicted_category) %>% 
+  summarise(n = n()) %>% 
+  spread(predicted_category, n) %>% 
+  ungroup() %>% 
+  mutate(total_cats = rowSums(.[2:8], na.rm = TRUE))
+
+marriage_countries <- full %>% 
+  group_by(COUNTRY, marital) %>% 
+  summarise(n_married = n()) %>% 
+  spread(marital, n_married) %>% 
+  ungroup() %>% 
+  mutate(total_marr = rowSums(.[2:7], na.rm = TRUE))
+
+are_equal(categories_countries$total_cats, marriage_countries$total_marr)
+
+parents_countries <- full %>% 
+  group_by(COUNTRY, parenthood) %>% 
+  summarise(n_parents = n()) %>% 
+  spread(parenthood, n_parents)
+
+gender_countries <- full %>% 
+  group_by(COUNTRY, gender) %>% 
+  summarise(n_gender = n()) %>% 
+  spread(gender, n_gender)
+
+age_countries <- full %>% 
+  group_by(COUNTRY) %>% 
+  mutate(age_num = as.numeric(age)) %>% 
+  summarise(med_age = median(age_num))
+
+excluded_vars <- c("o", "<NA>", "<NA>.x", "<NA>.y", "total_marr")
+second_excluded_vars <- c("divorced_perc", "separated_perc", "single_perc", "widowed_perc", "no_kids_perc", "m_perc")
+keep_countries <- c("United States", "India", "Venezuela", "Canada", "Mexico", "United Kingdom", "Philippines", "Viet Nam", "Brazil", "Australia", "Indonesia", "Thailand", "Germany", "Portugal", "Nigeria", "Egypt", "Denmark", "Nigeria", "France", "Turkey", "Dominican Republic")
+all_summary <- categories_countries %>% 
+  full_join(age_countries, by = "COUNTRY") %>% 
+  full_join(gender_countries, by = "COUNTRY") %>% 
+  full_join(parents_countries, by = "COUNTRY") %>% 
+  full_join(marriage_countries, by = "COUNTRY") %>% 
+  select(-one_of(excluded_vars)) %>% 
+  rename(no_kids = n, kids = y) %>% 
+  replace(., is.na(.), 0) %>% 
+  # mutate_if(is.numeric, funs(perc = (. /total_cats) * 100)) %>% 
+  mutate_at(vars(achievement:nature, f:widowed), funs(perc = (. /total_cats) * 100)) %>% 
+  select(COUNTRY, med_age, contains("perc"), -one_of(second_excluded_vars)) %>% 
+  mutate(eyes_width = 50, smile = 100, face_height = 0) %>% 
+  select(COUNTRY, med_age, achievement_perc, affection_perc, bonding_perc, enjoy_the_moment_perc, smile, leisure_perc, eyes_width, everything()) %>% 
+  filter(COUNTRY %in% keep_countries)
+```
+
+## Faces
+```{r}
+#Explanation of parameters: 1-height of face, 2-width of face, 3-shape of face, 4-height of mouth, 5-width of mouth, 6-curve of smile, 7-height of eyes, 8-width of eyes, 9-height of hair, 10-width of hair, 11-styling of hair, 12-height of nose, 13-width of nose, 14-width of ears, 15-height of ears.
+pdf("plot.pdf")
+# or tiff("plot.tiff")
+
+
+faces <- faces(all_summary[,2:15], labels = all_summary$COUNTRY, cex = 2, face.type = 0)
+dev.off()
+```
+
+
+# Words DF and Word Count DF 
+```{r}
+tidy_words <- full %>%
+  unnest_tokens(word, cleaned_hm) %>%  # to lower, remove punctuation 
+  anti_join(stop_words) %>% 
+  subset(select=c("hmid", "wid", "word", "age",  "gender","marital", "parenthood", "country", "predicted_category")) 
+
+tidy_words_cnt <- tidy_words %>% 
+  group_by(word) %>% 
+  count(sort = TRUE)
+
+```
+
+
+# Find sentences that contain a specific word.
+```{r}
+full$cleaned_hm[grep("family",full$cleaned_hm)]
+full$wid[grep("poop",full$cleaned_hm)]
+```
+
+# Find sentences or words based on demographics.
+```{r}
+full$cleaned_hm[full$marital == 'married']
+tidy_words$word[tidy_words$marital == 'married']
+
+#OR
+tidy_words %>% 
+  group_by(word) %>% 
+  filter(marital == 'married') %>% 
+  count(sort = TRUE)
+```
+
+```{r}
+write.csv(full, file = "full.csv")
+```
+
