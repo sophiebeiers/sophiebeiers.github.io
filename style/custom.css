@@ -63,7 +63,7 @@ a:hover {
 
 .items img{
   /* filter: grayscale(85%); */
-  opacity: 0.6;
+  opacity: 0.7;
 }
 .items-padding{
   margin: 0 auto;
@@ -77,24 +77,28 @@ a:hover {
 }
 .contents#caption .text {
         position: absolute;
-        top: 40%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 20;
     opacity: 0;
     transition: all 0.8s ease;
 }
+
 .contents#caption .text h3 {
-        margin: 0;
+        margin:0;
         color: white;
+        /* #66b2b2 */
         background-color: #66b2b2;
-        opacity: 0.9;
+        opacity: 1;
         font-size: large;
         /* font-family: 'Amatic SC', sans-serif; */
         font-family: 'PT Sans', sans-serif;
         font-weight: 700;
         text-transform: uppercase;
 }
+
+
 .contents#caption:hover .text {
     opacity: 1;
 
@@ -281,7 +285,7 @@ p.about {
   right: 0;
 }
 
-@media only screen and (max-width: 480px), only screen and (min-width: 560px) and (max-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-width: 480px), only screen and (min-width: 560px) and (max-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
     /* iPhone only */
     .icons{
     	font-size:20px;
