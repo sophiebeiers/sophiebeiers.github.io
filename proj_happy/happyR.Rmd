@@ -12,9 +12,9 @@ library(assertthat, quietly = TRUE)
 ```
 # Data
 ```{r}
-data <- read_csv("./happydb/data/cleaned_hm.csv")
-demo <- read_csv("./happydb/data/demographic.csv")
-country_codes <- read_csv("./happydb/data/country_codes.csv")
+data <- read_csv("./data/cleaned_hm.csv")
+demo <- read_csv("./data/demographic.csv")
+country_codes <- read_csv("./data/country_codes.csv")
 #words <- read_csv("./happydb/data/senselabel.csv")
 #food <- read_csv("./happydb/data/topic_dict/food-dict.csv")
 
