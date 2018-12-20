@@ -4,18 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--
-      1. To change fonts, visit https://fonts.google.com/
-      2. After you pick your fonts, click 'Customize'
-      3. Pick a few weights for your body font
-          400 = regular, regular italic, 700 = bold
-      4. And whichever weight you want for your title font (regular? bold?)
-      5. Replace the <link... down below
-      6. Edit custom.css with your new font names. Be sure to add the weight!
-    -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700Roboto+Slab:700|Slabo+27px" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -28,62 +18,63 @@
   <body>
 
     <style>
-      /* body {background-color: #DFEFE4;}
-      #canvas {background-color: #DFEFE4;} */
+    #typed {
+      font-size: 4.5vh;
+      font-family: 'Roboto', sans-serif;
+    }
+    .typed-cursor {
+      font-size: 4.5vh;
+    }
    </style>
 
 <!-- Header -->
-<div class="fancy-header background text-header">
+<!-- <div class="fancy-header background text-header">
     <div class="row">
       <div class="col-sm text-center">
         <h1> Sophie <span class='notbold'>Beiers</span></h1>
       </div>
     </div>
-</div>
+</div> -->
 
 
 <!-- Nav bar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E6F4F1;">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item "><a class="nav-link" href="../"> Viz <span class="sr-only">(current)</span></a></li>
-        <li class="nav-item active"><a class="nav-link" href="#">About </a>
-      </li>
-      </ul>
+    <div class = "navbar" id="navbar_blue">
+      <div class ="navbar-links">
+      <a class="active" href="../"> &larr; Back <span class="sr-only">(current)</span></a>
     </div>
-  </nav>
-
+  </div>
+<!-- Stuff here  -->
 <div class ="container">
   <div class="row">
-    <div class="column">
-      <p><br><br></p>
-        <img class="center"src="sophie_headshot_circle.png" style="width:35%">
+    <div class="col-lg-3"></div>
+      <div class="col-lg-6">
 
-    <p class='about'><br><br>Hey, I'm Sophie! I'm a quantitative analyst passionate about visualizing
-      data for social good. Currently a Data Journalist at the ACLU visualizing data and analyzing data for
-      active litigation. <br><br>
+      <p><br><br></p>
+        <img class="center"src="sophie_headshot_circle.png" style="width:60%">
+      <p><br></p>
+             <a href="https://twitter.com/sophiebeiers" target="_blank"><span><i class="fab fa-twitter icons"></i></span></a>
+             <a href="https://github.com/sophiebeiers/" target="_blank"><span><i class="fab fa-github icons"></i></span></a>
+             <a href="mailto:sophiebeierso@gmail.com"><span><i class="fas fa-envelope icons"></i></span></a>
+             <a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank"><span><i class="fab fa-linkedin icons"></i></span></a>
+
+      <br>
+      <div id="typed-strings">
+          <p>Hey, I'm Sophie.</p>
+      </div>
+      <span id="typed"></span>
+
+      <br><br>I'm a quantitative analyst passionate about visualizing
+      data for social good. Currently a Data Journalist at the <a href= "http://www.aclu.com"><b>ACLU</b></a> visualizing  and analyzing data for
+      active litigation and publication. <br><br>
       I used to do things like (try to) teach other journalists how to <a href= "http://ledeprogram.com"><b>code</b></a>, research <a href= "http://scholarship.claremont.edu/cgi/viewcontent.cgi?article=1045&context=pitzer_theses"><b>perceptive infants</b></a>
       and analyze student experiences with <a href= "http://www.youthtruthsurvey.org/school-culture/"><b>school culture</b></a>.
       Sometimes, I genuinely enjoy running. <br><br>
 
       Feel free to reach out!<br><br><br>
-      <!-- <div class="image-container">
-        <div class="content">
-          <a href="https://stat4243-ads-project4-group1.shinyapps.io/airbnb-shiny/" target="_new">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="resume.png" style="width:25%">
-            <div class="content-details fadeIn-bottom">
-              <p class="content-text">Resume</p>
-            </div>
-          </a>
-        </div>
-      </div> -->
+
       <a download="SBeiers_Resume.pdf" href="SBeiers_Resume.pdf" title="ImageName">
-      <img class="center" src="resume.png" style="width:25%"></p></a>
+      <img class="center" src="resume.png" style="width:25%"></a>
+    <div class="col-lg-3"></div>
 
 
 
@@ -112,11 +103,13 @@
     </div>
   </footer>
 
-  <!--content here-->
+  <!-- typing animation -->
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+      <script>
+      var typed = new Typed('#typed', {
+          stringsElement: '#typed-strings',
+          typeSpeed: 80
+        });
+      </script>
 
-  <footer class="footer text-center">
-    <div class="container">
-      <span class="text-muted"> New York, NY <br>2018</span>
-    </div>
-  </footer>
 </body>
