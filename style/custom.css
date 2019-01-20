@@ -285,7 +285,7 @@ a:hover {
 }
 
 
-@media only screen and (max-width: 970px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-width: 970px) and (-webkit-min-device-pixel-ratio: 2) {
   .icons {
       font-size: 18px;
       color: #66b2b2;
@@ -317,7 +317,7 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 728px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-width: 728px) and (-webkit-min-device-pixel-ratio: 2) {
   .text-header h1 {
     text-align: center;
     background: transparent;
@@ -331,7 +331,7 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 422px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-width: 422px) and (-webkit-min-device-pixel-ratio: 2) {
 
   .text-header h1 {
     text-align: center;
