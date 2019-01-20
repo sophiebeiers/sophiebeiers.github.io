@@ -140,26 +140,27 @@ a:hover {
   text-align: left;
   background: transparent;
   color: black;
-  font-size: 4em;
+  font-size: 9.5vh;
   position: relative;
   padding-left: 0.7em;
 }
 
 .social-header {
   text-align: right;
-  /* margin: 0 auto; */
-  position: block;
-  margin-left: 5em;
-  margin-right: 5em;
-  /* right: 10;
-  bottom: 10; */
-  padding-left: 0.7em;
-  padding-top: 0.9em;
-  */
+  top: 52%;
+  left: 20%;
+
+  position: absolute;
+  /* margin-left: 5em;
+  margin-right: 5em; */
+
+  /* padding-left: 0.7em;
+  padding-top: 0.9em; */
+
 }
 
 .icons {
-  font-size: 25px;
+  font-size: 28px;
   color: #66b2b2;
   margin-bottom: 1em;
   margin-right: 15px;
@@ -283,32 +284,22 @@ a:hover {
   right: 0;
 }
 
-@media only screen and (max-width: 480px), only screen and (min-width: 560px) and (max-width: 918px) and (-webkit-min-device-pixel-ratio: 2) {
 
-  /* iPhone only */
-  /* .icons {
-    font-size: 20px;
-    color: #66b2b2;
-  } */
-
-  .social-header {
-    text-align: left;
-    position: block;
-    margin-left: 3em;
-    margin-right: 5em;
-    padding-left: 0.3em;
-    padding-top: 0.5em;
-    white-space: nowrap;
-    visibility: hidden;
+@media only screen and (max-width: 970px) and (-webkit-min-device-pixel-ratio: 2) {
+  .icons {
+      font-size: 18px;
+      color: #66b2b2;
+      margin-bottom: 1em;
+      margin-right: 15px;
+      cursor: pointer;
+      transition: 0.4s;
+      margin-top: 0.5em;
   }
 
   .fancy-header {
     padding-top: 1em;
-    padding-bottom: 1em;
-    margin: 2;
-  }
-  #test {
-    padding-bottom: 0em;
+    /* padding-bottom: 1em; */
+    /* margin: 1; */
   }
 
   .text-header h1 {
@@ -319,7 +310,6 @@ a:hover {
     position: relative;
     padding-left: 0.7em;
   }
-
   .items-grid {
     width: 175px;
     margin: 5px;
@@ -327,27 +317,93 @@ a:hover {
   }
 }
 
-/* @media screen and (max-width: 600px) {
-  .navbar a:not(:first-child) {display: none;}
-  .navbar a.icon {
-    float: right;
-    display: block;
+@media only screen and (max-width: 728px) and (-webkit-min-device-pixel-ratio: 2) {
+  .text-header h1 {
+    text-align: center;
+    background: transparent;
+    color: black;
+    font-size: 3.2em;
+    position: relative;
+  }
+
+  .social-header {
+    text-align:center;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .navbar.responsive {position: relative;}
-  .navbar.responsive .icon {
+@media only screen and (max-width: 422px) and (-webkit-min-device-pixel-ratio: 2) {
+
+  .text-header h1 {
+    text-align: center;
+    background: transparent;
+    color: black;
+    font-size: 8vh;
+    padding-left: 0px;
+  }
+
+  .items-grid {
+    width: 100%;
+    margin: 3px;
+
+  }
+  .social-header {
+    text-align: center;
+    left: 30%;
     position: absolute;
-    right: 0;
-    top: 0;
   }
-  .navbar.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
+  .icons {
+    font-size: 25;
+    text-align: center;
+    align-items:center;
+    align-content: center;
   }
-} */
+  .items-padding {
+      margin: 0 auto;
+      float: none;
+      padding-left: 0px;
+
+  }
+}
+body {
+  background-color: white;
+  font-family: "ff-tisa-web-pro",serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #333;
+  padding: 1em;
+}
+/* test */
+article {
+  -webkit-column-width: 670px;
+  -moz-column-width: 670px;
+  column-width: 670px;
+}
+
+/* p {
+  margin-bottom: 1.3em;
+}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.157em;
+}
+
+h2 {font-size: 2.369em;}
+
+h3 {font-size: 1.777em;}
+
+h4 {font-size: 1.333em;}
+
+small, .font_small {font-size: 0.75em;} */
+
+
 .navbar {
   overflow: hidden;
   background-color: #E6F4F1;
