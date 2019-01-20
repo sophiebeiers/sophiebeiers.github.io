@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700Roboto+Slab:700|Slabo+27px" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700|Amatic+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -21,15 +21,50 @@
 
   <title>Sophie Beiers</title>
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <style>
+  #title-typed {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 8vh;
+    position: relative;
+    /* padding-left: 0.7em; */
+  }
+    #test {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    padding-left:3em;
+    margin: 2;
+    }
+
+
+  /* @media only screen and (max-width: 480px), only screen and (min-width: 560px) and (max-width: 983px) and (-webkit-min-device-pixel-ratio: 2) {
+
+    /* iPhone only */
+
+  /* #title-typed {
+    text-align: left;
+    background: transparent;
+    color: black;
+    font-size: 3em;
+    position: relative;
+    padding-left: 0.7em; */
+    /* }
+
+  }  */
+  </style>
 </head>
 
 <body>
 
   <!-- Header -->
-  <div class="fancy-header text-header">
+  <div class="fancy-header">
     <div class="row">
-      <div class="col-sm-6 text-left">
-        <h1> Sophie <span class='notbold'>Beiers</span></h1>
+      <div class="col-sm-6 text-left" id="test">
+                <div id="typed-name">
+                  <h1> Sophie <span class='notbold'>Beiers</span></h1>
+                </div>
+                <span id="title-typed"></span>
+
       </div>
 
       <div class="social-header">
@@ -59,12 +94,21 @@
 
 
         <div class="items-grid">
-          <a href="./proj_lemonade/" target="_new" class="contents" id="caption"><span class="text">
-              <h3>Beyoncé: Lemonade</h3>
+          <a href="./portraits/" target="_new" class="contents" id="caption"><span class="text">
+              <h3>Portraits of Smart Women</h3>
             </span>
-            <img class="content-image" src="./proj_lemonade/bey_lemons.png" style="width:100%">
+            <img class="content-image" src="./portraits/rbg.png" style="width:100%">
         </div>
         </a>
+
+        <div class="items-grid">
+          <a href="./proj_bachelor" target="_new" class="contents" id="caption"><span class="text">
+              <h3>The Bachelorette: Season 14</h3>
+            </span>
+            <img class="content-image" src="./proj_bachelor/bach.png" style="width:100%">
+        </div>
+        </a>
+
 
         <div class="items-grid">
           <a href="./proj_dogs" target="_new" class="contents" id="caption"><span class="text">
@@ -75,10 +119,10 @@
         </a>
 
         <div class="items-grid">
-          <a href="./proj_bachelor" target="_new" class="contents" id="caption"><span class="text">
-              <h3>The Bachelorette: Season 14</h3>
+          <a href="./proj_lemonade/" target="_new" class="contents" id="caption"><span class="text">
+              <h3>Beyoncé: Lemonade</h3>
             </span>
-            <img class="content-image" src="./proj_bachelor/bach.png" style="width:100%">
+            <img class="content-image" src="./proj_lemonade/bey_lemons.png" style="width:100%">
         </div>
         </a>
 
@@ -102,7 +146,7 @@
           <a href="./proj_olympics" target="_new" class="contents" id="caption"><span class="text">
               <h3>Winter Olympics</h3>
             </span>
-            <img class="content-image" src="./proj_olympics/olymp_abstract-01.png" style="width:100%">
+            <img class="content-image" src="./proj_olympics/olymp.png" style="width:100%">
         </div>
         </a>
 
@@ -185,7 +229,17 @@
       <!-- <span class="text-muted"> New York, NY <br>2018</span> -->
     </div>
   </footer>
+
 </body>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script>
+      var typed = new Typed('#title-typed', {
+        stringsElement: '#typed-name',
+        typeSpeed: 80,
+        showCursor: false,
+      });
+    </script>
+
 
 <script>
   function myFunction() {

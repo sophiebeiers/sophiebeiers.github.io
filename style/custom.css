@@ -19,6 +19,7 @@ h1 {
   font-weight: 700;
 }
 
+
 .notbold {
   font-weight: 400;
 }
@@ -80,7 +81,8 @@ a:hover {
 
 .contents#caption .text {
   position: absolute;
-  top: 60%;
+  top: 90%;
+  /* top: 80%; */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 20;
@@ -89,10 +91,10 @@ a:hover {
 }
 
 .contents#caption .text h3 {
-  margin: 0;
-  color: white;
+  padding: 14px;
+  color: #66b2b2;
   /* #66b2b2 */
-  background-color: #66b2b2;
+  background-color: white;
   opacity: 1;
   font-size: large;
   /* font-family: 'Amatic SC', sans-serif; */
@@ -281,28 +283,32 @@ a:hover {
   right: 0;
 }
 
-@media only screen and (max-width: 480px), only screen and (min-width: 560px) and (max-width: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-width: 480px), only screen and (min-width: 560px) and (max-width: 918px) and (-webkit-min-device-pixel-ratio: 2) {
 
   /* iPhone only */
-  .icons {
+  /* .icons {
     font-size: 20px;
     color: #66b2b2;
-  }
+  } */
 
   .social-header {
     text-align: left;
     position: block;
     margin-left: 3em;
     margin-right: 5em;
-    padding-left: 0.7em;
-    padding-top: 0.9em;
-    */
+    padding-left: 0.3em;
+    padding-top: 0.5em;
+    white-space: nowrap;
+    visibility: hidden;
   }
 
   .fancy-header {
-    padding-top: 2em;
+    padding-top: 1em;
     padding-bottom: 1em;
     margin: 2;
+  }
+  #test {
+    padding-bottom: 0em;
   }
 
   .text-header h1 {
