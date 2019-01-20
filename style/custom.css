@@ -374,11 +374,11 @@ body {
   padding: 1em;
 }
 /* test */
-article {
+/* article {
   -webkit-column-width: 670px;
   -moz-column-width: 670px;
   column-width: 670px;
-}
+} */
 
 /* p {
   margin-bottom: 1.3em;
