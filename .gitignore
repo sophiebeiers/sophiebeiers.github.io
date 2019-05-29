@@ -16,3 +16,7 @@ icons/.DS_Store
 .htaccess
 proj_olympics/.DS_Store
 proj_olympics/.DS_Store
+.Rproj.user
+proj_happy/javascript/node_modules/*
+license-plates-master/src/node_modules/*
+license-plates-master/src/.cache/*
