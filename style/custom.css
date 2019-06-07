@@ -93,15 +93,28 @@ a:hover {
 .contents#caption .text h3 {
   padding: 14px;
   color: #66b2b2;
-  /* #66b2b2 */
   background-color: white;
+  text-align:center;
   opacity: 1;
   font-size: large;
-  /* font-family: 'Amatic SC', sans-serif; */
   font-family: 'PT Sans', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
+
+.contents#caption .text p {
+  padding: 14px;
+  color: black;
+  /* #66b2b2 */
+  background-color: white;
+  opacity: 1;
+  font-size: small;
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+}
+
+
 
 .contents#caption:hover .text {
   opacity: 1;
