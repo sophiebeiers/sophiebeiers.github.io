@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+
     .section {
       display: flex;
       flex-direction: column;
@@ -17,11 +18,10 @@
     .subsection {
       display: flex;
       flex-direction: row;
-      padding-top: 5%;
+      padding-top: 1%;
       padding-bottom: 5%;
       vertical-align: top;
-            /* flex-wrap: wrap; */
-
+      height: 100%;
     }
 
     .steps {
@@ -31,7 +31,13 @@
       z-index:1;
     }
 
-
+ .background-image {
+   height:50%;
+    width:100%;
+    margin-left: 0%;
+    margin-right: 0%;
+    display: block;
+ }
     text.title {
       font-size: 1.2em;
     }
@@ -66,14 +72,14 @@
     } */
     /* Minimum height of 70% of the screen */
     .step {
-      min-height: 50vh;
+      min-height: 80vh;
       flex:1
 
     }
 
     .step>p {
-      background: pink;
-      padding: 10px 10px;
+      background: #FFF7F3;
+      padding: 20px 20px;
       margin-bottom: 0;
       color: black;
       /* padding-bottom: 1rem; */
@@ -84,7 +90,7 @@
     .step>ul,
     .step>h2,
     .step>h3 {
-      background: #1a0846;
+      background: #FFF7F3;
     }
 
 }
@@ -147,12 +153,29 @@
   <!-- <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png"> -->
 </head>
 
-<body>
+<body style="background-color:#FFE5DA;">
 
-
+<img class="background-image" src="bach.png">
 <div class="section">
-    <h1 class="cursive"> The Bachelorette - Season 15 <img src="rose.png"></h1>
-        <h3 class="subheader" class="sticky"> First Thing's First </h3>
+
+      <!-- <div class="centered">The age gaps between<br>movie love interests in</div> -->
+
+    <div class="container">
+       <div class="row">
+          <div class="offset-2 col-sm-8 mt-5 mb-5">
+            <h3 class="cursive">The Bachelorette<img src="rose.png"></h3>
+            <p>
+Blah Blah Blah            <br><br>
+Blach blah
+            <br><br><br>
+Blah Blah          </p>
+        </div>
+      </div>
+    </div>
+
+
+        <h3 class="subheader"> First Thing's First </h3>
+        <p>Hover over the bubbles for look at each bachelor's *journey* during each rose ceremony.</p>
 
 <div class="subsection">
         <div id="chart" class="sticky"></div>
@@ -166,10 +189,11 @@
         <p><strong>Night one:</strong> As <i>always</i> Hannah B let go of pretty much anyone normal. And we're off to a good start.</p>
       </div>
       <div class='step' id="three">
-        <p><strong>Night two:</strong>By night two...</p>
+        <p><strong>Night two:</strong> By night two, we finally said goodbye to Cam and Hannah (and the producers) picked Luke P.
+        last to give him, and us, all a good scare.</p>
       </div>
       <div class='step' id="four">
-        <p>Something else.</p>
+        <p><strong>Night three:</strong> This was the night of the infamous Tyler v. Tyler battle.</p>
       </div>
 
 </div>
@@ -177,7 +201,6 @@
 
 <h3 class="subheader" class="sticky"> Wait, Which Chris? </h3>
 <div class="subsection">
-
   <div id="chart2" class="sticky"></div>
   <div class="steps">
       <div class='step' id="one2">
@@ -196,13 +219,13 @@
 </div>
     </div>
 
-
   <!-- end of container -->
   <script src="//d3js.org/d3.v5.min.js" charset="utf-8"></script>
   <script src="https://unpkg.com/popper.js@1"></script>
   <script src="https://unpkg.com/tippy.js@4"></script>
   <script src="bubbles.js"></script>
   <script src="bar.js"></script>
+  <!-- <script src="main.js"></script> -->
   <script src="https://unpkg.com/enter-view"></script>
   <!-- <script src='scrolly.js'></script> -->
 
