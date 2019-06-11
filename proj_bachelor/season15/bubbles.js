@@ -94,8 +94,8 @@ console.log('hey')
       .attr('class', d => {
         return d['key']
       })
-      .attr("stroke", "pink")
-      .attr("stroke-width", 0.7)
+      .attr("stroke", "#FF878E")
+      .attr("stroke-width", 0.8)
       .attr("d", function(d) {
         return d3.line()
           .x(function(d) {
@@ -128,7 +128,7 @@ console.log('hey')
       });
 
     // circles
-    svg.selectAll(".men")
+    svg.selectAll("#men")
       .data(data)
       .enter()
       .append('circle')
@@ -139,7 +139,6 @@ console.log('hey')
       <b>Name:</b> ${'&nbsp;'.repeat(1)}${d.name}<br>
     </div>`)
       .attr("id", "men")
-
       .attr("r", 15)
       .attr("cx", function(d) {
         return xScale(d.week)
@@ -153,7 +152,7 @@ console.log('hey')
     // .attr("data-tippy-content", d => d.data.week);
 
     // mouseover events
-    svg.selectAll('circle')
+    svg.selectAll('#men')
       .on('mouseover', function(d) {
         var className = d['id']
         var circleUnderMouse = this;
@@ -169,12 +168,12 @@ console.log('hey')
         d3.selectAll('circle.' + className)
           .raise()
           .attr('r', 30)
-          .attr("stroke", "pink")
+          .attr("stroke", "red")
           .attr('stroke-width', 2)
         // make all the other ones fade
         d3.selectAll('circle')
           .transition()
-          .style('opacity', function() {
+          .attr('opacity', function() {
             return (this.getAttribute('class') === className) ? 1 : 0.5;
           })
       })
@@ -182,8 +181,8 @@ console.log('hey')
         var className = d['id']
         d3.selectAll('path.' + className)
           .transition()
-          .attr('stroke-width', '0.7')
-          .attr('stroke', 'pink')
+          .attr('stroke-width', '0.8')
+          .attr('stroke', '#FF878E')
           .style('z-index', 1)
         d3.selectAll('circle.' + className)
           .raise()
@@ -191,7 +190,7 @@ console.log('hey')
           .attr('stroke-width', 0)
         d3.selectAll('circle')
           .transition()
-          .style('opacity', 1)
+          .attr('opacity', 1)
 
       })
 
@@ -204,11 +203,14 @@ console.log('hey')
 
 
     // steps
-    d3.select('#two').on('stepin', () => {
+    d3.select('#two').on('stepin', (d) => {
       svg
-        .selectAll('circle')
+        .selectAll('path')
+        .attr('opacity', 0.2)
+      svg
+        .selectAll('#men')
         .attr('opacity', function(d) {
-          if (d.week == "1") {
+          if (d.week === "1") {
             return 1
           } else {
             return 0.2
@@ -218,8 +220,8 @@ console.log('hey')
         .duration(800)
 
         .attr('fill', function(d) {
-          if (d.left == "yes" && d.week == "1") {
-            return "black"
+          if (d.left === "yes" && d.week === "1") {
+            return "#C4515C"
           } else {
             return "url(#" + d.id + ")"
           }
@@ -228,7 +230,7 @@ console.log('hey')
 
     d3.select('#three').on('stepin', () => {
       svg
-        .selectAll('circle')
+        .selectAll('#men')
         .transition()
         .duration(800)
         .attr('opacity', function(d) {
@@ -243,7 +245,7 @@ console.log('hey')
 
         .attr('fill', function(d) {
           if (d.left == "yes" && d.week == "2") {
-            return "black"
+            return "#C4515C"
           } else {
             return "url(#" + d.id + ")"
           }
@@ -267,7 +269,7 @@ console.log('hey')
 
         .attr('fill', function(d) {
           if (d.left == "yes" && d.week == "3") {
-            return "black"
+            return "#C4515C"
           } else {
             return "url(#" + d.id + ")"
           }
