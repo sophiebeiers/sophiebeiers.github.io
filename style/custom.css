@@ -64,8 +64,8 @@ a:hover {
 }
 
 .items img {
-  /* filter: grayscale(85%); */
-  opacity: 0.7;
+  filter: grayscale(85%) brightness(105%) saturate(80%);
+  /* opacity: 0.7; */
 }
 
 .items-padding {
@@ -92,7 +92,7 @@ a:hover {
 
 .contents#caption .text h3 {
   padding: 14px;
-  color: #66b2b2;
+  /* color: #66b2b2; */
   background-color: white;
   text-align:center;
   opacity: 1;
@@ -121,7 +121,7 @@ a:hover {
 }
 
 .contents#caption:hover img {
-  /* -webkit-filter: grayscale(0%); */
+  filter: grayscale(0%);
   opacity: 1;
   cursor: pointer;
 }
@@ -357,6 +357,7 @@ a:hover {
   .items-grid {
     width: 100%;
     margin: 3px;
+    padding: 5px;
 
   }
   .social-header {
@@ -379,7 +380,7 @@ a:hover {
 }
 body {
   background-color: white;
-  font-family: "ff-tisa-web-pro",serif;
+  font-family: "ff-tisa-web-pro",sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.45;
