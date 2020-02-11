@@ -9,7 +9,7 @@ body {
 }
 
 h2, h3, h4, h5, h6 {
-  font-family: 'Merriweather', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   /* font-family: 'Roboto Slab', serif; */
 }
@@ -19,7 +19,18 @@ h1 {
   font-weight: 700;
 }
 
+.name {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  color: #408E8E;
+  margin-left: 3%;
+}
 
+.lastname {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #66B2B2;
+}
 .notbold {
   font-weight: 400;
 }
@@ -53,26 +64,25 @@ a:hover {
 }
 
 /* photo grid */
-.items {
+/* .items {
+  width: 100%;
+} */
+
+.items-grid {
   width: 100%;
 }
 
-.items-grid {
-  width: 246px;
-  margin: 5px;
-  /* float: left; */
-}
-
 .items img {
-  filter: grayscale(85%) brightness(105%) saturate(80%);
+  filter:  brightness(100%) saturate(30%);
   /* opacity: 0.7; */
 }
 
-.items-padding {
+/* .items-padding {
   margin: 0 auto;
   float: none;
-  padding-left: 20px;
-}
+  padding-left: 2%;
+  padding-right: 2%
+} */
 
 /* text overlay and hovering */
 .contents#caption {
@@ -97,8 +107,8 @@ a:hover {
   text-align:center;
   opacity: 1;
   font-size: large;
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -110,7 +120,7 @@ a:hover {
   opacity: 1;
   font-size: small;
   text-align: center;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
@@ -164,19 +174,14 @@ a:hover {
   left: 20%;
 
   position: absolute;
-  /* margin-left: 5em;
-  margin-right: 5em; */
-
-  /* padding-left: 0.7em;
-  padding-top: 0.9em; */
 
 }
 
 .icons {
   font-size: 28px;
   color: #66b2b2;
-  margin-bottom: 1em;
-  margin-right: 15px;
+  margin: 2px;
+  padding: 1px;
   cursor: pointer;
   transition: 0.4s;
   margin-top: 0.5em;
@@ -215,11 +220,6 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-}
-
-/* p.about {
-    margin: 30px 150px 30px;
-    /* text-align: center; */
 }
 
 */ .section {
@@ -281,103 +281,9 @@ a:hover {
   white-space: nowrap;
 }
 
-/* Nav bar */
-/* .navbar-nav>li {
-  float: none;
-  position: relative;
-  text-align: center;
-}
-
-.navbar-light .navbar-nav .active a::after {
-  border-bottom: 5px solid #355764;
-  bottom: -10px;
-  content: " ";
-  left: 0;
-  position: absolute;
-  right: 0;
-} */
 
 
-@media screen and (max-width: 970px) and (-webkit-min-device-pixel-ratio: 2) {
-  .icons {
-      font-size: 18px;
-      color: #66b2b2;
-      margin-bottom: 1em;
-      margin-right: 15px;
-      cursor: pointer;
-      transition: 0.4s;
-      margin-top: 0.5em;
-  }
 
-  .fancy-header {
-    padding-top: 1em;
-    /* padding-bottom: 1em; */
-    /* margin: 1; */
-  }
-
-  .text-header h1 {
-    text-align: left;
-    background: transparent;
-    color: black;
-    font-size: 3em;
-    position: relative;
-    padding-left: 0.7em;
-  }
-  .items-grid {
-    width: 175px;
-    margin: 5px;
-    /* float: left; */
-  }
-}
-
-@media screen and (max-width: 728px) and (-webkit-min-device-pixel-ratio: 2) {
-  .text-header h1 {
-    text-align: center;
-    background: transparent;
-    color: black;
-    font-size: 3.2em;
-    position: relative;
-  }
-
-  .social-header {
-    text-align:center;
-  }
-}
-
-@media screen and (max-width: 422px) and (-webkit-min-device-pixel-ratio: 2) {
-
-  .text-header h1 {
-    text-align: center;
-    background: transparent;
-    color: black;
-    font-size: 8vh;
-    padding-left: 0px;
-  }
-
-  .items-grid {
-    width: 100%;
-    margin: 3px;
-    padding: 5px;
-
-  }
-  .social-header {
-    text-align: center;
-    left: 30%;
-    position: absolute;
-  }
-  .icons {
-    font-size: 25;
-    text-align: center;
-    align-items:center;
-    align-content: center;
-  }
-  .items-padding {
-      margin: 0 auto;
-      float: none;
-      padding-left: 0px;
-
-  }
-}
 body {
   background-color: white;
   font-family: "ff-tisa-web-pro",sans-serif;
@@ -417,6 +323,21 @@ body {
   font-size: 16px;
 }
 
+nav.level {
+  margin-left:12%;
+  margin-right:12%;
+  margin-bottom: 0.5rem;
+
+}
+
+#filled {
+  width: 100%;
+  height: 25px;
+  background-color: #E6F5F1;
+  margin-bottom:10px;
+}
+
+
 .active {
   color: black;
   border-bottom: 5px solid #355764;
@@ -426,18 +347,6 @@ body {
   display: none;
 }
 
-/* Footer  */
-.footer {
-  background: #A7AABC;
-}
-
-.footer p {
-  margin-bottom: 3px;
-}
-
-.footer .container {
-  padding: 20px 0;
-}
 
 .about .container {
   padding: 30px 0;
