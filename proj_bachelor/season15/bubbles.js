@@ -21,7 +21,7 @@
 
   // data
   Promise.all([
-      d3.csv('bach.csv'),
+      d3.csv('bach2.csv'),
     ])
     .then(ready)
     .catch(err => {
@@ -34,7 +34,7 @@
   ]) {
 
 
-    var grouped_boys = d3.nest()
+    var grouped_girls = d3.nest()
       .key(function(d) {
         return d.id;
       })
@@ -87,7 +87,7 @@
 console.log('hey')
     // the connecting lines
     svg.selectAll(".line")
-      .data(grouped_boys)
+      .data(grouped_girls)
       .enter()
       .append("path")
       .attr("fill", "none")
@@ -108,10 +108,10 @@ console.log('hey')
       })
 
     // the images
-    defs.selectAll(".men-pattern")
+    defs.selectAll(".women-pattern")
       .data(data)
       .enter().append("pattern")
-      .attr("class", "men-pattern")
+      .attr("class", "women-pattern")
       .attr("id", function(d) {
         return d.id
       })
@@ -128,7 +128,7 @@ console.log('hey')
       });
 
     // circles
-    svg.selectAll("#men")
+    svg.selectAll("#women")
       .data(data)
       .enter()
       .append('circle')
@@ -138,7 +138,7 @@ console.log('hey')
       .attr('data-tippy-content', d => `<div style="text-align: left; font-family: 'Roboto Mono', monospace;">
       <b>Name:</b> ${'&nbsp;'.repeat(1)}${d.name}<br>
     </div>`)
-      .attr("id", "men")
+      .attr("id", "women")
       .attr("r", 15)
       .attr("cx", function(d) {
         return xScale(d.week)
@@ -152,7 +152,7 @@ console.log('hey')
     // .attr("data-tippy-content", d => d.data.week);
 
     // mouseover events
-    svg.selectAll('#men')
+    svg.selectAll('#women')
       .on('mouseover', function(d) {
         var className = d['id']
         var circleUnderMouse = this;
@@ -208,7 +208,7 @@ console.log('hey')
         .selectAll('path')
         .attr('opacity', 0.2)
       svg
-        .selectAll('#men')
+        .selectAll('#women')
         .attr('opacity', function(d) {
           if (d.week === "1") {
             return 1
@@ -230,7 +230,7 @@ console.log('hey')
 
     d3.select('#three').on('stepin', () => {
       svg
-        .selectAll('#men')
+        .selectAll('#women')
         .transition()
         .duration(800)
         .attr('opacity', function(d) {
