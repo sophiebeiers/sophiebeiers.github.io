@@ -1,37 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:500|PT+Sans:400,400i,700|Merriweather:300,700" rel="stylesheet">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:500|PT+Sans:400,400i,700|Merriweather:300,700"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
 
-  <!-- Our custom CSS file -->
-  <link rel="stylesheet" href="../style/custom.css">
+    <!-- Our custom CSS file -->
+    <link rel="stylesheet" href="../style/custom.css" />
 
-  <title>Sophie Beiers | About </title>
-  <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
-</head>
+    <title>Sophie Beiers | About</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png" />
+  </head>
 
-<body>
+  <body>
+    <style>
+      #typed {
+        font-size: 4.5vh;
+        font-family: "Roboto", sans-serif;
+      }
 
-  <style>
-    #typed {
-      font-size: 4.5vh;
-      font-family: 'Roboto', sans-serif;
-    }
+      .typed-cursor {
+        font-size: 4.5vh;
+      }
+    </style>
 
-    .typed-cursor {
-      font-size: 4.5vh;
-    }
-  </style>
-
-  <!-- Header -->
-  <!-- <div class="fancy-header background text-header">
+    <!-- Header -->
+    <!-- <div class="fancy-header background text-header">
     <div class="row">
       <div class="col-sm text-center">
         <h1> Sophie <span class='notbold'>Beiers</span></h1>
@@ -39,75 +53,116 @@
     </div>
 </div> -->
 
-
-  <!-- Nav bar -->
-  <div class="navbar" id="navbar_blue">
-    <div class="navbar-links">
-      <a class="active" href="../"> &larr; Back <span class="sr-only">(current)</span></a>
-    </div>
-  </div>
-  <!-- Stuff here  -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3"></div>
-      <div class="col-lg-6">
-
-        <p><br><br></p>
-        <img class="center" src="sophie_headshot_circle.png" style="width:60%">
-        <p><br></p>
-        <a href="https://twitter.com/sophiebeiers" target="_blank"><span><i class="fab fa-twitter icons"></i></span></a>
-        <a href="https://github.com/sophiebeiers/" target="_blank"><span><i class="fab fa-github icons"></i></span></a>
-        <a href="mailto:sophiebeiers@gmail.com"><span><i class="fas fa-envelope icons"></i></span></a>
-        <a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank"><span><i class="fab fa-linkedin icons"></i></span></a>
-
-        <br>
-        <div id="typed-strings">
-          <p>Hey, I'm Sophie.</p>
-        </div>
-        <span id="typed"></span>
-
-        <br><br>I'm a quantitative analyst passionate about visualizing
-        data for social good. Currently a Data Journalist at the <a href="http://www.aclu.com"><b>ACLU</b></a> visualizing and analyzing data for
-        active litigation and publication. <br><br>
-        I used to do things like (try to) <a href="http://ledeprogram.com"><b>teach</b></a> other journalists how to code, research <a href="http://scholarship.claremont.edu/cgi/viewcontent.cgi?article=1045&context=pitzer_theses"><b>perceptive
-            infants,</b></a>
-        and analyze student experiences with <a href="http://www.youthtruthsurvey.org/school-culture/"><b>school culture</b></a>.
-        Sometimes, I genuinely enjoy running. <br><br>
-
-        Feel free to reach out!<br><br><br>
-
-        <a download="SBeiers_Resume.pdf" href="SBeiers_Resume.pdf" title="ImageName">
-          <img class="center" src="resume.png" style="width:25%"></a>
-        <div class="col-lg-3"></div>
-
-
-
+    <!-- Nav bar -->
+    <div class="columns test">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <img
+              src="../Untitled_Artwork-7.png"
+              height="125"
+              width="125"
+              style="transform:rotate(0deg);"
+            />
+          </div>
+          <div class="navbar-menu is-active" id="nav-menu">
+            <div class="navbar-end">
+              <p class="navbar-item">
+                <a class="link is-info" href="../">Viz</a>
+              </p>
+              <p class="navbar-item">
+                <a class="link is-info" href="../illustration/">Illustration</a>
+              </p>
+              <p class="navbar-item">
+                <a class="link is-info active" href="#">About</a>
+              </p>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
-  </div>
 
-
-
-  <!-- Footer -->
-  <br>
-  <footer class="footer text-right">
-
-    <div class="container">
+    <div id="filled"></div>
+    <!-- Stuff here  -->
+    <div class="columns">
       <div class="row">
-      <div class="col-sm-3">
+        <div class="column is-three-fifths is-offset-one-fifth">
+          <!-- <div class="col-lg-3"></div>
+        <div class="col-lg-6"> -->
+          <p><br /><br /></p>
+          <img
+            class="center"
+            src="sophie_headshot_circle.png"
+            style="width:30%"
+          />
+          <p><br /></p>
+          <a href="https://twitter.com/sophiebeiers" target="_blank"
+            ><span><i class="fab fa-twitter icons"></i></span
+          ></a>
+          <a href="https://github.com/sophiebeiers/" target="_blank"
+            ><span><i class="fab fa-github icons"></i></span
+          ></a>
+          <a href="mailto:sophiebeiers@gmail.com"
+            ><span><i class="fas fa-envelope icons"></i></span
+          ></a>
+          <a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank"
+            ><span><i class="fab fa-linkedin icons"></i></span
+          ></a>
 
+          <br />
+          <div id="typed-strings">
+            <p>Hey, I'm Sophie.</p>
+          </div>
+          <span id="typed"></span>
+
+          <br /><br />I'm a quantitative analyst passionate about visualizing
+          data for social good. Currently a Data Journalist at the
+          <a href="http://www.aclu.com"><b>ACLU</b></a> visualizing and
+          analyzing data for active litigation and publication. <br /><br />
+          I used to do things like (try to)
+          <a href="http://ledeprogram.com"><b>teach</b></a> other journalists
+          how to code, research
+          <a
+            href="http://scholarship.claremont.edu/cgi/viewcontent.cgi?article=1045&context=pitzer_theses"
+            ><b>perceptive infants,</b></a
+          >
+          and analyze student experiences with
+          <a href="http://www.youthtruthsurvey.org/school-culture/"
+            ><b>school culture</b></a
+          >. Sometimes, I genuinely enjoy running. <br /><br />
+
+          Feel free to reach out!<br /><br /><br />
+
+          <a
+            download="SBeiers_Resume.pdf"
+            href="SBeiers_Resume.pdf"
+            title="ImageName"
+          >
+            <img src="resume.png" style="width:25%"
+          /></a>
+
+          <div class="col-lg-3"></div>
         </div>
       </div>
     </div>
-  </footer>
 
-  <!-- typing animation -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-  <script>
-    var typed = new Typed('#typed', {
-      stringsElement: '#typed-strings',
-      typeSpeed: 80
-    });
-  </script>
+    <!-- Footer -->
+    <br />
+    <footer class="footer text-right">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3"></div>
+        </div>
+      </div>
+    </footer>
 
-</body>
+    <!-- typing animation -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script>
+      var typed = new Typed("#typed", {
+        stringsElement: "#typed-strings",
+        typeSpeed: 80
+      });
+    </script>
+  </body>
+</html>
