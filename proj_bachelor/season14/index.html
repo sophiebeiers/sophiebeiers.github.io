@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* html, body { margin:0; padding:0; overflow:hidden } */
+      svg {
+        background: #f9dbe4;
+      }
+      .svg-container {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        padding-bottom: 60%;
+        vertical-align: top;
+        overflow: hidden;
+      }
+      .svg-content {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .annotation-note- {
+        font-weight: bold;
+        color: "blue";
+        background-color: "red";
+      }
+
+      text.title {
+        font-size: 1.2em;
+      }
+
+      .cursive {
+        font-family: "Sacramento", cursive;
+        font-size: 3.5em;
+      }
+
+      /* position: fixed; top:100; left:100; height:100%; width:100% } */
+    </style>
+    <!-- Source in things  -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Asap:400,700|PT+Sans:400,400i,700|Merriweather:300,700|Sacramento"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <!-- <link rel="stylesheet" href="../../style/custom.css">
+    <link rel="stylesheet" href="../../style/d3-tip.css"> -->
+
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png" />
+  </head>
+  <body>
+    <!-- <div class="fancy-header-article background-teal text-article">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 text-left">
+            <h1>Sophie <span class='notbold'>Beiers</span></h1>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- Nav bar -->
+    <div class="navbar" id="navbar_blue">
+      <div class="navbar-links">
+        <a class="active" href="../">
+          &larr; Back <span class="sr-only">(current)</span></a
+        >
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="row">
+        <h1 class="cursive">
+          The Bachelorette - Season 14 <img src="rose.png" />
+        </h1>
+      </div>
+      <div class="row">
+        <p>This season will be the most *dramatic* yet!! - Chris Harrison</p>
+        <br />
+      </div>
+      <div class="row">
+        <div class="column">
+          <button id="all" class="btn btn-danger btn-sm">
+            All Men<img src="rose.png" />
+          </button>
+          <button id="one" class="btn btn-danger btn-sm">Week 1</button>
+          <button id="two" class="btn btn-danger btn-sm">Week 2</button>
+          <button id="three" class="btn btn-danger btn-sm">Week 3</button>
+          <button id="four" class="btn btn-danger btn-sm">Week 4</button>
+          <button id="five" class="btn btn-danger btn-sm">Week 5</button>
+          <button id="six" class="btn btn-danger btn-sm">Week 6</button>
+          <button id="seven" class="btn btn-danger btn-sm">Week 7</button>
+          <button id="eight" class="btn btn-danger btn-sm">Week 8</button>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div id="container" class="svg-container"></div>
+
+    <!-- <div id="chart"></div> -->
+
+    <!-- end of container -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/1.12.1/d3-annotation.min.js"></script>
+    <!-- <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+    <script src="d3_tip.js"></script>
+    <script src="bubbles.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+
+    <footer class="footer text-right">
+      <div class="container">
+        <div class="row">
+          <!-- <div class="col-sm-3">
+            <span class="text-muted"> Feel free to reach out. </span>
+          </div> -->
+
+          <div class="col-sm-11 text-right">
+            <a href="mailto:sophiebeiers@gmail.com" target="_blank"
+              ><img src="../icons/email.png" width="30" height="30"/></a
+            >&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/sophiebeiers/" target="_blank"
+              ><img src="../icons/linkedin.png" width="30" height="30"/></a
+            >&nbsp;&nbsp;
+            <a href="https://www.github.com/sophiebeiers" target="_blank"
+              ><img src="../icons/github.png" width="33" height="33"/></a
+            >&nbsp;&nbsp;
+            <a href="https://twitter.com/sophiebeiers" target="_blank"
+              ><img src="../icons/twitter.png" width="33" height="33"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div>
+      <font size="1"
+        >Icon by
+        <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon"
+          >www.flaticon.com</a
+        >
+        is licensed by
+        <a
+          href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0"
+          target="_blank"
+          >CC 3.0 BY</a
+        ></font
+      >
+    </div>
+  </body>
+</html>
